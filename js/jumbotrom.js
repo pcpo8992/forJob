@@ -7,10 +7,10 @@ btnNext.onclick = function () {
     var value = parseInt(activeImg.getAttribute("value"));
     var imgContainer = document.getElementsByClassName("imgContainer");
     if (value < imgContainer.length - 1) {
-        // console.log(imgContainer[value]);
+        console.log(imgContainer[value]);
         imgContainer[value].removeAttribute("id");
         value += 1;
-        // console.log(value);
+        console.log(value);
         imgContainer[value].setAttribute("id", "jumbotronIsActive");
     } else {
         imgContainer[value].removeAttribute("id");
