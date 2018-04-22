@@ -42,11 +42,11 @@
 }
 
 .fastBox a:hover {
-    color: rgb(36, 36, 202);
+    color: red;
 }
 
 .fastBox a:hover .img-color {
-    color: rgb(94, 94, 206);
+    color: red;
 }
 
 /* 全文檢索 */
@@ -109,7 +109,7 @@
     width: 100%;
     height: 100%;
     background-color: rgb(0, 0, 0);
-    opacity: 0.9;
+    opacity: 1;
     z-index: 10;
     position: absolute;
     top: 0;
@@ -374,7 +374,7 @@
 }
 
 .news {
-    width: 660px;
+    width: 700px;
     height: 400px;
 }
 
@@ -538,10 +538,6 @@ ul.more-news a:hover {
     color: rgb(0, 160, 160);
 }
 
-.area:hover [class^="image-box"] {
-    background-size: 115%;
-}
-
 [class^="image-box"] {
     width: 58px;
     height: 58px;
@@ -557,11 +553,10 @@ ul.more-news a:hover {
 
 [class^="image-box"] svg {
     width: 90%;
-    /* transition: 0.1s; */
 }
 
 .area:hover svg {
-    width: 110;
+    width: 110%;
 }
 
 /* 常用服務熱區 */
@@ -571,20 +566,7 @@ ul.more-news a:hover {
     width: 993px;
     height: 500px;
     margin-top: 10px;
-}
-
-.main-box-title {
-    box-sizing: border-box;
-    text-align: center;
-    height: 20px;
-    font-family: "微軟正黑體";
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: black;
-}
-
-.box-bottom {
-    margin-top: 2.8em;
+    margin-bottom: 50px;
 }
 
 .main-box-image {
@@ -599,46 +581,17 @@ ul.more-news a:hover {
 .title-box {
     position: absolute;
     width: 300px;
-    height: 35px;
+    height: 50px;
+    line-height: 50px;
     left: 25px;
     top: -15px;
     color: #fff;
-    line-height: 35px;
     text-align: center;
     font-size: 1.2em;
 }
 
 .colorRed {
     background-color: #AC373D;
-}
-
-.main-box-image .main-box-image-line {
-    box-sizing: border-box;
-    border-bottom: 1px solid rgb(190, 190, 190);
-    width: 80%;
-    height: 25px;
-    margin: 0px 12px 0px 12px;
-}
-
-.main-box-image .main-box-image-ige {
-    box-sizing: border-box;
-    display: inline-flex;
-    width: 20%;
-    margin: 0px auto;
-    font-size: 2.7em;
-    color: rgb(190, 190, 190);
-    justify-content: center;
-}
-
-.main-box-image .main-box-image-ige:hover {
-    transition: 0.3s;
-    color: rgb(192, 0, 0);
-}
-
-.main-box-image .main-box-image-ige img {
-    box-sizing: border-box;
-    width: 62.5px;
-    height: 50px;
 }
 
 .main-box-btn {
@@ -736,74 +689,18 @@ ul.more-news a:hover {
 }
 
 /* 執行績效作為 */
-
 .main-box-policy {
     box-sizing: border-box;
     width: 995px;
-    height: 800px;
+    height: 700px;
     margin-bottom: 10px;
     background-color: #F7F7F7;
     margin-top: 10px;
+    margin-bottom: 50px;
 }
 
-/* 區塊title */
-
-.main-box-title {
-    box-sizing: border-box;
-    text-align: center;
-    height: 20px;
-    font-family: "微軟正黑體";
-    font-weight: 500;
-    margin-bottom: 5px;
-    /* color: black; */
-}
-
-.main-box-image {
-    display: flex;
-    border: 1px solid;
-    height: 20px;
-    background-color: #4B4B4B;
-    border-bottom: 5px solid rgb(161, 161, 161);
-    position: relative;
-}
-
-.title-box {
-    position: absolute;
-    width: 300px;
-    height: 35px;
-    left: 25px;
-    top: -15px;
-    color: #fff;
-    line-height: 35px;
-    text-align: center;
-    font-size: 1.2em;
-}
-
-.colorYellow {
-    background-color: #E7AE3C;
-}
-
-.main-box-image .main-box-image-line {
-    box-sizing: border-box;
-    border-bottom: 1.3px solid rgb(190, 190, 190);
-    width: 80%;
-    height: 25px;
-    margin: 0px 12px 0px 12px;
-}
-
-.main-box-image .main-box-image-ige {
-    box-sizing: border-box;
-    display: inline-flex;
-    width: 20%;
-    margin: 0px auto;
-    font-size: 2.7em;
-    color: rgb(190, 190, 190);
-    justify-content: center;
-}
-
-.main-box-image:hover .main-box-image-ige {
-    transition: 0.3s;
-    color: rgb(192, 0, 0);
+.colorGreen {
+    background-color: rgb(0, 160, 160);
 }
 
 .main-policy-box {
@@ -814,24 +711,29 @@ ul.more-news a:hover {
 }
 
 .policy-box-video {
-    /* width: 40%; */
     height: 500px;
     border: 1px solid gray;
-    /* box-shadow: 0px 0px 20px #8f8f8f; */
     background-color: black;
     transition: 1s;
     color: #fff;
+    display: flex;
+    align-items: center;
 }
 
-.policy-box-video:hover {
-    box-shadow: 0px 0px 50px #8f8f8f;
-    /* transform: translate(-5px, -5px); */
+.policy-video {
+    width: 80%;
+    height: 85%;
+    margin: 10px auto;
 }
 
-div.policy-box-content {
+.policy-video iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.policy-box-content {
     width: calc(100%);
-    height: 120px;
-    /* box-shadow: 0px 0px 20px #8f8f8f; */
+    height: 110px;
     background-color: #fff;
     transition: 1s;
     border: 1px solid gray;
@@ -847,45 +749,19 @@ div.policy-box-content {
     transition: 0.3s;
 }
 
-[class^="policy-box"] .policy-title {
-    /* height: 2em; */
-    /* line-height: 2em; */
-    font-size: 1.2em;
-    width: 100%;
-    border-bottom: 5px solid rgb(66, 202, 184);
-    color: #fff;
-    font-family: "微軟正黑體";
-    /* padding-left: 10px; */
-    /* text-align: center; */
-}
-
-.policy-video {
-    /* border: 1px solid; */
-    width: 80%;
-    height: 85%;
-    margin: 10px auto;
-}
-
-.policy-video iframe {
-    width: 100%;
-    height: 100%;
-}
-
 .policy-content {
     margin: 10px auto;
     display: flex;
     justify-content: space-around;
-    /* border: 1px solid; */
+    align-items: center;
     overflow: hidden;
     box-sizing: border-box;
 }
 
 .policy-content img {
     width: calc(990px/6.5);
-    height: 100px;
     border: 1px solid rgb(182, 180, 180);
     opacity: 0.7;
-    /* transition: 1s ease; */
     cursor: pointer;
 }
 
@@ -894,85 +770,9 @@ div.policy-box-content {
     /* transform:scale(1.2); */
 }
 
-.policyModal {
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    z-index: 999;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none;
-    flex-flow: column;
-    align-items: center;
-}
-
-.policyClose {
-    color: #fff;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 2em;
-    cursor: pointer;
-}
-
-.policyClose:hover {
-    color: rgb(255, 0, 128);
-}
-
-.policyTitle {
-    color: #fff;
-    /* width: 100%; */
-    font-size: 2em;
-    font-weight: 400;
-    margin-top: 10px;
-    border-bottom: 10px solid red;
-    height: 50px;
-}
-
-.policyModalImg {
-    display: flex;
-    flex-flow: column;
-    width: 900px;
-    border: 1px solid rebeccapurple;
-    margin-top: 30px;
-}
-
-.policyModalImg img {
-    width: 100%;
-}
-
-.policyDisable {
-    display: none;
-}
-
-#policyImgActive {
-    display: block;
-}
-
-.littlePolicyImg {
-    display: flex;
-    justify-content: center;
-}
-
-.littlePolicyImg img {
-    width: calc(100%/6);
-    height: 100px;
-    opacity: 0.8;
-}
-
-.littlePolicyImg img:hover {
-    opacity: 1;
-    cursor: pointer;
-}
-
-#littleImgActive {
-    opacity: 1;
-}
-
-div.more-policy {
+.more-policy {
     text-align: center;
-    margin-top: 1.5em;
+    margin-top: 0.5em;
     margin-left: 1.5em;
     display: flex;
     justify-content: flex-start;
@@ -981,7 +781,7 @@ div.more-policy {
     align-content: center;
 }
 
-div.more-policy a {
+.more-policy a {
     text-decoration: none;
     font-size: 1em;
     display: flex;
@@ -989,71 +789,17 @@ div.more-policy a {
     color: black;
 }
 
-div.more-policy .more {
+.more-policy .more {
     margin-right: 0.3em;
     font-size: 1.5em;
     color: rgb(126, 114, 114);
 }
 
-div.more-policy a:hover,
+.more-policy a:hover,
 a:hover .more {
     transition: 0.3s;
     color: rgb(236, 166, 104);
     text-decoration: underline;
-}
-
-.box-bottom {
-    margin-top: 2em;
-}
-
-/* The Modal (background) */
-
-#myModal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background-color: black;
-    display: none;
-    /* border: 1px solid red; */
-    justify-content: center;
-    align-items: center;
-}
-
-#myModal .close {
-    color: white;
-    position: absolute;
-    top: 10px;
-    right: 40px;
-    font-size: 2em;
-    cursor: pointer;
-}
-
-#myModal .close:hover {
-    color: red;
-}
-
-img.modal-content {
-    width: 60%;
-    animation-name: changeWidth;
-    animation-duration: 1s;
-    /* margin:0px auto; */
-    /* border: 1px solid red; */
-}
-
-@keyframes changeWidth {
-    from {
-        width: 0%;
-    }
-    to {
-        width: 60%;
-    }
-}
-
-img.disable {
-    display: none;
 }
 
 /* 執行業務區塊 */
@@ -1063,42 +809,18 @@ img.disable {
     width: 995px;
     height: 790px;
     margin-bottom: 10px;
-    background-color: #F7F7F7;
     margin-top: 10px;
 }
 
-.main-box-title {
-    box-sizing: border-box;
-    text-align: center;
-    height: 20px;
-    font-family: "微軟正黑體";
-    font-weight: 500;
-    margin-bottom: 5px;
+.colorPink {
+    background-color: #DD78A6;
 }
 
-.main-box-image {
+.tabLinkBtn{
+    width: 100%;
     display: flex;
-    border: 1px solid;
-    height: 20px;
-    background-color: #4B4B4B;
-    border-bottom: 5px solid rgb(161, 161, 161);
-    position: relative;
-}
-
-.title-box {
-    position: absolute;
-    width: 300px;
-    height: 35px;
-    left: 25px;
-    top: -15px;
-    color: #fff;
-    line-height: 35px;
-    text-align: center;
-    font-size: 1.2em;
-}
-
-.colorYellow {
-    background-color: rgb(53, 115, 207);
+    justify-content: center;
+    margin-top: 10px;
 }
 
 .tablink {
@@ -1108,7 +830,7 @@ img.disable {
     line-height: 40px;
     font-size: 1.3em;
     text-align: center;
-    background-color: #0c5757;
+    background-color: #585a5a;
     color: #fff;
     cursor: pointer;
     margin-top: 10px;
@@ -1117,7 +839,7 @@ img.disable {
 }
 
 .tablink:hover {
-    background-color: #0eb9b9;
+    background-color: #DD78A6;
 }
 
 .tabcontent {
@@ -1126,7 +848,7 @@ img.disable {
     height: 700px;
     background-color: rgb(255, 255, 255);
     display: none;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -1136,7 +858,7 @@ img.disable {
 }
 
 #tabActiveColor {
-    background-color: #0eb9b9;
+    background-color: #DD78A6;
 }
 
 .tabcontent .enforcementCard,
@@ -1190,7 +912,7 @@ img.disable {
 }
 
 .card-title {
-    font-size: 1.3em;
+    font-size: 1em;
     font-weight: 400;
 }
 
@@ -1224,6 +946,7 @@ img.disable {
 
 .heart {
     justify-content: space-evenly;
+    align-items: flex-start;
 }
 
 .heartCard {
@@ -1233,6 +956,7 @@ img.disable {
     border-radius: 15px;
     box-sizing: border-box;
     padding: 10px;
+    margin-top: 20px;
 }
 
 .heartCard img {
@@ -1296,12 +1020,10 @@ img.disable {
 .main-box-dataVisual {
     box-sizing: border-box;
     width: 995px;
-    height: 800px;
+    height: 750px;
     margin-bottom: 10px;
     margin-top: 3em;
 }
-
-/* 區塊title */
 
 .main-box-image {
     display: flex;
@@ -1325,8 +1047,8 @@ img.disable {
     font-size: 1.2em;
 }
 
-.colorYellow {
-    background-color: #E7AE3C;
+.colorBrown {
+    background-color: rgb(170, 94, 94);
 }
 
 .blockBtn {
@@ -1336,6 +1058,7 @@ img.disable {
     display: flex;
     justify-content: space-evenly;
     box-sizing: border-box;
+    align-items: center;
 }
 
 .blockBtn .execBtn {
@@ -1374,11 +1097,7 @@ img.disable {
     border-radius: 5px;
     background-color: #fff;
     position: relative;
-}
-
-.dashboard .cashBoard:hover {
-    transition: 0.5s;
-    transform: translate(-5px, -5px);
+    transform: translate(-4px, -4px);
     box-shadow: 8px 8px 3px #cccccc;
 }
 
@@ -1473,21 +1192,21 @@ img.disable {
     /* border:1px solid; */
 }
 
-div.data-box {
+.data-box {
     width: calc(40%);
     box-shadow: 5px 5px 1px #dddddd;
     position: relative;
 }
 
-div.data-box:hover {
+.data-box:hover {
     transform: translate(-5px, -5px);
     transition: 0.4s;
     box-shadow: 8px 8px 3px #cccccc;
 }
 
 .data-box .data-title {
-    height: 2em;
-    line-height: 2em;
+    height: 2.5em;
+    line-height: 2.5em;
     font-size: 1em;
     width: 100%;
     background-color: #51B2B4;
@@ -1510,7 +1229,7 @@ div.data-box:hover {
     height: 80%;
 }
 
-div.more-data {
+.more-data {
     text-align: center;
     margin-top: 1.5em;
     margin-left: 1.5em;
@@ -1521,7 +1240,7 @@ div.more-data {
     align-content: center;
 }
 
-div.more-data a {
+.more-data a {
     text-decoration: none;
     font-size: 1em;
     display: flex;
@@ -1529,13 +1248,13 @@ div.more-data a {
     color: black;
 }
 
-div.more-data .more {
+.more-data .more {
     margin-right: 0.3em;
     font-size: 1.5em;
     color: rgb(126, 114, 114);
 }
 
-div.more-data a:hover,
+.more-data a:hover,
 a:hover .more {
     transition: 0.3s;
     color: rgb(236, 166, 104);
@@ -1543,16 +1262,17 @@ a:hover .more {
 
 /* 熱門影片 */
 
-div.main-box-youtube {
+.main-box-youtube {
     box-sizing: border-box;
     width: 993px;
-    height: 520px;
+    height: 530px;
     margin-bottom: 10px;
     background-color: #F5F4EF;
     margin-top: 10px;
+    margin-bottom: 40px;
 }
 
-div.main-box-title {
+.main-box-title {
     box-sizing: border-box;
     text-align: center;
     height: 20px;
@@ -1563,7 +1283,7 @@ div.main-box-title {
     color: black;
 }
 
-div.main-box-image {
+.main-box-image {
     display: flex;
     border: 1px solid;
     height: 20px;
@@ -1572,61 +1292,24 @@ div.main-box-image {
     position: relative;
 }
 
-.title-box {
-    position: absolute;
-    width: 300px;
-    height: 35px;
-    left: 25px;
-    top: -15px;
-    color: #fff;
-    line-height: 35px;
-    text-align: center;
-    font-size: 1.2em;
-}
-
 .colorBlue {
     background-color: #449FE3;
 }
 
-div.main-box-image .main-box-image-ige {
-    box-sizing: border-box;
-    display: inline-flex;
-    width: 20%;
-    margin: 0px auto;
-    font-size: 2.7em;
-    color: rgb(190, 190, 190);
-    /* border: 1px solid; */
-    justify-content: center;
-}
-
-.main-box-image:hover .main-box-image-ige {
-    transition: 0.3s;
-    color: rgb(192, 0, 0);
-}
-
-.main-box-image .main-box-image-ige img {
-    box-sizing: border-box;
-    width: 62.5px;
-    height: 50px;
-    margin: 0px auto;
-}
 
 .main-box-movie {
     box-sizing: border-box;
     width: 100%;
     display: flex;
-    height: 370px;
-    /* border: 1px solid red; */
+    height: 430px;
     display: flex;
     justify-content: center;
     margin-top: 20px;
-    /* box-shadow: 0px 0px 5px black; */
 }
 
 .movie-box {
     width: 95%;
     height: 100%;
-    /* border: 1px solid; */
     background-color: #fff;
     display: flex;
     justify-content: space-evenly;
@@ -1653,8 +1336,6 @@ div.main-box-image .main-box-image-ige {
 .movie-content {
     width: 300px;
     height: 360px;
-    /* border: 1px solid red; */
-    /* background-color: black; */
 }
 
 .movie-content ul {
@@ -1666,8 +1347,7 @@ div.main-box-image .main-box-image-ige {
     display: flex;
     padding-left: 0;
     width: 300px;
-    height: 99px;
-    /* border-bottom: 1px dotted black; */
+    height: 110px;
 }
 
 .movie-link {
@@ -1676,9 +1356,7 @@ div.main-box-image .main-box-image-ige {
     height: 100%;
     border-bottom: 1px dotted gray;
     align-items: center;
-    /* justify-content: space-between; */
     text-decoration: none;
-    /* border: 1px solid; */
     cursor: pointer;
 }
 
@@ -1688,25 +1366,23 @@ div.main-box-image .main-box-image-ige {
 
 #choose {
     background-color: #EEEEEE;
-    border-radius: 5px;
-    /* width: 80%; */
 }
 
 .movie-logo {
     flex: 0.6;
-    /* border: 1px solid red; */
-    color: #56BFC1;
+    font-size: 1.3em;
+    color: #449FE3;
     height: 60%;
 }
 
 .movie-inner-content {
-    /* flex: 6; */
     width: 90%;
     display: flex;
     flex-direction: column;
     margin-left: 10px;
-    /* background-color: #F0F0F0; */
-    /* border: 1px solid red; */
+    justify-content: space-evenly;
+    height: 100px;
+    border-radius: 5px;
 }
 
 .movie-name {
@@ -1714,38 +1390,36 @@ div.main-box-image .main-box-image-ige {
     font-weight: 600;
     display: flex;
     align-items: center;
-    /* border: 1px solid #000; */
 }
 
 .movie-cop {
     height: 20%;
-    font-size: 0.5em;
+    font-size: 0.8em;
     display: flex;
     align-items: center;
-    color: #56BFC1;
+    color: gray;
 }
 
 .movie-date {
     height: 20%;
-    font-size: 0.6em;
+    font-size: 0.8em;
     display: flex;
     align-items: center;
-    color: #56BFC1;
+    color: gray;
 }
 
-div.more-video {
+.more-video {
     text-align: center;
     margin-top: 0.6em;
     margin-left: 1em;
     display: flex;
     justify-content: flex-start;
-    /* border: 1px solid; */
     height: 2em;
     line-height: 2em;
     align-content: center;
 }
 
-div.more-video a {
+.more-video a {
     text-decoration: none;
     font-size: 1em;
     display: flex;
@@ -1753,19 +1427,14 @@ div.more-video a {
     color: black;
 }
 
-div.more-video .more {
+.more-video .more {
     margin-right: 0.3em;
     font-size: 1.5em;
     color: rgb(126, 114, 114);
 }
 
-div.more-video a:hover,
+.more-video a:hover,
 a:hover .more {
     transition: 0.3s;
     color: rgb(236, 166, 104);
-}
-
-.hr {
-    /* border: 0.5px solid rgb(63, 66, 66); */
-    margin-top: 20px;
 }

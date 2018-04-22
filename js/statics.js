@@ -108,46 +108,32 @@ function getExec(value) {
     switch (value) {
         case 0:
             return staticNum.tpk;
-            break;
         case 1:
             return staticNum.tpy;
-            break;
         case 2:
             return staticNum.sly;
-            break;
         case 3:
             return staticNum.pcy;
-            break;
         case 4:
             return staticNum.tyy;
-            break;
         case 5:
             return staticNum.scy;
-            break;
         case 6:
             return staticNum.tcy;
-            break;
         case 7:
             return staticNum.chy;
-            break;
         case 8:
             return staticNum.cyy;
-            break;
         case 9:
             return staticNum.tny;
-            break;
         case 10:
             return staticNum.ksy;
-            break;
         case 11:
             return staticNum.pty;
-            break;
         case 12:
             return staticNum.hly;
-            break;
         case 13:
             return staticNum.ily;
-            break;
     }
 }
 
