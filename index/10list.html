@@ -1,0 +1,71 @@
+<style>
+*{
+    /* border: aqua solid; */
+}
+.fastBox ul{
+    padding: 0;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 100px;
+}
+
+.fastBox li{
+    list-style-type: none;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(185, 185, 185);
+}
+
+.fastBox a{
+    display: flex;
+    flex-flow: column;
+    justify-content:center;
+    align-items: center;
+    height: 80%;
+    width: 80%;
+    text-decoration:none;
+    border-radius: 5px;
+    font-size: 13px;
+    box-sizing: border-box;
+    background-color: #fff;
+    transition: 0.4s;
+    color: rgb(14, 14, 14);
+    font-family: "微軟正黑體";
+}
+
+.fastBox a .img-color{
+    font-size: 2em;
+    color: rgb(165, 164, 164);
+}
+
+.fastBox a:hover{
+    color: rgb(36, 36, 202);
+}
+
+.fastBox a:hover .img-color{
+    color: rgb(94, 94, 206);
+}
+
+
+</style>
+
+<div class="fastBox">
+    <ul>
+        <li><a href=""><i class="fas img-color fa-search "></i>搜尋</a></li>
+        <li><a href=""><i class="fas img-color fa-volume-down"></i>消息</a></li>
+        <li><a href=""><i class="fas img-color fa-user"></i>服務</a></li>
+        <li><a href=""><i class="far img-color fa-flag"></i>報告</a></li>
+        <li><a href=""><i class="fas img-color fa-briefcase"></i>業務</a></li>
+        <li><a href=""><i class="fas img-color fa-chart-bar"></i>統計</a></li>
+        <li><a href=""><i class="fab img-color fa-youtube"></i>影音</a></li>
+        <li><a href=""><i class="fas img-color fa-link"></i>連結</a></li>
+        <li><a href=""><i class="fas img-color fa-arrow-up"></i>top</a></li>
+    </ul>
+</div>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>

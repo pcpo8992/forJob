@@ -1,0 +1,246 @@
+<style>
+    .bottom-container-self {
+        box-sizing: border-box;
+        width: 932px;
+        display: inline-flex;
+        /* background-color: #2D2D2D; */
+    }
+
+    .bottom-container-self .bottom-container-first {
+        box-sizing: border-box;
+        width: 55%;
+        /* height: 100%; */
+        /* border: 1px solid; */
+        display: inline-block;
+        margin: 0px;
+    }
+
+    .bottom-container-self .bottom-container-second {
+        box-sizing: border-box;
+        width: 45%;
+        height: 100%;
+        margin: 0px;
+        display: flex;
+        flex-flow: column;
+        /* border: 1px solid red; */
+    }
+
+    .bottom-container-title .title-box {
+        display: inline-block;
+    }
+
+    .title-box a {
+        display: inline-block;
+        border: 1px solid;
+        border-radius: 5px;
+        text-align: center;
+        background-color: rgb(4, 160, 172);
+        width: 7em;
+        color: white;
+        text-decoration: none;
+    }
+
+    .title-box a:hover {
+        background-color: rgb(21, 76, 80);
+        color: white;
+    }
+
+    .bottom-container-address {
+        color: white;
+    }
+
+    .bottom-container-address div {
+        font-family: "微軟正黑體";
+        box-sizing: border-box;
+        font-size: 1em;
+        color:white;
+        /* border: 1px solid;   */
+        margin: 3px 0px;
+    }
+
+    .bottom-container-address span {
+        box-sizing: border-box;
+        /* font-size: 1em; */
+        font-family: "微軟正黑體";
+        color:white;
+    }
+
+    .bottom-container-address .first {
+        margin-top: 10px;
+    }
+
+    .bottom-container-address .first a {
+        font-size: 0.9em;
+        color: #ccffff;
+        text-decoration: none;
+        font-family: "微軟正黑體";
+    }
+
+    .bottom-container-address .first a:hover {
+        text-decoration: underline;
+    }
+
+    .bottom-container-second img {
+        /* display: inline-block; */
+        margin-top: 1.4px;
+        /* border: 1px solid; */
+    }
+
+    .bottom-container-second [class^="bottom-container-second-box"] {
+        /* border: 1px solid white; */
+        display: flex;
+        justify-content:flex-end;
+        /* margin: 0px 10px; */
+    }
+
+    .bottom-second-image {
+        /* width:3em; */
+        /* height:3em; */
+        display: flex;
+        font-size:2em;
+        align-items: center;
+        /* border: 1px solid red; */
+        margin: 0px 5px;
+    }
+
+    .icon-image{
+        width: 46px;
+        height: 46px;
+        display:flex;
+        /* border:1px solid rgb(209, 205, 205); */
+        align-content: center;
+        justify-content: center;
+        /* margin:0px 5px; */
+    }
+    .icon-image a{
+        display:flex;
+        /* width: 2em; */
+        /* height: 2em; */
+        /* border: 1px solid rgb(209, 205, 205); */
+    }
+
+    .icon-image:hover{
+        background-color: white;
+        border-radius: 5px;
+        /* font-size: 1.1em; */
+    }
+
+    .icon{
+        color:rgb(209, 205, 205);
+        font-size: 1.02em;
+    }
+    .icon-image:hover .icon-youtube{
+        color:red;
+        font-size:1.2em;
+    }
+    .icon-image:hover .icon-facebook{
+        color: #3b5998;
+        font-size:1.2em;
+    }
+    .icon-image:hover .icon-rss{
+        color: #f26522;
+        font-size:1.2em;
+    }
+    .icon-image:hover .icon-news{
+        color:#E7427E;
+        font-size:1.2em;
+    }
+</style>
+
+
+<div class="bottom-container-self">
+    <div class="bottom-container-first">
+        <div class="bottom-container-title">
+            <!-- 隱私權宣告 -->
+            <div class="title-box">
+                <a title=隱私權宣告 href="https://www.tpk.moj.gov.tw/ct.asp?xItem=193438&ctNode=28202" target="_blank">隱私權宣告</a>
+            </div>
+            <!-- 資訊安全政策 -->
+            <div class="title-box">
+                <a title=資訊安全政策 href="https://www.moj.gov.tw/sp-inse-list-001.html" target="_blank">資訊安全政策</a>
+            </div>
+            <!-- 資料開放宣告 -->
+            <div class="title-box">
+                <a title=資料開放宣告 href="https://www.tpk.moj.gov.tw/ct.asp?xItem=193416&ctNode=28201" target="_blank">資料開放宣告</a>
+            </div>
+            <!-- 意見信箱 -->
+            <div class="title-box">
+                <a title=意見信箱 href="https://www.tpk.moj.gov.tw/ct.asp?xItem=401727&CtNode=41129&mp=030" target="_blank">意見信箱</a>
+            </div>
+        </div>
+        <div class="bottom-container-address">
+            <!-- 交通資訊 -->
+            <div class="first">
+                <span>地址：11485 臺北市內湖區康寧路三段51號7樓</span>
+                <a title="交通資訊" style="color: #ccffff" href="https://www.tpk.moj.gov.tw/ct.asp?xItem=2111&CtNode=21620&mp=030">
+                    <i class="fas fa-map-marker-alt"></i> 交通資訊</a>
+                <a title="辦公時間" style="color: #ccffff" href="https://www.tpk.moj.gov.tw/content.asp?mp=030&CuItem=502975">
+                    <i class="far fa-clock"></i> 辦公時間</a>
+            </div>
+            <div>電話總機：(02)2633-6650 傳真電話：(02)2633-6929</div>
+            <div>最佳瀏覽解析度為1024*768以上</div>
+            <div>建議瀏覽器：Chrome 31、Firefox 31、IE 11以上版本</div>
+            <div id="update-day" style="color: rgba(255, 255, 0, 0.87)"></div>
+        </div>
+    </div>
+    <div class="bottom-container-second">
+        <div class="bottom-container-second-box1">
+            <!-- 影音專區 -->
+            <div class="bottom-second-image icon-image">
+                <a title="影音專區" target=_blank href="https://www.youtube.com/channel/UCth7EXf77LjjHenf_L9eH4g">
+                    <i class="fab fa-youtube-square fa-fw icon icon-youtube"></i>
+                </a>
+            </div>
+            <!-- 臉書專區 -->
+            <div class="bottom-second-image icon-image">
+                <a title="臉書專區" target=_blank href="https://www.facebook.com/MOJaEa/?ref=br_rs">
+                    <i class="fab fa-facebook-square fa-fw icon icon-facebook"></i>
+                </a>
+            </div>
+            <!-- RSS -->
+            <div class="bottom-second-image icon-image">
+                <a title="RSS" target=_blank href="https://www.moj.gov.tw/lp-36-001.html">
+                    <i class="fas fa-rss-square fa-fw icon icon-rss"></i>
+                </a>
+            </div>
+            <!-- 訂閱電子報 -->
+            <div class="bottom-second-image icon-image">
+                <a title="訂閱電子報" tagget=_blank href="https://www.moj.gov.tw/sp-epap-sform-001.html">
+                    <i class="fas fa-columns fa-fw icon icon-news"></i>
+                </a>
+            </div>
+            <!-- 我的E政府 -->
+            <div class="bottom-second-image" style="margin-right: 5px;">
+                <a title="我的E政府" target=_blank href="https://www.gov.tw/Default.aspx">
+                    <img title="我的E政府" alt="我的E政府" src="https://www.tpk.moj.gov.tw/site/moj/public/MMO/tpk/egov.png" width="43px" height="46px">
+                </a>
+            </div>
+            <!-- 無障礙網站 -->
+            <div class="bottom-second-image" style="margin-right:0px;">
+                    <a title="無障礙網站" target=_blank href="https://www.handicap-free.nat.gov.tw/applications/Detail?category=20161110085015">
+                        <img title="無障礙網站" alt="無障礙網站" src="https://www.moj.gov.tw/site/moj/public/MMO/tpk/aplus.jpg" height="36px">
+                    </a>
+                </div>
+        </div>
+        <!-- 執行署qrcode -->
+        <div class="bottom-container-second-box2">
+            <a title="執行署qrcode" target=_blank href="https://www.tpk.moj.gov.tw/mp030.html">
+                <img title="執行署qrcode" alt="執行署qrcode" src="https://www.tpk.moj.gov.tw/site/moj/public/MMO/tpk/QR.png" width="101px">
+            </a>
+        </div>
+    </div>
+</div>
+<script>
+    var today = new Date();
+    var year = today.getFullYear();
+    var month = today.getMonth();
+    var day = today.getDate();
+    var now = document.getElementById("update-day");
+    now.textContent = "更新日期: " + (year - 1911).toString() + "年" + (month + 1).toString() + "月" + day.toString() + "日";
+</script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<script src="https://tpki.github.io/forChild/js/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>

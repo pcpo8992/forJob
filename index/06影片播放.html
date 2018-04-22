@@ -1,0 +1,310 @@
+<style>
+    div.main-box-youtube {
+        box-sizing: border-box;
+        width: 993px;
+        height: 520px;
+        margin-bottom: 10px;
+        background-color: #F5F4EF;
+        margin-top: 10px;
+    }
+
+    div.main-box-title {
+        box-sizing: border-box;
+        text-align: center;
+        height: 20px;
+        font-family: "微軟正黑體";
+        font-weight: 600;
+        font-size: 1.1em;
+        margin-bottom: 5px;
+        color: black;
+    }
+
+    div.main-box-image {
+        display: flex;
+        border:1px solid;
+        height: 20px;
+        background-color: #4B4B4B;
+        border-bottom: 5px solid rgb(161, 161, 161);
+        position: relative;}
+    .title-box{
+        position: absolute;
+        width: 300px;
+        height: 35px;
+        left: 25px;
+        top:-15px;
+        color:#fff;
+        line-height: 35px;
+        text-align:center;
+        font-size: 1.2em;
+    }
+    
+    .colorBlue{
+        background-color: #449FE3;
+    }
+
+    div.main-box-image .main-box-image-ige {
+        box-sizing: border-box;
+        display: inline-flex;
+        width: 20%;
+        margin: 0px auto;
+        font-size: 2.7em;
+        color: rgb(190, 190, 190);
+        /* border: 1px solid; */
+        justify-content: center;
+    }
+
+    .main-box-image:hover .main-box-image-ige {
+        transition: 0.3s;
+        color: rgb(192, 0, 0);
+    }
+
+    .main-box-image .main-box-image-ige img {
+        box-sizing: border-box;
+        width: 62.5px;
+        height: 50px;
+        margin: 0px auto;
+    }
+
+    .main-box-movie {
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        height: 370px;
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        /* box-shadow: 0px 0px 5px black; */
+    }
+
+    .movie-box {
+        width: 95%;
+        height: 100%;
+        /* border: 1px solid; */
+        background-color: #fff;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        box-shadow: 0px 0px 10px rgb(77, 75, 75);
+    }
+
+    .main-movie {
+        width: 570px;
+        height: 330px;
+        border: 5px solid gray;
+    }
+
+    .movie-size {
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+
+    #movieIsActive {
+        display: block;
+    }
+
+    .movie-content {
+        width: 300px;
+        height: 360px;
+        /* border: 1px solid red; */
+        /* background-color: black; */
+    }
+
+    .movie-content ul {
+        padding-left: 0;
+    }
+
+    .movie-content li {
+        list-style: none;
+        display: flex;
+        padding-left: 0;
+        width: 300px;
+        height: 99px;
+        /* border-bottom: 1px dotted black; */
+    }
+
+    .movie-link {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px dotted gray;
+        align-items: center;
+        /* justify-content: space-between; */
+        text-decoration: none;
+        /* border: 1px solid; */
+        cursor: pointer;
+    }
+
+    .movie-link:hover .movie-name {
+        color: rgb(187, 187, 183);
+    }
+
+    #choose {
+        background-color: #EEEEEE;
+        border-radius: 5px;
+        /* width: 80%; */
+    }
+
+    .movie-logo {
+        flex: 0.6;
+        /* border: 1px solid red; */
+        color: #56BFC1;
+        height: 60%;
+    }
+
+    .movie-inner-content {
+        /* flex: 6; */
+        width:90%;
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        /* background-color: #F0F0F0; */
+        /* border: 1px solid red; */
+    }
+
+    .movie-name {
+        height: 40%;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        /* border: 1px solid #000; */
+    }
+
+    .movie-cop {
+        height: 20%;
+        font-size: 0.5em;
+        display: flex;
+        align-items: center;
+        color: #56BFC1;
+    }
+
+    .movie-date {
+        height: 20%;
+        font-size: 0.6em;
+        display: flex;
+        align-items: center;
+        color: #56BFC1;
+    }
+
+
+    div.more-video {
+        text-align: center;
+        margin-top: 0.6em;
+        margin-left: 1em;
+        display: flex;
+        justify-content: flex-start;
+        /* border: 1px solid; */
+        height: 2em;
+        line-height: 2em;
+        align-content: center;
+    }
+
+    div.more-video a {
+        text-decoration: none;
+        font-size: 1em;
+        display: flex;
+        align-items: center;
+        color: black;
+    }
+
+    div.more-video .more {
+        margin-right: 0.3em;
+        font-size: 1.5em;
+        color: rgb(126, 114, 114);
+    }
+
+    div.more-video a:hover,
+    a:hover .more {
+        transition: 0.3s;
+        color: rgb(236, 166, 104);
+    }
+
+    .hr {
+        /* border: 0.5px solid rgb(63, 66, 66); */
+        margin-top: 20px;
+    }
+</style>
+
+<div class="main-box-youtube wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
+    <!--影片名稱-->
+    <!--署徽-->
+    <div class="main-box-image">
+        <div class="title-box colorBlue">熱門影片專區</div>
+    </div>
+    <!--影片-->
+    <div class="main-box-movie">
+        <div class="movie-box">
+            <div class="main-movie">
+                <iframe class="movie-size" value='0' id="movieIsActive" title="行政執行署5000億成果短片-攀升跨越榮耀時刻" src="https://www.youtube.com/embed/04ljiWGEC4o"
+                    frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                <iframe class="movie-size" value='1' title="行政執行有效率，超商繳款最便利" src="https://www.youtube.com/embed/lG-DJAbRr4A" frameborder="0"
+                    gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                <iframe class="movie-size" value='2' title="執行分署傳繳通知「係金ㄟ」記者會錄影" src="https://www.youtube.com/embed/0v5eeRzCY4s" frameborder="0"
+                    gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="movie-content">
+                <ul>
+                    <li>
+                        <div class="movie-link" >
+                            <div class="movie-logo">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <div class="movie-inner-content" id="choose" value='0'>
+                                <div class="movie-name">大突破，跨越5,000億成果</div>
+                                <div class="movie-cop">行政執行署</div>
+                                <div class="movie-date">發布日期：106年12月21日</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-link" >
+                            <div class="movie-logo">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <div class="movie-inner-content" value='1'>
+                                <div class="movie-name">行政執行有效率，超商繳款最便利</div>
+                                <div class="movie-cop">行政執行署</div>
+                                <div class="movie-date">發布日期：107年2月2日</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="movie-link" >
+                            <div class="movie-logo">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <div class="movie-inner-content" value='2'>
+                                <div class="movie-name">執行分署傳繳通知「係金ㄟ」記者會錄影</div>
+                                <div class="movie-cop">行政執行署</div>
+                                <div class="movie-date">發布日期：107年3月6日</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="more-video">
+        <a title="在新視窗打開" target="_blank" href="https://www.youtube.com/channel/UCth7EXf77LjjHenf_L9eH4g/videos">
+            <i class="fas fa-plus-circle more"></i>更多熱門影片</a>
+    </div>
+    <div class="hr"></div>
+</div>
+<script>
+    var btnMovie = document.getElementsByClassName("movie-inner-content");
+    for(var row = 0; row < btnMovie.length; row++){
+        btnMovie[row].onclick = function(){
+            var movieNow = document.getElementsByTagName("iframe");
+            var movieIsActive = document.getElementById("movieIsActive");
+            var btnIsActive = document.getElementById("choose");
+            var value = this.getAttribute("value");
+            btnIsActive.removeAttribute("id");
+            btnMovie[value].setAttribute("id", "choose");
+            movieIsActive.removeAttribute("id");
+            movieNow[value].setAttribute("id", "movieIsActive")
+        }
+    }
+    console.log(btnMovie[0]);
+</script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>

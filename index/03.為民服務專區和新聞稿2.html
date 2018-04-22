@@ -1,0 +1,702 @@
+<!--為民服務專區 -->
+<style>
+    * {
+        /* border: 1px solid; */
+    }
+
+    .container-news {
+        box-sizing: border-box;
+        width: 993px;
+        height: 430px;
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .news {
+        width: 660px;
+        height: 400px;
+    }
+
+    .btnNewsBlock {
+        width: 100%;
+        height: 65px;
+        display: flex;
+        cursor: pointer;
+    }
+
+    .btn-news {
+        width: 163px;
+        height: 45px;
+        background-color: #d3d3d3;
+        text-align: center;
+        font-size: 1.2em;
+        color: rgb(43, 42, 42);
+        line-height: 45px;
+    }
+
+    .btn-news:hover {
+        background-color: #B0B0B0;
+    }
+
+    #is-active {
+        background-color: #0cb5b5;
+        color: #ffffff;
+        font-family: "微軟正黑體";
+    }
+
+    #is-active:hover {
+        background-color: #0D7A7A;
+    }
+
+    .newsBlock {
+        height: 335px;
+        width: 100%;
+    }
+
+    .newsBlock #isActive {
+        display: block;
+    }
+
+    .hot-news-content {
+        display: none;
+    }
+
+    .hot-news-content ul {
+        /* border: 1px solid; */
+        padding: 0;
+        margin-top: 0px;
+    }
+
+    .hot-news-content li {
+        list-style-type: none;
+    }
+
+    .hot-news-content .newsContent {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid rgb(109, 107, 107);
+    }
+
+    .newsContent a {
+        display: flex;
+        width: 100%;
+        /* height:100%; */
+        text-decoration: none;
+        color: rgb(109, 107, 107);
+        font-family: "微軟正黑體";
+        transition: 150ms;
+    }
+
+    .newsContent .new-content:hover {
+        color: #e66d00;
+        text-decoration: underline;
+    }
+
+    .newsContent span.new-date {
+        /* margin-right: 20px; */
+        margin-left: 5px;
+        width: 100px;
+        color: #e66d00;
+        font-family: "微軟正黑體";
+        text-decoration: none;
+        /* font-family: 'Times New Roman', Times, serif; */
+    }
+
+    ul.more-news {
+        margin-top: 25px;
+    }
+
+    ul.more-news .plus {
+        margin-right: 10px;
+        font-size: 1.2em;
+    }
+
+    ul.more-news a {
+        text-decoration: none;
+        transition: 150ms;
+        color: rgb(49, 48, 48);
+        font-family: "微軟正黑體";
+    }
+
+    ul.more-news a:hover {
+        color: #e66d00;
+    }
+
+    .for-people-container {
+        box-sizing: border-box;
+        width: 230px;
+        height: 400px;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+
+    .for-people-container-name {
+        box-sizing: border-box;
+        font-size: 1.2em;
+        font-family: "微軟正黑體";
+        font-weight: 900;
+        text-align: center;
+        background-color: #0cb5b5;
+        color: #ffffff;
+        width: 96%;
+        /* border-top-left-radius: 10px;
+        border-top-right-radius: 10px; */
+        margin-bottom: 2px;
+        height: 44px;
+        line-height: 44px;
+    }
+
+    .for-people-container-box {
+        width: 100%;
+    }
+
+    [class^="for-people-box"] {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 4px;
+    }
+
+    .area {
+        display: flex;
+    }
+
+    .area a {
+        text-decoration: none;
+        color: rgb(71, 79, 85);
+        font-size: 0.9em;
+        font-family: "微軟正黑體";
+        font-weight: 900;
+        text-align: center;
+    }
+
+    .area:hover a {
+        color: rgb(0, 160, 160);
+    }
+
+    .area:hover [class^="image-box"] {
+        background-size: 115%;
+    }
+
+    [class^="image-box"] {
+        width: 58px;
+        height: 58px;
+        background-size: 95%;
+        background-repeat: no-repeat;
+        background-position: center;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    [class^="image-box"] svg {
+        width: 90%;
+        /* transition: 0.1s; */
+    }
+    .area:hover svg {
+        width: 110;
+    }
+</style>
+
+
+
+<div class="container-news">
+    <div class="news">
+        <div class="btnNewsBlock">
+            <div class="btn-news" id="is-active" title="新聞稿" onclick="getBlock(0)">新聞稿</div>
+            <div class="btn-news" title="電子公布欄" onclick="getBlock(1)">最新消息</div>
+            <div class="btn-news" title="獎勵檢舉" onclick="getBlock(2)">獎勵檢舉</div>
+            <div class="btn-news" title="採購公告" onclick="getBlock(3)">採購公告</div>
+            <div class="btn-news" title="廉政宣導" onclick="getBlock(4)">廉政宣導</div>
+        </div>
+        <div class="newsBlock">
+            <!--新聞稿-->
+            <div class="hot-news-content" id="isActive" value="0">
+                <ul>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/ct.asp?xItem=504403&ctNode=35868&mp=030" title="年後首波聯合拍賣，手機輕鬆Pay上場，拍定金額高達5,000萬元">
+                                <span class="new-date">107-03-06</span>
+                                <span class="new-content">年後首波聯合拍賣，手機輕鬆Pay上場，拍定金額高達5,000萬元</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/ct.asp?xItem=504365&ctNode=35868&mp=030" title="勿信網路謠言，行政執行署各分署傳繳通知超商繳款「係金ㄟ」，不是詐騙">
+                                <span class="new-date">107-03-06</span>
+                                <span class="new-content">勿信網路謠言，行政執行署各分署傳繳通知超商繳款「係金ㄟ」，不是詐騙</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/ct.asp?xItem=502243&ctNode=35868&mp=030" title="法務部行政執行署春節新聞稿">
+                                <span class="new-date">107-02-12</span>
+                                <span class="new-content">法務部行政執行署春節新聞稿</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/ct.asp?xItem=501625&ctNode=35868&mp=030" title="執行署春節前最後一波聯合拍賣，拍定金額高達3千萬元">
+                                <span class="new-date">107-02-06</span>
+                                <span class="new-content">執行署春節前最後一波聯合拍賣，拍定金額高達3千萬元</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/ct.asp?xItem=500326&ctNode=35868&mp=030" title="執行分署查就診資料 不違反個資法">
+                                <span class="new-date">107-01-24</span>
+                                <span class="new-content">執行分署查就診資料 不違反個資法</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="more-news">
+                    <a href="https://www.tpk.moj.gov.tw/np.asp?ctNode=35868&mp=030" title="更多新聞稿">
+                        <i class="fas fa-plus-circle plus"></i>更多新聞稿</a>
+                </ul>
+            </div>
+            <!--最新消息-->
+            <div class="hot-news-content" value="1">
+                <ul>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/HitCounter.asp?xItem=502197&mp=030" title="食品五環護食安，為學校午餐把關政策宣導影片">
+                                <span class="new-date">107-02-12</span>
+                                <span class="new-content">食品五環護食安，為學校午餐把關政策宣導</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/ct.asp?xItem=499668&ctNode=35869&mp=030" title="洗錢防制電子海報、資訊圖表宣導">
+                                <span class="new-date">107-01-18</span>
+                                <span class="new-content">洗錢防制電子海報、資訊圖表宣導</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/HitCounter.asp?xItem=487421&mp=030" title="出境入境誠實申報">
+                                <span class="new-date">107-09-14</span>
+                                <span class="new-content">出境入境誠實申報</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/ct.asp?xItem=480685&ctNode=35869&mp=030" title="防制洗錢 國家向前">
+                                <span class="new-date">107-02-06</span>
+                                <span class="new-content">防制洗錢 國家向前"</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/ct.asp?xItem=478445&ctNode=35869&mp=030" title="國民旅遊卡新制懶人包">
+                                <span class="new-date">107-01-24</span>
+                                <span class="new-content">國民旅遊卡新制懶人包</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="more-news">
+                    <a href="https://www.tpk.moj.gov.tw/np.asp?ctNode=35869&mp=030" title="更多訊息">
+                        <i class="fas fa-plus-circle plus"></i>更多最新消息</a>
+                </ul>
+            </div>
+            <!--獎勵檢舉-->
+            <div class="hot-news-content" value="2">
+                <ul>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/HitCounter.asp?xItem=507465&mp=030" title="法務部行政執行署獎勵檢舉公告(107年度獎檢字第2號)" target="_blank">
+                                <span class="new-date">107-03-31</span>
+                                <span class="new-content">法務部行政執行署獎勵檢舉公告(107年度獎檢字第2號)</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/HitCounter.asp?xItem=507466&mp=030" title="法務部行政執行署獎勵檢舉公告(107年度獎檢奢字第4號)" target="_blank">
+                                <span class="new-date">107-03-31</span>
+                                <span class="new-content">法務部行政執行署獎勵檢舉公告(107年度獎檢奢字第4號)</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/HitCounter.asp?xItem=503855&mp=030" title="法務部行政執行署獎勵檢舉公告(107年度獎檢奢字第3號)" target="_blank">
+                                <span class="new-date">107-03-01</span>
+                                <span class="new-content">法務部行政執行署獎勵檢舉公告(107年度獎檢奢字第3號)</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/HitCounter.asp?xItem=500727&mp=030" title="法務部行政執行署獎勵檢舉公告(107年度獎檢奢字第2號)" target="_blank">
+                                <span class="new-date">107-01-30</span>
+                                <span class="new-content">法務部行政執行署獎勵檢舉公告(107年度獎檢奢字第2號)</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/HitCounter.asp?xItem=497658&mp=030" title="法務部行政執行署獎勵檢舉公告(107年度獎檢字第1號)" target="_blank">
+                                <span class="new-date">106-12-28-</span>
+                                <span class="new-content">法務部行政執行署獎勵檢舉公告(107年度獎檢字第1號)</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="more-news">
+                    <a href="https://www.tpk.moj.gov.tw/np.asp?ctNode=42805&mp=030" title="更多獎勵檢舉公告">
+                        <i class="fas fa-plus-circle plus"></i>更多獎勵檢舉公告</a>
+                </ul>
+            </div>
+            <!--採購公告 -->
+            <div class="hot-news-content" value="3">
+                <ul>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/HitCounter.asp?xItem=498067&mp=030" title="決標公告-「106年度年終業務座談會」會議場地、住宿及餐飲委外採購案" target="_blank">
+                                <span class="new-date">107-01-03</span>
+                                <span class="new-content">【決標公告】「106年度年終業務座談會」會議場地、住宿及餐飲委外採購案</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/HitCounter.asp?xItem=497152&mp=030" title="招標公告-「106年度年終業務座談會」會議場地、住宿及餐飲委外採購案" target="_blank">
+                                <span class="new-date">106-12-22</span>
+                                <span class="new-content">【招標公告】「106年度年終業務座談會」會議場地、住宿及餐飲委外採購案</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/HitCounter.asp?xItem=494968&mp=030" title="決標公告-「大突破—行政執行徵起績效跨越5,000億元成果分享會」活動規劃、設計及執行委外案"
+                                target="_blank">
+                                <span class="new-date">106-12-04</span>
+                                <span class="new-content">【決標公告】「大突破—行政執行徵起績效跨越5,000億元成果分享會」委外案</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/HitCounter.asp?xItem=494514&mp=030" title="決標公告-107年度非涉及公權力事項勞務委外採購案" target="_blank">
+                                <span class="new-date">106-11-29</span>
+                                <span class="new-content">【決標公告】-107年度非涉及公權力事項勞務委外採購案</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/HitCounter.asp?xItem=494268&mp=030" title="決標公告-107年度電腦系統操作管理委外駐點服務採購案" target="_blank">
+                                <span class="new-date">106-11-28</span>
+                                <span class="new-content">【決標公告】-107年度電腦系統操作管理委外駐點服務採購案</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="more-news">
+                    <a href="https://www.tpk.moj.gov.tw/np.asp?ctNode=42803&mp=030" title="更多採購公告">
+                        <i class="fas fa-plus-circle plus"></i>更多採購公告</a>
+                </ul>
+            </div>
+            <!--廉政宣導-->
+            <div class="hot-news-content" value="4">
+                <ul>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/HitCounter.asp?xItem=506927&mp=030" title="毒字這條路-白天看到鬼(完整版)">
+                                <span class="new-date">107-03-28</span>
+                                <span class="new-content">【宣導影片】毒字這條路-白天看到鬼</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/HitCounter.asp?xItem=506928&mp=030" title="毒字這條路-搖搖搖搖到奈何橋(完整版)">
+                                <span class="new-date">107-03-28</span>
+                                <span class="new-content">【宣導影片】毒字這條路-搖搖搖搖到奈何橋</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/HitCounter.asp?xItem=506930&mp=030" title="「安全居住 你我守護」反毒宣導影片">
+                                <span class="new-date">107-03-28</span>
+                                <span class="new-content">【宣導影片】安全居住 你我守護</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/HitCounter.asp?xItem=506931&mp=030" title="行政院安居緝毒專案影片">
+                                <span class="new-date">107-03-28</span>
+                                <span class="new-content">【宣導影片】行政院安居緝毒專案</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="newsContent">
+                            <a href="https://www.tpk.moj.gov.tw/HitCounter.asp?xItem=506932&mp=030" title="警政署「安居專案」反毒宣導影片">
+                                <span class="new-date">107-03-28</span>
+                                <span class="new-content">【宣導影片】警政署「安居專案」</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="more-news">
+                    <a href="https://www.tpk.moj.gov.tw/np.asp?ctNode=21646&mp=030" title="更多廉政宣導">
+                        <i class="fas fa-plus-circle plus"></i>更多廉政宣導</a>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 為民服務專區 -->
+    <div class="for-people-container">
+        <!--名稱 -->
+        <div class="for-people-container-name">為民服務專區</div>
+        <!--按鈕 -->
+        <div class="for-people-container-box">
+            <div class="for-people-box-top">
+                <!--1地理位置-->
+                <div class="area">
+                    <a title="地理位置" href="https://www.tpk.moj.gov.tw/ct.asp?xItem=2111&CtNode=21620&mp=030" target="_blank">
+                        <div class="image-box-left">
+                            <svg id="Location" data-name="Location" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+                                <title>右邊廣告 拷貝</title>
+                                <g>
+                                    <path d="M25.19,54a22.44,22.44,0,1,1,31.74,0L41.06,69.86ZM40.71,27.82a9.36,9.36,0,1,0,9.36,9.35A9.36,9.36,0,0,0,40.71,27.82Z"
+                                        style="fill:#f05d4b" />
+                                    <path d="M56.62,19.82h0a23.52,23.52,0,0,0-33.24,0h0a23.52,23.52,0,0,0,0,33.24L40,69.67,56.62,53.06A23.52,23.52,0,0,0,56.62,19.82ZM40,43.49a7.64,7.64,0,1,1,7.64-7.64A7.64,7.64,0,0,1,40,43.49Z"
+                                        style="fill:none;stroke:#555e65;stroke-miterlimit:10;stroke-width:2px" />
+                                </g>
+                            </svg>
+                        </div>
+                        <span>地理位置</span>
+                    </a>
+                </div>
+                <!--1關懷公益-->
+                <div class="area">
+                    <a title="關懷公益" href="https://www.tpk.moj.gov.tw/lp.asp?ctNode=40394&CtUnit=16142&BaseDSD=7&mp=030" target="_blank">
+                        <div class="image-box-center">
+                            <svg id="Heart" data-name="Heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+                                <title>右邊廣告 拷貝</title>
+                                <g>
+                                    <path d="M41.19,66.43c-2.81-1.17-14.32-6.29-21.68-14.85-6.72-7.82-8.88-17.08-5.63-24.16a14.15,14.15,0,0,1,13.23-8.28h.2c7.42.08,12.3,7.38,12.34,7.45l1.54,2.54,1.54-2.54c.05-.08,4.92-7.37,12.35-7.45h.19a14.15,14.15,0,0,1,13.24,8.28c3.25,7.08,1.09,16.34-5.64,24.16C55.52,60.14,44,65.26,41.19,66.43Z"
+                                        style="fill:#f05d4b" />
+                                    <path d="M53.59,16.55c-7.83.09-13,7.21-13.59,8.15-.57-.94-5.76-8.06-13.59-8.15-15.32-.17-23.14,18.25-9,34.71C26,61.3,40,66.57,40,66.57S54,61.3,62.59,51.26C76.73,34.8,68.91,16.38,53.59,16.55Z"
+                                        style="fill:none;stroke:#555e65;stroke-miterlimit:10;stroke-width:2px" />
+                                </g>
+                            </svg>
+                        </div>
+                        <span>關懷公益</span>
+                    </a>
+                </div>
+                <!--3民意信箱-->
+                <div class="area">
+                    <a title="民意信箱" href="https://www.tpk.moj.gov.tw/ct.asp?xItem=401727&CtNode=41129&mp=030" target="_blank">
+                        <div class="image-box-right">
+                            <svg id="Mail" data-name="Mail" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+                                <title>右邊廣告 拷貝</title>
+                                <g>
+                                    <polygon points="64.87 36.87 15.5 36.87 15.5 32.36 40.18 18.92 64.87 32.36 64.87 36.87" style="fill:#fff" />
+                                    <polygon points="17.4 36.24 17.4 33.14 41.45 20.08 65.5 33.14 65.5 36.24 17.4 36.24" style="fill:#c2e7f7" />
+                                    <polygon points="64.87 36.87 15.5 36.87 15.5 32.36 40.18 18.92 64.87 32.36 64.87 36.87" style="fill:none;stroke:#555e65;stroke-miterlimit:10;stroke-width:2px"
+                                    />
+                                    <rect x="18.66" y="23.58" width="42.41" height="28.48" rx="4" ry="4" style="fill:#fff" />
+                                    <rect x="20.56" y="25.48" width="41.14" height="26.58" rx="2" ry="2" style="fill:#faf7de" />
+                                    <rect x="18.66" y="23.58" width="42.41" height="28.48" rx="4" ry="4" style="fill:none;stroke:#555e65;stroke-miterlimit:10;stroke-width:2px"
+                                    />
+                                    <polygon points="18.95 36.87 64.87 61.37 64.87 64.72 15.5 64.72 15.5 36.87 18.95 36.87" style="fill:#fff" />
+                                    <polygon points="17.4 64.72 64.87 64.72 64.87 63.37 19.84 38.77 17.4 38.77 17.4 64.72" style="fill:#c2e7f7" />
+                                    <polygon points="18.95 36.87 64.87 61.37 64.87 64.72 15.5 64.72 15.5 36.87 18.95 36.87" style="fill:none;stroke:#555e65;stroke-miterlimit:10;stroke-width:2px"
+                                    />
+                                    <polygon points="61.41 36.87 15.5 61.37 15.5 64.72 64.87 64.72 64.87 36.87 61.41 36.87" style="fill:#fff" />
+                                    <polygon points="64.87 64.72 16.77 64.72 16.77 63.02 61.94 38.77 64.87 38.77 64.87 64.72" style="fill:#c2e7f7" />
+                                    <polygon points="61.41 36.87 15.5 61.37 15.5 64.72 64.87 64.72 64.87 36.87 61.41 36.87" style="fill:none;stroke:#555e65;stroke-miterlimit:10;stroke-width:2px"
+                                    />
+                                    <line x1="44.65" y1="50.44" x2="61.02" y2="59.25" style="fill:none;stroke:#555e65;stroke-miterlimit:10;stroke-width:2px"
+                                    />
+                                    <line x1="31.32" y1="32.44" x2="38.92" y2="32.44" style="fill:none;stroke:#555e65;stroke-miterlimit:10;stroke-width:2px"
+                                    />
+                                    <line x1="31.32" y1="36.87" x2="49.68" y2="36.87" style="fill:none;stroke:#555e65;stroke-miterlimit:10;stroke-width:2px"
+                                    />
+                                </g>
+                            </svg>
+                        </div>
+                        <span>民意信箱</span>
+                    </a>
+                </div>
+            </div>
+            <div class="for-people-box-center-1">
+                <!--4 123聯合拍賣-->
+                <div class="area">
+                    <a title="聯合拍賣" href="https://www.tpk.moj.gov.tw/ct.asp?xItem=52378&CtNode=14925&mp=030" target="_blank">
+                        <div class="image-box-left">
+                                <svg id="auction" data-name="auction" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><title>gavel</title><path d="M51.06,55.6C59.71,66.35,72.3,80.51,73.7,81.91a5.75,5.75,0,0,0,8.13-8.13c-1.4-1.4-15.56-14.08-26.31-22.64-.7.78-1.49,1.57-2.19,2.27s-1.49,1.49-2.27,2.19M17.84,44.14l-.18.18a4.17,4.17,0,0,0,0,5.94L36.2,68.8a4.17,4.17,0,0,0,5.94,0l.18-.18a4.17,4.17,0,0,0,0-5.94L23.78,44.14a4.16,4.16,0,0,0-5.94,0M50.27,17.66,68.8,36.19a4.17,4.17,0,0,1,0,5.94l-.17.18a4.18,4.18,0,0,1-5.95,0L44.15,23.78a4.18,4.18,0,0,1,0-6l.18-.17a4.16,4.16,0,0,1,5.94,0" style="fill:#7c6335"/><path d="M44.24,23.86l-.09-.08A74.74,74.74,0,0,0,33.05,33a80.43,80.43,0,0,0-9.27,11.1l.09.09L42.23,62.59l.09.09a76,76,0,0,0,11.1-9.27,79.62,79.62,0,0,0,9.26-11.1l-.08-.09Z" style="fill:#f9da58"/><path d="M49.22,18.62,67.75,37.15a2.76,2.76,0,0,1,0,3.93l-.17.18a2.84,2.84,0,0,1-3.93,0l-.09-.09L45.2,22.81l-.09-.08h0a2.75,2.75,0,0,1-.78-1.93,3.13,3.13,0,0,1,1-2.18,2.84,2.84,0,0,1,3.93,0ZM55.69,53c10.67,8.57,23.87,20.37,25.18,21.77A4.39,4.39,0,0,1,74.66,81c-1.4-1.4-13.2-14.51-21.77-25.18.44-.44,1-.87,1.4-1.4a18.48,18.48,0,0,0,1.4-1.4ZM25.62,44A80.62,80.62,0,0,1,34,34a74.18,74.18,0,0,1,10-8.39L60.85,42.48a81.51,81.51,0,0,1-8.39,10,73.45,73.45,0,0,1-10,8.39Zm15.65,23.6-.18.18a2.84,2.84,0,0,1-3.93,0L18.62,49.21a2.71,2.71,0,0,1-.78-1.92,3.11,3.11,0,0,1,1-2.18,2.69,2.69,0,0,1,3.93,0l.09.08L41.27,63.64h0a2.7,2.7,0,0,1,0,3.93ZM43.1,16.78a5.7,5.7,0,0,0-1,6.65A82.9,82.9,0,0,0,32,32a77.72,77.72,0,0,0-8.57,10.14,5.74,5.74,0,0,0-6.73,9.1L35.15,69.76a5.65,5.65,0,0,0,8,0l.18-.18a5.37,5.37,0,0,0,1.66-3.93,5.55,5.55,0,0,0-.7-2.62c2.27-1.66,4.54-3.41,6.73-5.34,8.57,10.58,20.46,23.78,21.77,25.18A7.17,7.17,0,0,0,82.88,72.73c-1.4-1.31-14.6-13.2-25.27-21.85A74.69,74.69,0,0,0,63,44.14a5.58,5.58,0,0,0,6.64-1l.17-.17a5.47,5.47,0,0,0,0-7.87L51.23,16.61a5.87,5.87,0,0,0-8.13.17Z"/><path d="M54.55,50.09l-1.22,1.22a1.21,1.21,0,0,0-.35,1,1,1,0,0,0,.52,1C64,61.8,76.76,73.25,78.16,74.65a4.49,4.49,0,0,1,0,6.21,4.32,4.32,0,0,1-2,1.14,1.41,1.41,0,0,0-1.05,1.4,1.31,1.31,0,0,0,1.05,1.31A7.26,7.26,0,0,0,83,82.87a7.18,7.18,0,0,0,2.1-5.07A6.86,6.86,0,0,0,83,72.73C81.48,71.33,67.32,58.66,56.48,50a1.38,1.38,0,0,0-1.93.09" style="opacity:0.23999999463558197;isolation:isolate"/></svg>
+                        </div>
+                        <span>聯合拍賣</span>
+                    </a>
+                </div>
+                <!--5就業資訊-->
+                <div class="area">
+                    <a title="就業資訊" href="https://www.tpk.moj.gov.tw/lp.asp?CtNode=35880&CtUnit=7841&BaseDSD=7&mp=030" target="_blank">
+                        <div class="image-box-center">
+                            <svg id="job" data-name="job" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                <title>briefcase-2</title>
+                                <g>
+                                    <g id="Fill">
+                                        <rect x="13.02" y="34.91" width="73.96" height="43.77" rx="3.02" ry="3.02" style="fill:#fff"
+                                        />
+                                    </g>
+                                    <g id="Red">
+                                        <path d="M60.57,21.32H39.43a3,3,0,0,0-3,3v7.55h3V24.34H60.57v7.55h3V24.34A3,3,0,0,0,60.57,21.32Z"
+                                            style="fill:#ee6a56" />
+                                    </g>
+                                    <g id="Yellow">
+                                        <path d="M56,54.53v2.26H44V54.53H13V75.66a3,3,0,0,0,3,3H84a3,3,0,0,0,3-3V54.53Z" style="fill:#ffc868"
+                                        />
+                                    </g>
+                                    <g id="Inner_Lines" data-name="Inner Lines" style="opacity:0.15000000596046448">
+                                        <path d="M16,68.87a.76.76,0,0,0-.76-.76H13v1.51h2.26A.76.76,0,0,0,16,68.87Zm-1.51-3a.76.76,0,0,0-.76-.76H13V66.6h.75A.75.75,0,0,0,14.53,65.85Zm2.26,5.28H13v1.51h3.77a.76.76,0,1,0,0-1.51Zm66.42-31.7a.76.76,0,0,0-.76.76.75.75,0,0,0,.76.75H87V39.43ZM84,43.21a.76.76,0,0,0,.76.75H87V42.45H84.72A.76.76,0,0,0,84,43.21Zm1.51,3a.76.76,0,0,0,.76.75H87V45.47h-.75A.76.76,0,0,0,85.47,46.23Z"
+                                        />
+                                    </g>
+                                    <g id="Shadows" style="opacity:0.10000000149011612">
+                                        <path d="M42.45,59.81A1.52,1.52,0,0,0,44,61.32H56a1.52,1.52,0,0,0,1.51-1.51v-3A1.51,1.51,0,0,1,56,58.3H44a1.51,1.51,0,0,1-1.51-1.51Zm0-5.28H13V56H42.45ZM56,55.28H44v1.51H56Zm1.51-.75V56H87V54.53ZM84,77.17H16a3,3,0,0,1-3-3v1.51a3,3,0,0,0,3,3H84a3,3,0,0,0,3-3V74.15A3,3,0,0,1,84,77.17Z"
+                                        />
+                                    </g>
+                                    <g id="Outline">
+                                        <path d="M84,31.89H66.6V24.34a6,6,0,0,0-6-6H39.43a6,6,0,0,0-6,6v7.55H16a6,6,0,0,0-6,6V75.66a6,6,0,0,0,6,6H84a6,6,0,0,0,6-6V37.92A6,6,0,0,0,84,31.89ZM36.42,24.34a3,3,0,0,1,3-3H60.57a3,3,0,0,1,3,3v7.55h-3V24.34H39.43v7.55h-3Zm21.13,3v4.53H42.45V27.36ZM87,75.66a3,3,0,0,1-3,3H16a3,3,0,0,1-3-3V54.53H42.45v2.26A1.51,1.51,0,0,0,44,58.3H56a1.51,1.51,0,0,0,1.51-1.51V54.53H87ZM44,56.79V49.25h1.51v7.54Zm3,0V49.25h6v7.54Zm7.55,0V49.25H56v7.54ZM87,51.51H57.55V49.25A1.51,1.51,0,0,0,56,47.74H44a1.51,1.51,0,0,0-1.51,1.51v2.26H13V37.92a3,3,0,0,1,3-3H84a3,3,0,0,1,3,3Z"
+                                            style="fill:#171c1f" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <span>就業資訊</span>
+                    </a>
+                </div>
+                <!--6分署轄區-->
+                <div class="area">
+                    <a title="分署轄區" href="https://www.tpk.moj.gov.tw/np.asp?ctNode=16569&mp=030" target="_blank">
+                        <div class="image-box-right">
+                                <svg id="Compass" data-name="Compass" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><title>compass</title><g><g id="Fill"><path d="M55,22.24a6.09,6.09,0,1,0-10.06,0,33.47,33.47,0,1,0,10.06,0Zm-5-2.67a.76.76,0,1,1,.76-.76A.76.76,0,0,1,50,19.57Z" style="fill:#fff"/></g><g id="Blue"><circle cx="50" cy="55.33" r="26.62" style="fill:#70cbf6"/></g><g id="Black"><path d="M44.86,49.41l-.41.41-.36.37c-2.35,2.35-4.7,11.56-5.84,16.89,5.33-1.13,14.57-3.49,16.91-5.83l.46-.48.3-.3c2.34-2.34,4.69-11.56,5.82-16.89C56.43,44.68,47.19,47.07,44.86,49.41Z" style="fill:#171c1f"/></g><g id="Red"><path d="M45.94,50.19l9.21,9.21c1.4-1.59,3.31-7.08,5-14.17C53,46.88,47.53,48.79,45.94,50.19Z" style="fill:#ff7575"/></g><g id="White"><path d="M44.86,51.27c-1.4,1.61-3.31,7.08-5,14.15,7.06-1.64,12.54-3.54,14.16-4.94Z" style="fill:#fff"/></g><g id="Shadows" style="opacity:0.10000000149011612"><path d="M55.62,60.77l-.46.48c-2.28,2.28-11,4.56-16.37,5.71-.2.85-.39,1.66-.54,2.39,5.32-1.13,14.56-3.49,16.91-5.83l.45-.47.3-.31c2.34-2.34,4.69-11.56,5.82-16.88l-.54.11C60,51.3,57.92,58.44,55.87,60.42ZM50,32.51A25.87,25.87,0,0,1,75.82,56.85c0-.5,0-1,0-1.52a25.87,25.87,0,1,0-51.73,0c0,.51,0,1,.05,1.52A25.86,25.86,0,0,1,50,32.51ZM82,54.57a31.95,31.95,0,0,1-63.9,0v.76a31.95,31.95,0,0,0,63.9,0Z"/></g><g id="Inner_Lines" data-name="Inner Lines" style="opacity:0.25"><path d="M50,73.58a.76.76,0,0,0-.76.76v1.53a.76.76,0,0,0,1.52,0V74.34A.76.76,0,0,0,50,73.58Zm-19-19H29.46a.76.76,0,1,0,0,1.52H31a.76.76,0,1,0,0-1.52Zm5-14.3a.76.76,0,0,0-1.08.08.77.77,0,0,0,0,1L36,42.4a.76.76,0,0,0,1-.24.79.79,0,0,0,0-.81ZM50,34a.76.76,0,0,0-.76.76v1.52a.76.76,0,0,0,1.52,0V34.79A.76.76,0,0,0,50,34ZM70.54,54.57H69a.76.76,0,0,0,0,1.52h1.53a.76.76,0,1,0,0-1.52ZM64,68.26a.76.76,0,1,0-1.29.81.69.69,0,0,0,.24.24L64,70.38a.76.76,0,0,0,1.07-.08.75.75,0,0,0,0-1Z" style="fill:#171c1f"/></g><g id="Outline"><path d="M58.74,21.44a9.13,9.13,0,1,0-17.5,0,35,35,0,1,0,17.5,0ZM50,87.28a31.95,31.95,0,0,1-3.74-63.67,6.08,6.08,0,1,1,8.54-1.05,6.52,6.52,0,0,1-1,1.05A31.95,31.95,0,0,1,50,87.28Zm0-59.34A27.39,27.39,0,1,0,77.38,55.33,27.39,27.39,0,0,0,50,27.94Zm0,53.25A25.87,25.87,0,1,1,75.86,55.33,25.86,25.86,0,0,1,50,81.19Zm0-59.33a3,3,0,1,0-3-3.05A3,3,0,0,0,50,21.86Zm0-3.81a.76.76,0,1,1-.76.76A.76.76,0,0,1,50,18.05Z" style="fill:#171c1f"/></g></g></svg>
+                        </div>
+                        <span>分署轄區</span>
+                    </a>
+                </div>
+            </div>
+            <div class="for-people-box-center-2">
+                <!--7常見問題-->
+                <div class="area">
+                    <a title="常見問題" href="https://www.tpk.moj.gov.tw/np.asp?ctNode=11264&mp=030" target="_blank">
+                        <div class="image-box-left">
+                            <svg id="Chat" data-name="Chat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+                                <title>右邊廣告 拷貝</title>
+                                <g>
+                                    <path d="M40.36,64A23.63,23.63,0,1,1,59.77,53.86l-.41.58,2.48,6.82a.4.4,0,0,1-.05.41.46.46,0,0,1-.37.2h0a.45.45,0,0,1-.16,0l-6.82-2.48-.58.41A23.5,23.5,0,0,1,40.36,64Z"
+                                        style="fill:#d8eac6" />
+                                    <path d="M59.52,53.27a25,25,0,1,0-6.25,6.25l6.16,2.24a1.82,1.82,0,0,0,2.33-2.33Z" style="fill:none;stroke:#555e65;stroke-miterlimit:10;stroke-width:2px"
+                                    />
+                                    <circle cx="39.91" cy="39.91" r="1.82" style="fill:#fff" />
+                                    <circle cx="30.82" cy="39.91" r="1.82" style="fill:#fff" />
+                                    <circle cx="49" cy="39.91" r="1.82" style="fill:#fff" />
+                                    <circle cx="39" cy="39" r="1.82" style="fill:#555e65" />
+                                    <circle cx="29.91" cy="39" r="1.82" style="fill:#555e65" />
+                                    <circle cx="48.09" cy="39" r="1.82" style="fill:#555e65" />
+                                </g>
+                            </svg>
+                        </div>
+                        <span>常見問題</span>
+                    </a>
+                </div>
+                <!--8民眾申辦事項-->
+                <div class="area">
+                    <a title="民眾申辦事項" href="https://www.moj.gov.tw/np-16-001.html" target="_blank">
+                        <div class="image-box-center">
+                                <svg id="clipboard" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><title>clipboard</title><rect x="22.5" y="19.56" width="55" height="66.55" style="fill:#faf7de;stroke:#103e68;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px"/><rect x="38.45" y="13.79" width="23.19" height="11.55" style="fill:#fff;stroke:#103e68;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px"/><line x1="45.69" y1="41.29" x2="67.33" y2="41.29" style="fill:none;stroke:#103e68;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px"/><line x1="45.69" y1="55.77" x2="67.33" y2="55.77" style="fill:none;stroke:#103e68;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px"/><line x1="45.69" y1="70.25" x2="67.33" y2="70.25" style="fill:none;stroke:#103e68;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px"/><line x1="32.68" y1="41.29" x2="35.52" y2="41.29" style="fill:none;stroke:#103e68;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px"/><line x1="32.68" y1="55.77" x2="35.52" y2="55.77" style="fill:none;stroke:#103e68;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px"/><line x1="32.68" y1="70.25" x2="35.52" y2="70.25" style="fill:none;stroke:#103e68;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px"/></svg>
+                        </div>
+                        <span>申辦事項</span>
+                    </a>
+                </div>
+                <!--9檔案應用-->
+                <div class="area">
+                    <a title="檔案應用" href="https://www.tpk.moj.gov.tw/np.asp?ctNode=40587&mp=030" target="_blank">
+                        <div class="image-box-right">
+                                <svg id="folder" data-name="folder" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><title>folder</title><g id="Inner_Lines_1" data-name="Inner Lines 1"><path d="M75,60.5,71,23.75a1.32,1.32,0,0,0-1.49-1.14h0L38,26.11a1.3,1.3,0,0,0-1.13,1.49h0L41,64.35a1.31,1.31,0,0,0,1.49,1.14h0L74,62a1.31,1.31,0,0,0,1-1.49ZM42.21,64.17,38.1,27.42l31.5-3.5,4.2,36.75Z" style="fill:#171c1f"/></g><g id="White"><rect x="40.12" y="25.58" width="31.67" height="37.01" transform="translate(-4.54 6.47) rotate(-6.36)" style="fill:#fff"/></g><g id="Inner_Lines_3" data-name="Inner Lines 3"><path d="M79.84,28.82,48.25,26.37a1.3,1.3,0,0,0-1.4,1.23l-2.8,36.92a1.28,1.28,0,0,0,1.23,1.4h0l31.58,2.45a1.29,1.29,0,0,0,1.4-1.22L81,30.22A1.18,1.18,0,0,0,79.84,28.82ZM77,67,45.36,64.61l2.8-36.83,31.59,2.36Z" style="fill:#171c1f"/></g><g id="White-2"><rect x="44.27" y="31.5" width="37.1" height="31.76" transform="translate(10.58 106.22) rotate(-85.43)" style="fill:#fff"/></g><g id="Fill"><path d="M82.38,31.54H63.21C58,31.54,42.74,21,37.49,21H17.62A2.63,2.63,0,0,0,15,23.57V76.42a2.63,2.63,0,0,0,2.62,2.63H82.38A2.64,2.64,0,0,0,85,76.42V34.16A2.64,2.64,0,0,0,82.38,31.54Z" style="fill:#c2e7f7"/></g><g id="Shadows" style="opacity:0.10000000149011612"><rect x="17.63" y="69.77" width="64.75" height="3.94"/></g><g id="Inner_Lines_4" data-name="Inner Lines 4" style="opacity:0.25"><rect x="17.63" y="69.77" width="64.75" height="1.31" style="fill:#171c1f"/></g><g id="Outline"><path d="M82.38,31.54H63.21C58,31.54,42.74,21,37.49,21H17.62A2.63,2.63,0,0,0,15,23.57V76.42a2.63,2.63,0,0,0,2.62,2.63H82.38A2.64,2.64,0,0,0,85,76.42V34.16A2.64,2.64,0,0,0,82.38,31.54Zm0,44.88H17.62V23.57H37.4c2,0,7.61,2.89,11.64,5,6.73,3.5,11,5.6,14.08,5.6H82.38Z" style="fill:#171c1f"/></g></svg>
+                        </div>
+                        <span>檔案應用</span>
+                    </a>
+                </div>
+            </div>
+            <div class="for-people-box-bottom">
+                <!--10影音專區-->
+                <div class="area">
+                    <a title="影音專區" href="https://www.tpk.moj.gov.tw/np.asp?ctNode=42774&mp=030" target="_blank">
+                        <div class="image-box-left">
+                                <svg id="youtube" data-name="youtube" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><title>youtube</title><path d="M15,47.22a106,106,0,0,1,.7-11.33s.68-4.82,2.78-6.95c2.66-2.78,6.16-2.7,7.72-3,5.6-.54,23.8-.7,23.8-.7s14.71,0,24.5.73a10,10,0,0,1,7,3c2.1,2.13,2.78,7,2.78,7A105.76,105.76,0,0,1,85,47.22v5.51a105.76,105.76,0,0,1-.7,11.33s-.68,4.82-2.78,7a10,10,0,0,1-7,3c-9.79.71-24.5.73-24.5.73s-18.2-.16-23.8-.7c-1.56-.29-5.06-.21-7.72-3-2.1-2.13-2.78-7-2.78-7A105.76,105.76,0,0,1,15,52.73Z" style="fill:red"/><polygon points="42.77 59.16 42.77 39.5 61.69 49.36 42.79 59.16 42.77 59.16" style="fill:#fff"/></svg>
+                        </div>
+                        <span>影音專區</span>
+                    </a>
+                </div>
+                <!--11臉書專區-->
+                <div class="area">
+                    <a title="臉書專區" href="https://www.facebook.com/MOJaEa/?ref=br_rs" target="_blank">
+                        <div class="image-box-center">
+                                <svg id="facebook" data-name="facebook" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><title>facebook</title><path d="M80.3,14.2H18.1a3.9,3.9,0,0,0-3.9,3.9V80.4a3.9,3.9,0,0,0,3.9,3.9H51.6V57.1H42.5V46.5h9.1V38.7c0-9,5.5-14,13.6-14,3.9,0,7.2.3,8.2.4v9.4H67.8c-4.4,0-5.2,2.1-5.2,5.2v6.7H73.1L71.7,57H62.6V84.1H80.4a3.9,3.9,0,0,0,3.9-3.9V18a4,4,0,0,0-4-3.8" style="fill:#3b5998"/></svg>
+                        </div>
+                        <span>臉書專區</span>
+                    </a>
+                </div>
+                <!--12網路相簿-->
+                <div class="area">
+                    <a title="網路相簿" href="https://www.flickr.com/photos/148399646@N06/albums/with/72157681065759686" target="_blank">
+                        <div class="image-box-right">
+                            <svg id="flickr" data-name="flickr" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+                                <title>右邊廣告 拷貝</title>
+                                <circle cx="34.64" cy="36.14" r="6.94" style="fill:#0063dc" />
+                                <rect x="14.5" y="14.61" width="50" height="50" rx="4.31" ry="4.31" style="fill:none;stroke:#999;stroke-miterlimit:10" />
+                                <circle cx="45.75" cy="36.14" r="6.94" style="fill:#ff0084" />
+                                <text transform="translate(26.1 57.23)" style="font-size:12.5px;fill:#0063dc;stroke:#0063dc;stroke-miterlimit:10;stroke-width:0.25px;font-family:LiHeiPro, LiHei Pro">flick
+                                    <tspan x="23.86" y="0" style="fill:#ff0084;stroke:#ff0084">r</tspan>
+                                </text>
+                                <text transform="translate(54.57 51.93)" style="font-size:2.0833332538604736px;fill:#ff0084;font-family:LiHeiPro, LiHei Pro">TM</text>
+                            </svg>
+                        </div>
+                        <span>網路相簿</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function getBlock(value) {
+        var newsNow = document.querySelector("#isActive");
+        var btnActive = document.querySelector("#is-active");
+        var btnNext = document.getElementsByClassName("btn-news");
+        var block = document.getElementsByClassName("hot-news-content");
+        // console.log(newsNow);
+        btnActive.removeAttribute("id");
+        newsNow.removeAttribute("id");
+        btnNext[value].setAttribute("id", "is-active");
+        block[value].setAttribute("id", "isActive");
+    }
+</script>
+
+
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>

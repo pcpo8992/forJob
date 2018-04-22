@@ -1,0 +1,356 @@
+<style>
+    /* 視覺化區塊 */
+
+    .main-box-dataVisual {
+        box-sizing: border-box;
+        width: 995px;
+        height: 550px;
+        margin-bottom: 10px;
+        margin-top: 3em;
+    }
+
+    /* 區塊title */
+
+    .main-box-title {
+        box-sizing: border-box;
+        text-align: center;
+        height: 20px;
+        font-family: "微軟正黑體";
+        font-weight: 500;
+        margin-bottom: 5px;
+        color: black;
+    }
+
+    .main-box-image {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .main-box-image .main-box-image-line {
+        box-sizing: border-box;
+        border-bottom: 1.3px solid rgb(190, 190, 190);
+        width: 80%;
+        height: 25px;
+        margin: 0px 12px 0px 12px;
+    }
+
+    .main-box-image .main-box-image-ige {
+        box-sizing: border-box;
+        display: inline-flex;
+        width: 20%;
+        margin: 0px auto;
+        font-size: 2.7em;
+        color: rgb(190, 190, 190);
+        justify-content: center;
+    }
+
+    .main-box-image:hover .main-box-image-ige {
+        transition: 0.3s;
+        color: rgb(192, 0, 0);
+    }
+
+    .main-data-box {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-around;
+        margin-top: 1.2em;
+        height: 360px;
+        /* border:1px solid; */
+    }
+
+    div.data-box {
+        width: calc(40%);
+        box-shadow: 5px 5px 1px #dddddd;
+    }
+
+    div.data-box:hover {
+        transition: 0.3s;
+        box-shadow: 8px 8px 3px #cccccc;
+    }
+
+    .data-box .data-title {
+        height: 2em;
+        line-height: 2em;
+        font-size: 1.2em;
+        width: 100%;
+        background-color: #51B2B4;
+        color: white;
+        font-family: "微軟正黑體";
+        text-align: center;
+    }
+
+    .data-title .unit {
+        font-size: 0.6em;
+    }
+
+    .data-main-title {
+        text-align: center;
+    }
+
+    #donutChart,
+    #barChart {
+        width: 100%;
+        height: 80%;
+        /* border: 1px solid; */
+    }
+
+    div.more-data {
+        text-align: center;
+        margin-top: 1.5em;
+        margin-left: 1.5em;
+        display: flex;
+        justify-content: flex-start;
+        height: 2em;
+        line-height: 2em;
+        align-content: center;
+    }
+
+    div.more-data a {
+        text-decoration: none;
+        font-size: 1em;
+        display: flex;
+        align-items: center;
+        color: black;
+    }
+
+    div.more-data .more {
+        margin-right: 0.3em;
+        font-size: 1.5em;
+        color: rgb(126, 114, 114);
+    }
+
+    div.more-data a:hover,
+    a:hover .more {
+        transition: 0.3s;
+        color: rgb(236, 166, 104);
+    }
+</style>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<div class="main-box-dataVisual wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
+    <!--名稱-->
+    <div class="main-box-title">行政執行資訊視覺化專區</div>
+    <!--視覺化區塊-->
+    <div class="main-box-image">
+        <div class="main-box-image-line"></div>
+        <div class="main-box-image-ige">
+            <i class="fas fa-chart-line"></i>
+        </div>
+        <div class="main-box-image-line"></div>
+    </div>
+    <!--data-->
+    <div class="main-data-box">
+        <!-- 新收件數 -->
+        <div class="data-box wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="data-title">
+                <div>106年執行案件新收情形
+                    <span class="unit">(單位：萬件)</span>
+                </div>
+            </div>
+            <div id="donutChart" class="data-image"></div>
+        </div>
+        <!-- 徵起金額 -->
+        <div class="data-box wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="data-title">
+                <div>106年執行案件徵起情形
+                    <span class="unit">(單位：新臺幣億元)</span>
+                </div>
+            </div>
+            <div id="barChart" class="data-image"></div>
+        </div>
+    </div>
+    <!-- 更多統計 -->
+    <div class="more-data">
+        <a title="在新視窗打開" target="_blank" href="http://www.rjsd.moj.gov.tw/RJSDWEB/visualization/justice/enforcement/enforcement_index.html">
+            <i class="fas fa-plus-circle more"></i>更多統計資訊服務</a>
+    </div>
+
+</div>
+<script type="text/javascript">
+    // Load the Visualization API and the corechart package.
+    google.charts.load('current', {
+        'packages': ['corechart']
+    });
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    //chart_div_box1
+    google.charts.setOnLoadCallback(drawChart);
+
+    // google.charts.load('current', {packages: ['corechart', 'bar']});
+    //chart_div_box2
+    google.charts.setOnLoadCallback(drawAnotherChart);
+
+
+    // Callback that creates and populates a data table,
+    // instantiates the pie chart, passes in the data and
+    // draws it.
+
+    //chart新收
+    function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.arrayToDataTable([
+            ['種類', '件數'],
+            // 4710703
+            ['罰鍰', 471],
+            // 3092629
+            ['費用', 309],
+            // 994597
+            ['財稅', 99],
+            // 561884
+            ['健保', 56]
+        ]);
+        // Set chart options
+        var options = {
+            // 'backgroundColor': 'gray', 
+            'backgroundColor.stroke': 'red',
+            'backgroundColor.strokeWidth': 1,
+            'backgroundColor.fill': 'red',
+            chartArea: {
+                left: 70,
+                top: 65,
+                width: '100%',
+                height: '100%'
+            },
+            colors:['#F34626','#EFBA23', '#007F62', '#00A3D6'],
+            enableInteractivity: true,
+            fontSize: '1em',
+            // fontName:'微軟正黑體',
+            // forceIFrame: true,
+            legend: {
+                position: 'right',
+                textStyle: {
+                    color: '#005b8e',
+                    fontSize: 13
+                }
+            },
+            // 'legend.alignment': 'start',
+            // 'legend.position': 'bottom',
+            // 'legend.textStyle': {
+            //     color: 'black' ,
+            //     fontName: '微軟正黑體' ,
+            //     fontSize: '16',
+            //     // bold: < boolean > ,
+            //     // italic: < boolean >
+            // },
+            pieHole: 0.4,
+            pieSliceBorderColor: 'white',
+            pieSliceText: 'percentage',
+            pieSliceTextStyle: {
+                color: 'white',
+                // fontName: '微軟正黑體',
+                fontSize: 12
+            },
+            // slices: {
+            //     0: {
+            //         color: 'black',
+            //         // offset: 0.1
+            //     },
+            //     1: {
+            //         color: 'red',
+            //     },
+            //     2: {
+            //         color: 'gray'
+            //     },
+            //     3: {
+            //         color: 'red'
+            //     }
+            // },
+            'title': '總新收案件數：935萬件',
+            'titleTextStyle': {
+                color: '#005b8e',
+                fontName: '微軟正黑體',
+                fontSize: 14,
+                bold: true,
+            },
+
+            // tooltip: {
+            //     textStyle: {
+            //         color: 'black'
+            //     },
+            //     showColorCode: true
+            // },
+            'tooltip.isHtml': true,
+            'tooltip.ignoreBounds': true,
+            // 'tooltip.text': 'both',
+            'tooltip.textStyle': {
+                // color: 'white' ,
+                // fontName: < string > ,
+                // fontSize: < number > ,
+                // bold: < boolean > ,
+                // italic: < boolean >
+            },
+            // 'tooltip.trigger': 'selection'
+        };
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('donutChart'));
+        chart.draw(data, options);
+    }
+
+    //chart徵起
+    function drawAnotherChart() {
+
+        var data = new google.visualization.arrayToDataTable([
+            ['案件類型', '徵起金額', {
+                role: 'style'
+            }, {
+                role: 'annotation'
+            }],
+            ['財稅', 103, 'color: #007F62; fill-opacity:1', 103],
+            ['健保', 87, 'color: #00A3D6; fill-opacity:1;', 87],
+            ['費用', 61, 'color: #EFBA23; fill-opacity: 1', 61],
+            ['罰鍰', 23, 'color: #F34626; fill-opacity: 1', 23],
+        ])
+        var options = {
+            chartArea: {
+                left: 90,
+                top: 70,
+                // width: '100%',
+                // height: '80%'
+            },
+            title: '總徵起金額：272億元',
+            'titleTextStyle': {
+                color: '#005b8e',
+                fontName: '微軟正黑體',
+                fontSize: 14,
+                bold: true,
+            },
+            width: '100%',
+            height: '320',
+            hAxis: {
+                // title: '案件類型',
+                // format: 'string',
+            },
+            vAxis: {
+                // title: '徵起金額'
+            },
+            bar: {
+                groupWidth: "70%"
+            },
+            legend: {
+                position: 'none',
+            },
+            'tooltip.isHtml': true,
+            annotations: {
+                textStyle: {
+                    fontName: 'Times-Roman',
+                    fontSize: 13,
+                    // bold: true,
+                    // italic: true,
+                    // The color of the text.
+                    color: 'white',
+                    // The color of the text outline.
+                    // auraColor: '#d799ae',
+                    // The transparency of the text.
+                    // opacity: 0.8
+                }
+            }
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('barChart'));
+
+        chart.draw(data, options);
+    }
+</script>
+<!-- <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script> -->

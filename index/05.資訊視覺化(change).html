@@ -1,0 +1,858 @@
+<style>
+    /* 視覺化區塊 */
+    .arrow-color {
+        color: rgb(156, 148, 148);
+    }
+
+    .arrow-color:hover {
+        color: rgb(129, 61, 51);
+        cursor: pointer;
+    }
+
+    .main-box-dataVisual {
+        box-sizing: border-box;
+        width: 995px;
+        height: 550px;
+        margin-bottom: 10px;
+        margin-top: 3em;
+    }
+
+    /* 區塊title */
+
+    .main-box-image {
+        display: flex;
+        border: 1px solid;
+        height: 20px;
+        background-color: #4B4B4B;
+        border-bottom: 5px solid rgb(161, 161, 161);
+        position: relative;
+    }
+
+    .title-box {
+        position: absolute;
+        width: 300px;
+        height: 35px;
+        left: 25px;
+        top: -15px;
+        color: #fff;
+        font-family: "微軟正黑體";
+        line-height: 35px;
+        text-align: center;
+        font-size: 1.2em;
+    }
+
+    .colorYellow {
+        background-color: #E7AE3C;
+    }
+
+    .blockBtn {
+        width: 993px;
+        height: 50px;
+        margin: 10px 0;
+        display: flex;
+        justify-content: space-evenly;
+        box-sizing: border-box;
+    }
+
+    .blockBtn .execBtn {
+        width: 80px;
+        height: 30px;
+        border-radius: 5px;
+        color: #fff;
+        font-family: "微軟正黑體";
+        background-color: rgb(104, 79, 79);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 5px;
+        cursor: pointer;
+    }
+
+    #execBtnActive{
+        background-color: rgb(170, 94, 94);
+    }
+
+    .blockBtn .execBtn:hover {
+        background-color: rgb(170, 94, 94);
+    }
+
+    .dashboard {
+        height: 180px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: #EEEEEE;
+    }
+
+    .dashboard .cashBoard {
+        width: 254px;
+        height: 126px;
+        border-radius: 5px;
+        background-color: #fff;
+        position: relative;
+    }
+
+    .dashboard .cashBoard:hover{
+        transition: 0.5s;
+        transform: translate(-5px, -5px);
+        box-shadow: 8px 8px 3px #cccccc;
+    }
+
+    .cardHeader {
+        width: 100%;
+        height: 83px;
+        display: inline-flex;
+        justify-content: space-between;
+    }
+
+    .cardHeader .boxImage {
+        width: 86px;
+        height: 86px;
+        position: relative;
+        border-radius: 5px;
+        left: 15px;
+        top: -20px;
+        box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.5em;
+        color: #fff;
+    }
+
+    .cardHeader .success {
+        background: linear-gradient(60deg, #66bb6a, #43a047);
+    }
+
+    .cardHeader .danger {
+        background: linear-gradient(60deg, #ef5350, #e53935);
+    }
+
+    .cardHeader .info {
+        background: linear-gradient(60deg, #26c6da, #00acc1);
+    }
+
+    .boxContent {
+        width: 140px;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .boxContent .common {
+        width: 80%;
+        text-align: right;
+    }
+
+    .execName {
+        color: gray;
+    }
+
+    .num {
+        font-size: 1.1em;
+    }
+
+    .newNum, .overNum, .receiveMoney{
+        color: red;
+        font-weight: 800;
+        font-size: 1.2em;
+    }
+
+    .cardFotter {
+        width: 90%;
+        height: 40px;
+        border-top: 1px solid gray;
+        margin: 0px auto;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .segmentation {
+        flex: 8;
+        margin-left: 10px;
+    }
+
+    .dashBoardUnit {
+        flex: 3;
+    }
+
+    .main-data-box {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-around;
+        margin-top: 1.2em;
+        height: 360px;
+        /* border:1px solid; */
+    }
+
+    div.data-box {
+        width: calc(40%);
+        box-shadow: 5px 5px 1px #dddddd;
+        position: relative;
+    }
+
+    div.data-box:hover {
+        transform: translate(-5px, -5px);
+        transition: 0.4s;
+        box-shadow: 8px 8px 3px #cccccc;
+    }
+
+    .data-box .data-title {
+        height: 2em;
+        line-height: 2em;
+        font-size: 1em;
+        width: 100%;
+        background-color: #51B2B4;
+        color: white;
+        font-family: "微軟正黑體";
+        text-align: center;
+    }
+
+    .data-title .unit {
+        font-size: 0.6em;
+    }
+
+    .data-main-title {
+        text-align: center;
+    }
+
+    #donutChart,
+    #barChart {
+        width: 100%;
+        height: 80%;
+    }
+
+    div.more-data {
+        text-align: center;
+        margin-top: 1.5em;
+        margin-left: 1.5em;
+        display: flex;
+        justify-content: flex-start;
+        height: 2em;
+        line-height: 2em;
+        align-content: center;
+    }
+
+    div.more-data a {
+        text-decoration: none;
+        font-size: 1em;
+        display: flex;
+        align-items: center;
+        color: black;
+    }
+
+    div.more-data .more {
+        margin-right: 0.3em;
+        font-size: 1.5em;
+        color: rgb(126, 114, 114);
+    }
+
+    div.more-data a:hover,
+    a:hover .more {
+        transition: 0.3s;
+        color: rgb(236, 166, 104);
+    }
+</style>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<div class="main-box-dataVisual wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
+    <!--名稱-->
+    <div class="main-box-image">
+        <div class="title-box colorYellow">行政執行資訊視覺化專區</div>
+    </div>
+    <div class="blockBtn">
+        <div class="execBtn" id="execBtnActive" onclick="changeStatic(0)">合計</div>
+        <div class="execBtn" onclick="changeStatic(1)">臺北</div>
+        <div class="execBtn" onclick="changeStatic(2)">士林</div>
+        <div class="execBtn" onclick="changeStatic(3)">新北</div>
+        <div class="execBtn" onclick="changeStatic(4)">桃園</div>
+        <div class="execBtn" onclick="changeStatic(5)">新竹</div>
+        <div class="execBtn" onclick="changeStatic(6)">臺中</div>
+        <div class="execBtn" onclick="changeStatic(7)">彰化</div>
+        <div class="execBtn" onclick="changeStatic(8)">嘉義</div>
+        <div class="execBtn" onclick="changeStatic(9)">臺南</div>
+        <div class="execBtn" onclick="changeStatic(10)">高雄</div>
+        <div class="execBtn" onclick="changeStatic(11)">屏東</div>
+        <div class="execBtn" onclick="changeStatic(12)">花蓮</div>
+        <div class="execBtn" onclick="changeStatic(13)">宜蘭</div>
+    </div>
+    <div class="dashboard">
+        <div class="cashBoard">
+            <div class="cardHeader">
+                <div class="boxImage success">
+                    <i class="far fa-clipboard"></i>
+                </div>
+                <div class="boxContent">
+                    <div class="execName common">新收件數</div>
+                    <div class="num common">
+                        <span class="newNum">935</span>
+                        <span class="unit">萬件</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cardFotter">
+                <div class="dashBoardUnit">106年 </div>
+                <div class="segmentation">行政執行各分署</div>  
+            </div>
+        </div>
+        <div class="cashBoard">
+            <div class="cardHeader">
+                <div class="boxImage danger">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <div class="boxContent">
+                    <div class="execName common">終結件數</div>
+                    <div class="num common">
+                        <span class="overNum">749</span>
+                        <span class="unit">萬件</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cardFotter">
+                    <div class="dashBoardUnit">106年 </div>
+                <div class="segmentation">行政執行各分署</div>
+            </div>
+        </div>
+        <div class="cashBoard">
+            <div class="cardHeader">
+                <div class="boxImage info">
+                    <i class="fas fa-donate"></i>
+                </div>
+                <div class="boxContent">
+                    <div class="execName common">徵起金額</div>
+                    <div class="num common">
+                        <span class="receiveMoney">275</span>
+                        <span class="unit">億元</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cardFotter">
+                    <div class="dashBoardUnit">106年 </div>
+                <div class="segmentation">行政執行各分署</div>
+            </div>
+        </div>
+    </div>
+
+    <!--data-->
+    <div class="main-data-box">
+        <!-- 新收件數 -->
+        <div class="data-box wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="data-title">
+                
+                    <span class="pie-name">106年執行案件新收情形</span>
+                    <span class="unit">(單位：萬件)</span>
+
+            </div>
+            <div id="donutChart" class="data-image"></div>
+        </div>
+        <!-- 徵起金額 -->
+        <div class="data-box wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="data-title">
+                    <span class="colChart-name">106年執行案件徵起情形</span>
+                    <span class="unit">(單位：新臺幣億元)</span>
+                
+            </div>
+            <div id="barChart" class="data-image"></div>
+        </div>
+    </div>
+    <!-- 更多統計 -->
+    <div class="more-data">
+        <a title="在新視窗打開" target="_blank" href="http://www.rjsd.moj.gov.tw/RJSDWEB/visualization/justice/enforcement/enforcement_index.html">
+            <i class="fas fa-plus-circle more"></i>更多統計資訊服務</a>
+    </div>
+
+</div>
+<script type="text/javascript">
+    var nowValue = 0;
+    var staticNum = {
+        tpk: {
+            name: "行政執行署各分署",
+            unit: "萬件",
+            newNum: 935,
+            overNum: 749,
+            receiveMoney: 275
+        },
+        tpy: {
+            name: "行政執行署臺北分署",
+            unit: "萬件",
+            newNum: 80,
+            overNum: 69,
+            receiveMoney: 69
+        },
+        sly: {
+            name: "行政執行署士林分署",
+            unit: "萬件",
+            newNum: 46,
+            overNum: 39,
+            receiveMoney: 14
+        },
+        pcy: {
+            name: "行政執行署新北分署",
+            unit: "萬件",
+            newNum: 142,
+            overNum: 110,
+            receiveMoney: 24
+        },
+        tyy: {
+            name: "行政執行署桃園分署",
+            unit: "萬件",
+            newNum: 97,
+            overNum: 78,
+            receiveMoney: 18.2
+        },
+        scy: {
+            name: "行政執行署新竹分署",
+            unit: "萬件",
+            newNum: 69,
+            overNum: 41,
+            receiveMoney: 10
+        },
+        tcy: {
+            name: "行政執行署臺中分署",
+            unit: "萬件",
+            newNum: 73,
+            overNum: 64,
+            receiveMoney: 18.7
+        },
+        chy: {
+            name: "行政執行署彰化分署",
+            unit: "萬件",
+            newNum: 64,
+            overNum: 52,
+            receiveMoney: 12
+        },
+        cyy: {
+            name: "行政執行署嘉義分署",
+            unit: "萬件",
+            newNum: 70,
+            overNum: 46,
+            receiveMoney: 8.3
+        },
+        tny: {
+            name: "行政執行署臺南分署",
+            unit: "萬件",
+            newNum: 52,
+            overNum: 43,
+            receiveMoney: 11
+        },
+        ksy: {
+            name: "行政執行署高雄分署",
+            unit: "萬件",
+            newNum: 115,
+            overNum: 101,
+            receiveMoney: 70
+        },
+        pty: {
+            name: "行政執行署屏東分署",
+            unit: "萬件",
+            newNum: 41,
+            overNum: 34,
+            receiveMoney: 5.3
+        },
+        hly: {
+            name: "行政執行署花蓮分署",
+            unit: "萬件",
+            newNum: 34,
+            overNum: 26,
+            receiveMoney: 5.2
+        },
+        ily: {
+            name: "行政執行署宜蘭分署",
+            unit: "萬件",
+            newNum: 47,
+            overNum: 39,
+            receiveMoney: 5.7
+        }
+    }
+    google.charts.load('current', {
+        'packages': ['corechart']
+    });
+    changeStatic(0);
+
+    function getExec(value) {
+        switch (value) {
+            case 0:
+                return staticNum.tpk;
+                break;
+            case 1:
+                return staticNum.tpy;
+                break;
+            case 2:
+                return staticNum.sly;
+                break;
+            case 3:
+                return staticNum.pcy;
+                break;
+            case 4:
+                return staticNum.tyy;
+                break;
+            case 5:
+                return staticNum.scy;
+                break;
+            case 6:
+                return staticNum.tcy;
+                break;
+            case 7:
+                return staticNum.chy;
+                break;
+            case 8:
+                return staticNum.cyy;
+                break;
+            case 9:
+                return staticNum.tny;
+                break;
+            case 10:
+                return staticNum.ksy;
+                break;
+            case 11:
+                return staticNum.pty;
+                break;
+            case 12:
+                return staticNum.hly;
+                break;
+            case 13:
+                return staticNum.ily;
+                break;
+        }
+    }
+
+    function changeStatic(value) {
+        var newNumBlock = document.querySelector(".cashBoard .newNum");
+        var overNumBlock = document.querySelector(".cashBoard .overNum");
+        var moneyBlock = document.querySelector(".cashBoard .receiveMoney");
+        var execName = document.querySelectorAll(".cardFotter .segmentation");
+        var pieName = document.querySelector(".data-title .pie-name");
+        var colChartName = document.querySelector(".data-title .colChart-name");
+        var execBtnActive = document.getElementById("execBtnActive");
+        var execBtn = document.querySelectorAll(".execBtn");
+
+        nowValue = value;
+        execBtnActive.removeAttribute("id", "execBtnActive");
+        execBtn[nowValue].setAttribute("id", "execBtnActive");
+        //    console.log(execName);
+        pieName.textContent = '106年 ' + getExec(nowValue).name + ' 新收情形';
+        colChartName.textContent = '106年 ' + getExec(nowValue).name + ' 徵起情形';
+        execName.forEach(function (elm) {
+            elm.textContent = getExec(value).name;
+        })
+        newNumBlock.textContent = getExec(value).newNum;
+        overNumBlock.textContent = getExec(value).overNum;
+        moneyBlock.textContent = getExec(value).receiveMoney;
+        //    execName.textContent = getExec(nowValue).name;
+
+        google.charts.setOnLoadCallback(drawChart);
+        google.charts.setOnLoadCallback(drawAnotherChart);
+
+    }
+
+    function drawChart() {
+        var caseType = ['種類', '件數'];
+
+        var dataTotal = [
+            [
+                //執行署
+                caseType, ['罰鍰', 471],
+                ['費用', 309],
+                ['財稅', 99],
+                ['健保', 56]
+            ],
+            [
+                //臺北
+                caseType, ['罰鍰', 38],
+                ['費用', 31],
+                ['財稅', 6.5],
+                ['健保', 4.4]
+            ],
+            [
+                //士林
+                caseType, ['罰鍰', 22],
+                ['費用', 31],
+                ['財稅', 4.5],
+                ['健保', 3.2]
+            ],
+            [
+                //新北
+                caseType, ['罰鍰', 81],
+                ['費用', 39],
+                ['財稅', 14],
+                ['健保', 7.6]
+            ],
+            [
+                //桃園
+                caseType, ['罰鍰', 45],
+                ['費用', 34],
+                ['財稅', 10],
+                ['健保', 6.5]
+            ],
+            [
+                //新竹
+                caseType, ['罰鍰', 38],
+                ['費用', 20],
+                ['財稅', 6.6],
+                ['健保', 3.6]
+            ],
+            [
+                //臺中
+                caseType, ['罰鍰', 26],
+                ['費用', 31],
+                ['財稅', 8.3],
+                ['健保', 6.7]
+            ],
+            [
+                //彰化
+                caseType, ['罰鍰', 33],
+                ['費用', 19],
+                ['財稅', 6.9],
+                ['健保', 3.9]
+            ],
+            [
+                //嘉義
+                caseType, ['罰鍰', 38],
+                ['費用', 21],
+                ['財稅', 7.1],
+                ['健保', 4]
+            ],
+            [
+                //臺南
+                caseType, ['費用', 23],
+                ['罰鍰', 17],
+                ['財稅', 7.1],
+                ['健保', 4]
+            ],
+            [
+                //高雄
+                caseType, ['罰鍰', 63],
+                ['費用', 33],
+                ['財稅', 12],
+                ['健保', 5.6]
+            ],
+            [
+                //屏東
+                caseType, ['罰鍰', 19],
+                ['費用', 13],
+                ['財稅', 5.5],
+                ['健保', 2.1]
+            ],
+            [
+                //花蓮
+                caseType, ['罰鍰', 18],
+                ['費用', 9.2],
+                ['財稅', 4],
+                ['健保', 2.3]
+            ],
+            [
+                //宜蘭
+                caseType, ['罰鍰', 26],
+                ['費用', 14],
+                ['財稅', 4.5],
+                ['健保', 2.3]
+            ],
+        ];
+
+        // Create the data table.
+        var data = new google.visualization.arrayToDataTable(dataTotal[nowValue]);
+        // Set chart options
+        var options = {
+            // 'backgroundColor': 'gray', 
+            'backgroundColor.stroke': 'red',
+            'backgroundColor.strokeWidth': 1,
+            'backgroundColor.fill': 'red',
+            chartArea: {
+                left: 70,
+                top: 65,
+                width: '100%',
+                height: '100%'
+            },
+            colors: ['#F34626', '#EFBA23', '#007F62', '#00A3D6'],
+            enableInteractivity: true,
+            fontSize: '1em',
+            // fontName:'微軟正黑體',
+            // forceIFrame: true,
+            legend: {
+                position: 'right',
+                textStyle: {
+                    color: '#005b8e',
+                    fontSize: 13
+                }
+            },
+            pieHole: 0.4,
+            pieSliceBorderColor: 'white',
+            pieSliceText: 'percentage',
+            pieSliceTextStyle: {
+                color: 'white',
+                // fontName: '微軟正黑體',
+                fontSize: 12
+            },
+            // 'title': '總新收案件數：935萬件',
+            title: "總新收案件數：" + getExec(nowValue).newNum + "萬件",
+            'titleTextStyle': {
+                color: '#005b8e',
+                fontName: '微軟正黑體',
+                fontSize: 14,
+                bold: true,
+            },
+            'tooltip.isHtml': true,
+            'tooltip.ignoreBounds': true,
+        };
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('donutChart'));
+        chart.draw(data, options);
+    }
+
+    function drawAnotherChart() {
+        var dataTotal = [
+            //執行署
+            [
+                ['財稅', 103, 'color: #007F62; fill-opacity:1', 103],
+                ['健保', 87, 'color: #00A3D6; fill-opacity:1;', 87],
+                ['費用', 61, 'color: #EFBA23; fill-opacity: 1', 61],
+                ['罰鍰', 23, 'color: #F34626; fill-opacity: 1', 23],
+            ],
+            //臺北分署
+            [
+                ['財稅', 15, 'color: #007F62; fill-opacity:1', 15],
+                ['健保', 35, 'color: #00A3D6; fill-opacity:1;', 35],
+                ['費用', 15, 'color: #EFBA23; fill-opacity: 1', 15],
+                ['罰鍰', 2.3, 'color: #F34626; fill-opacity: 1', 2.3],
+            ],
+            //士林分署
+            [
+                ['財稅', 9.4, 'color: #007F62; fill-opacity:1', 9.4],
+                ['健保', 1.8, 'color: #00A3D6; fill-opacity:1;', 1.8],
+                ['費用', 2, 'color: #EFBA23; fill-opacity: 1', 2],
+                ['罰鍰', 1.5, 'color: #F34626; fill-opacity: 1', 1.5],
+            ],
+            //新北分署
+            [
+                ['財稅', 14, 'color: #007F62; fill-opacity:1', 14],
+                ['健保', 1.8, 'color: #00A3D6; fill-opacity:1;', 1.8],
+                ['費用', 3.7, 'color: #EFBA23; fill-opacity: 1', 3.7],
+                ['罰鍰', 3.3, 'color: #F34626; fill-opacity: 1', 3.3],
+            ],
+            //桃園分署
+            [
+                ['財稅', 9.9, 'color: #007F62; fill-opacity:1', 9.9],
+                ['健保', 3.2, 'color: #00A3D6; fill-opacity:1;', 3.2],
+                ['費用', 2.9, 'color: #EFBA23; fill-opacity: 1', 2.9],
+                ['罰鍰', 2.1, 'color: #F34626; fill-opacity: 1', 2.1],
+            ],
+            //新竹分署
+            [
+                ['財稅', 6.2, 'color: #007F62; fill-opacity:1', 6.2],
+                ['健保', 1.3, 'color: #00A3D6; fill-opacity:1;', 1.3],
+                ['費用', 1.5, 'color: #EFBA23; fill-opacity: 1', 1.5],
+                ['罰鍰', 1.6, 'color: #F34626; fill-opacity: 1', 1.6],
+            ],
+            //臺中分署
+            [
+                ['財稅', 9.1, 'color: #007F62; fill-opacity:1', 9.1],
+                ['健保', 3.5, 'color: #00A3D6; fill-opacity:1;', 3.5],
+                ['費用', 3.6, 'color: #EFBA23; fill-opacity: 1', 3.6],
+                ['罰鍰', 2.2, 'color: #F34626; fill-opacity: 1', 2.2],
+            ],
+            //彰化分署
+            [
+                ['財稅', 6.3, 'color: #007F62; fill-opacity:1', 6.3],
+                ['健保', 1.5, 'color: #00A3D6; fill-opacity:1;', 1.5],
+                ['費用', 2.4, 'color: #EFBA23; fill-opacity: 1', 2.4],
+                ['罰鍰', 1.9, 'color: #F34626; fill-opacity: 1', 1.9],
+            ],
+            //嘉義分署
+            [
+                ['財稅', 4.2, 'color: #007F62; fill-opacity:1', 4.2],
+                ['健保', 1.2, 'color: #00A3D6; fill-opacity:1;', 1.2],
+                ['費用', 1.4, 'color: #EFBA23; fill-opacity: 1', 1.4],
+                ['罰鍰', 1.5, 'color: #F34626; fill-opacity: 1', 1.5],
+            ],
+            //臺南分署
+            [
+                ['財稅', 6.3, 'color: #007F62; fill-opacity:1', 6.3],
+                ['健保', 1.7, 'color: #00A3D6; fill-opacity:1;', 1.7],
+                ['費用', 1.9, 'color: #EFBA23; fill-opacity: 1', 1.9],
+                ['罰鍰', 0.9, 'color: #F34626; fill-opacity: 1', 0.9],
+            ],
+            //高雄分署
+            [
+                ['財稅', 14, 'color: #007F62; fill-opacity:1', 14],
+                ['健保', 30, 'color: #00A3D6; fill-opacity:1;', 30],
+                ['費用', 23, 'color: #EFBA23; fill-opacity: 1', 23],
+                ['罰鍰', 2.6, 'color: #F34626; fill-opacity: 1', 2.6],
+            ],
+            //屏東分署
+            [
+                ['財稅', 2.4, 'color: #007F62; fill-opacity:1', 2.4],
+                ['健保', 1, 'color: #00A3D6; fill-opacity:1;', 1],
+                ['費用', 0.8, 'color: #EFBA23; fill-opacity: 1', 0.8],
+                ['罰鍰', 0.9, 'color: #F34626; fill-opacity: 1', 0.9],
+            ],
+            //花蓮分署
+            [
+                ['財稅', 1.90, 'color: #007F62; fill-opacity:1', 1.90],
+                ['健保', 1.11, 'color: #00A3D6; fill-opacity:1;', 1.11],
+                ['費用', 1.13, 'color: #EFBA23; fill-opacity: 1', 1.13],
+                ['罰鍰', 1.03, 'color: #F34626; fill-opacity: 1', 1.03],
+            ],
+            //宜蘭分署
+            [
+                ['財稅', 2.6, 'color: #007F62; fill-opacity:1', 2.6],
+                ['健保', 0.9, 'color: #00A3D6; fill-opacity:1;', 0.9],
+                ['費用', 0.8, 'color: #EFBA23; fill-opacity:1', 0.8],
+                ['罰鍰', 1.2, 'color: #F34626; fill-opacity:1', 1.2],
+            ],
+        ];
+
+        var dataChoice = [
+        ['案件類型', '徵起金額', {
+                role: 'style'
+            }, {
+                role: 'annotation'
+            }],
+            dataTotal[nowValue][0],
+            dataTotal[nowValue][1],
+            dataTotal[nowValue][2],
+            dataTotal[nowValue][3]
+        ];
+        // console.log(dataChoice);
+
+        var data = new google.visualization.arrayToDataTable(dataChoice);
+        var options = {
+            chartArea: {
+                left: 90,
+                top: 70,
+            },
+            title: '總徵起金額：' + getExec(nowValue).receiveMoney +  '億元',
+            'titleTextStyle': {
+                color: '#005b8e',
+                fontName: '微軟正黑體',
+                fontSize: 14,
+                bold: true,
+            },
+            width: '100%',
+            height: '320',
+            bar: {
+                groupWidth: "70%"
+            },
+            legend: {
+                position: 'none',
+            },
+            'tooltip.isHtml': true,
+            annotations: {
+                textStyle: {
+                    fontName: 'Times-Roman',
+                    fontSize: 13,
+                    color: 'white',
+                }
+            },
+            'vAxis.viewWindow.min': 'pretty'         
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('barChart'));
+
+        chart.draw(data, options);
+    }
+</script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
+    crossorigin="anonymous"></script>

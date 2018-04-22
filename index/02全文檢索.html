@@ -1,0 +1,633 @@
+<style>
+    /* 區塊導覽 */
+    #color {
+        background-color: rgb(21, 143, 224);
+        border: 1px solid rgb(21, 143, 224);
+        border-radius: 2px;
+        cursor: pointer;
+    }
+
+    #color:hover {
+        background-color: rgb(23, 128, 199);
+    }
+
+    .serach-container {
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 995px;
+        margin-bottom: 10px;
+    }
+
+    .option-container {
+        width: calc(30%);
+        display: flex;
+        flex-flow: row;
+        justify-content: space-evenly;
+    }
+
+    @keyframes open {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 0.9;
+        }
+    }
+
+    .linkBtn {
+        width: 140px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: rgb(21, 143, 224);
+        color: white;
+        font-size: 0.9em;
+        box-sizing: border-box;
+        letter-spacing: 0.3px;
+    }
+
+    .linkBtn:hover{
+        background-color: rgb(23, 128, 199);
+    }
+
+    .linkModel,
+    .model-other {
+        width: 100%;
+        height: 100%;
+        background-color: rgb(0, 0, 0);
+        opacity: 0.9;
+        z-index: 10;
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: none;
+        justify-content: center;
+        animation-name: open;
+        animation-duration: 1s;
+    }
+
+    .linkClose {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        font-size: 1.5em;
+        color: #fff;
+    }
+
+    .linkClose:hover{
+        color: red;
+    }
+
+    .linkModelBox {
+        width: 100%;
+        height: 90%;
+        position: absolute;
+        top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .linkModelBox .linkTitle {
+        font-family: "微軟正黑體", Arial, Helvetica, sans-serif;
+        border-bottom: 1px solid #fff;
+        text-align: center;
+        color: #D7FC51;
+        font-size: 1.7em;
+        font-weight: 500;
+        width: 70%;
+        padding-bottom: 10px;
+    }
+
+    .linkModelBox .linkContent {
+        width: 73%;
+        height: 30%;
+    }
+
+    .linkHeight {
+        width: 80%;
+        height: 100%;
+    }
+
+    .linkModelBox .area-image {
+        width: 500px;
+        margin-top: 40px;
+    }
+
+    .area-image img {
+        width: 100%;
+        height: 100%;
+        display: none;
+        /* transition: 0.5s; */
+    }
+
+    .linkModelBox ul {
+        height: 100%;
+        overflow: auto;
+    }
+
+    .linkModelBox .linkName {
+        color: #57f1f2;
+        font-size: 1.2em;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .linkModelBox li {
+        list-style-type: none;
+        display: inline-block;
+        border-bottom: 2px dotted #444444;
+        margin: 0 15px 5px 0;
+        width: 220px;
+        height: 40px;
+        box-sizing: border-box;
+        transition: .3s ease-out;
+    }
+
+    .linkModelBox li a {
+        text-decoration: none;
+        color: rgb(223, 223, 223);
+        font-size: 0.9em;
+        display: flex;
+        height: 90%;
+        /* background-color: red; */
+        box-sizing: border-box;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .linkModelBox li:hover a {
+        color: #57f1f2;
+        background-color: rgb(126, 125, 125);
+        border-radius: 3px;
+        transition: .3s ease-out;
+    }
+
+    .linkModelBox li:hover .arrow {
+        transform: translateX(5px);
+        transition: .3s ease-out;
+    }
+
+    .arrow {
+        margin-right: 10px;
+    }
+
+    .area-image {
+        height: 60%;
+        width: 70%;
+        border-radius: 10px;
+        overflow: hidden;
+        animation-name: open;
+        animation-duration: 1s;
+    }
+
+    .clock {
+        width: calc(33%);
+        color: rgb(21, 143, 224);
+        display: flex;
+        justify-content: center;
+    }
+
+    .clock-image,
+    .clock-time {
+        display: flex;
+        align-items: center;
+    }
+
+    .clock-image {
+        margin-right: 10px;
+    }
+
+    #clock {
+        font-family: "微軟正黑體";
+    }
+
+    .googlesearch {
+        display: flex;
+        flex-flow: column;
+        width: calc(33%);
+        margin-top: 5px;
+    }
+
+    .googlesearch .hot-word {
+        margin-left: 0px;
+        font-size: 0.8em;
+        font-family: "微軟正黑體";
+        color: rgb(101, 0, 160);
+    }
+
+    .hot-word a {
+        text-decoration: none;
+        color: rgb(21, 143, 224);
+    }
+
+    .hot-word a:hover {
+        color: red;
+        text-decoration: underline;
+    }
+</style>
+
+<div class="serach-container" id="serach-container">
+    <!-- 各分署全球資訊網連結 -->
+    <div class="option-container">
+        <div class="linkBtn link" id="linkBtn">所屬機關網站連結</div>
+        <div class="linkModel" id="linkModel">
+            <span><i class="fas fa-times linkClose"></i></span>
+            <div class="linkModelBox">
+                <div class="linkTitle">法務部行政執行署各分署全球資訊網清單</div>
+                <div class="linkContent">
+                    <ul>
+                        <li onmouseover="changeExecImg(0)" onmouseout="recoverImg(0)">
+                            <a target="_blank" href="http://www.tpy.moj.gov.tw" title="臺北分署">
+                                <i class="fas fa-caret-right arrow"></i>法務部行政執行署臺北分署</a>
+                        </li>
+                        <li onmouseover="changeExecImg(1)" onmouseout="recoverImg(1)">
+                            <a target="_blank" href="http://www.sly.moj.gov.tw" title="士林分署">
+                                <i class="fas fa-caret-right arrow"></i>法務部行政執行署士林分署</a>
+                        </li>
+                        <li onmouseover="changeExecImg(2)" onmouseout="recoverImg(2)">
+                            <a target="_blank" href="http://www.pcy.moj.gov.tw" title="新北分署">
+                                <i class="fas fa-caret-right arrow"></i>法務部行政執行署新北分署</a>
+                        </li>
+                        <li onmouseover="changeExecImg(3)" onmouseout="recoverImg(3)">
+                            <a target="_blank" href="http://www.tyy.moj.gov.tw" title="桃園分署">
+                                <i class="fas fa-caret-right arrow"></i>法務部行政執行署桃園分署</a>
+                        </li>
+                        <li onmouseover="changeExecImg(4)" onmouseout="recoverImg(4)">
+                            <a target="_blank" href="http://www.scy.moj.gov.tw" title="新竹分署">
+                                <i class="fas fa-caret-right arrow"></i>法務部行政執行署新竹分署</a>
+                        </li>
+                        <li onmouseover="changeExecImg(5)" onmouseout="recoverImg(5)">
+                            <a target="_blank" href="http://www.tcy.moj.gov.tw" title="臺中分署">
+                                <i class="fas fa-caret-right arrow"></i>法務部行政執行署臺中分署</a>
+                        </li>
+                        <li onmouseover="changeExecImg(6)" onmouseout="recoverImg(6)">
+                            <a target="_blank" href="http://www.chy.moj.gov.tw" title="彰化分署">
+                                <i class="fas fa-caret-right arrow"></i>法務部行政執行署彰化分署</a>
+                        </li>
+                        <li onmouseover="changeExecImg(7)" onmouseout="recoverImg(7)">
+                            <a target="_blank" href="http://www.cyy.moj.gov.tw" title="嘉義分署">
+                                <i class="fas fa-caret-right arrow"></i>法務部行政執行署嘉義分署</a>
+                        </li>
+                        <li onmouseover="changeExecImg(8)" onmouseout="recoverImg(8)">
+                            <a target="_blank" href="http://www.tny.moj.gov.tw" title="臺南分署">
+                                <i class="fas fa-caret-right arrow"></i>法務部行政執行署臺南分署</a>
+                        </li>
+                        <li onmouseover="changeExecImg(9)" onmouseout="recoverImg(9)">
+                            <a target="_blank" href="http://www.ksy.moj.gov.tw" title="高雄分署">
+                                <i class="fas fa-caret-right arrow"></i>法務部行政執行署高雄分署</a>
+                        </li>
+                        <li onmouseover="changeExecImg(10)" onmouseout="recoverImg(10)">
+                            <a target="_blank" href="http://www.pty.moj.gov.tw" title="屏東分署">
+                                <i class="fas fa-caret-right arrow"></i>法務部行政執行署屏東分署</a>
+                        </li>
+                        <li onmouseover="changeExecImg(11)" onmouseout="recoverImg(11)">
+                            <a target="_blank" href="http://www.hly.moj.gov.tw" title="花蓮分署">
+                                <i class="fas fa-caret-right arrow"></i>法務部行政執行署花蓮分署</a>
+                        </li>
+                        <li onmouseover="changeExecImg(12)" onmouseout="recoverImg(12)">
+                            <a target="_blank" href="http://www.ily.moj.gov.tw" title="臺北分署">
+                                <i class="fas fa-caret-right arrow"></i>法務部行政執行署宜蘭分署</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="area-image">
+                    <img src="../image/exec_dept_id/01tpy.jpg" alt="法務部行政執行署臺北分署">
+                    <img src="../image/exec_dept_id/02sly.jpg" alt="法務部行政執行署士林分署">
+                    <img src="../image/exec_dept_id/03pcy.jpg" alt="法務部行政執行署新北分署">
+                    <img src="../image/exec_dept_id//04tyy.jpg" alt="法務部行政執行署桃園分署">
+                    <img src="../image/exec_dept_id/05scy.jpg" alt="法務部行政執行署新竹分署">
+                    <img src="../image/exec_dept_id/06chy.jpg" alt="法務部行政執行署臺中分署">
+                    <img src="../image/exec_dept_id/07tcy.jpg" alt="法務部行政執行署彰化分署">
+                    <img src="../image/exec_dept_id/08cyy.jpg" alt="法務部行政執行署嘉義分署">
+                    <img src="../image/exec_dept_id/09tny.jpg" alt="法務部行政執行署臺南分署">
+                    <img src="../image/exec_dept_id/10ksy.jpg" alt="法務部行政執行署高雄分署">
+                    <img src="../image/exec_dept_id/11pty.jpg" alt="法務部行政執行署屏東分署">
+                    <img src="../image/exec_dept_id/12hly.jpg" alt="法務部行政執行署花蓮分署">
+                    <img src="../image/exec_dept_id/13ily.jpg" alt="法務部行政執行署宜蘭分署">
+                </div>
+            </div>
+        </div>
+        <div class="linkBtn link" id="btn-other">其他機關網站連結</div>
+        <div class="model-other" id="myModel-other">
+            <span><i class="fas fa-times linkClose"></i></span>
+            <div class="linkModelBox">
+                <div class="linkTitle">其他機關全球資訊網清單</div>
+                <div class="linkHeight">
+                    <ul>
+                        <div class="linkName">上級機關</div>
+                        <li>
+                            <a target="_blank" href="https://www.moj.gov.tw/mp-001.html" title="行政院">
+                                <i class="fas fa-caret-right arrow"></i>行政院</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.moj.gov.tw/mp-001.html" title="法務部">
+                                <i class="fas fa-caret-right arrow"></i>法務部</a>
+                        </li>
+                        <div class="linkName">主要移送機關(國稅)</div>
+                        <li>
+                            <a target="_blank" href="https://www.dot.gov.tw/" title="財政部賦稅署">
+                                <i class="fas fa-caret-right arrow"></i>財政部賦稅署</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://www.ntbt.gov.tw/" title="財政部臺北國稅局">
+                                <i class="fas fa-caret-right arrow"></i>財政部臺北國稅局</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.ntbk.gov.tw/etwmain/" title="財政部高雄國稅局">
+                                <i class="fas fa-caret-right arrow"></i>財政部高雄國稅局</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.ntbna.gov.tw/etwmain/" title="財政部臺北國稅局">
+                                <i class="fas fa-caret-right arrow"></i>財政部臺北國稅局</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.ntbna.gov.tw/etwmain/" title="財政部北區國稅局">
+                                <i class="fas fa-caret-right arrow"></i>財政部北區國稅局</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://www.ntbca.gov.tw/" title="財政部中區國稅局">
+                                <i class="fas fa-caret-right arrow"></i>財政部中區國稅局</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://www.ntbsa.gov.tw/" title="財政部南區國稅局">
+                                <i class="fas fa-caret-right arrow"></i>財政部南區國稅局</a>
+                        </li>
+                        <div class="linkName">主要移送機關(地方稅)</div>
+                        <li>
+                            <a target="_blank" href="https://tpctax.gov.taipei/" title="臺北市稅捐稽徵處">
+                                <i class="fas fa-caret-right arrow"></i>臺北市稅捐稽徵處</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://www.tax.ntpc.gov.tw/core/main/index.php" title="新北市政府稅捐稽徵處">
+                                <i class="fas fa-caret-right arrow"></i>新北市政府稅捐稽徵處</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://www.tytax.gov.tw/core/main/index.php" title="桃園市政府地方稅務局">
+                                <i class="fas fa-caret-right arrow"></i>桃園市政府地方稅務局</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://www.tax.taichung.gov.tw/" title="臺中市政府地方稅務局">
+                                <i class="fas fa-caret-right arrow"></i>臺中市政府地方稅務局</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://www.tntb.gov.tw/core/main/index.php" title="臺南市政府財政稅務局">
+                                <i class="fas fa-caret-right arrow"></i>臺南市政府財政稅務局</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://finance2.kcg.gov.tw/" title="高雄市政府財政局">
+                                <i class="fas fa-caret-right arrow"></i>高雄市政府財政局</a>
+                        </li>
+                        <div class="linkName">主要移送機關(健保、勞保機關)</div>
+                        <li>
+                            <a target="_blank" href="https://www.nhi.gov.tw/" title="衛生福利部中央健康保險署">
+                                <i class="fas fa-caret-right arrow"></i>衛生福利部中央健康保險署</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.bli.gov.tw/default.aspx" title="勞動部勞工保險局">
+                                <i class="fas fa-caret-right arrow"></i>勞動部勞工保險局</a>
+                        </li>
+                        <div class="linkName">主要移送機關(監理機關)</div>
+                        <li>
+                            <a target="_blank" href="https://www.thb.gov.tw/" title="交通部公路總局">
+                                <i class="fas fa-caret-right arrow"></i>交通部公路總局</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.mvdis.gov.tw/" title="監理服務網">
+                                <i class="fas fa-caret-right arrow"></i>監理服務網</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://tpcmv.thb.gov.tw/" title="臺北市區監理所">
+                                <i class="fas fa-caret-right arrow"></i>臺北市區監理所</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://tmvso.thb.gov.tw/" title="臺北區監理所">
+                                <i class="fas fa-caret-right arrow"></i>臺北區監理所</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://hmv.thb.gov.tw/" title="新竹區監理所">
+                                <i class="fas fa-caret-right arrow"></i>新竹區監理所</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://tmv.thb.gov.tw/" title="臺中區監理所">
+                                <i class="fas fa-caret-right arrow"></i>臺中區監理所</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://cyi2.thb.gov.tw/" title="嘉義區監理所">
+                                <i class="fas fa-caret-right arrow"></i>嘉義區監理所</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://khcmv.thb.gov.tw/" title="高雄市區監理所">
+                                <i class="fas fa-caret-right arrow"></i>高雄市區監理所</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://komv.thb.gov.tw/" title="高雄區監理所">
+                                <i class="fas fa-caret-right arrow"></i>嘉義區監理所</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.mvdis.gov.tw/m3-emv/news/office" title="更多監理機關">
+                                <i class="fas fa-caret-right arrow"></i>更多監理機關</a>
+                        </li>
+                        <div class="linkName">主要移送機關(交裁機關)</div>
+                        <li>
+                            <a target="_blank" href="http://www.judge.gov.taipei/" title="臺北市交通事件裁決所">
+                                <i class="fas fa-caret-right arrow"></i>臺北市交通事件裁決所</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.tad.ntpc.gov.tw/" title="新北市政府交通事件裁決處">
+                                <i class="fas fa-caret-right arrow"></i>新北市政府交通事件裁決處</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://traffic-tad.tycg.gov.tw/" title="桃園市政府交通事件裁決處">
+                                <i class="fas fa-caret-right arrow"></i>桃園市政府交通事件裁決處</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://www.traffic.taichung.gov.tw/sub2/news/index.asp?Parser=9,18,273" title="臺中市交通事件裁決處">
+                                <i class="fas fa-caret-right arrow"></i>臺中市交通事件裁決處</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://ttac.tainan.gov.tw/" title="臺南市政府交通局">
+                                <i class="fas fa-caret-right arrow"></i>臺南市政府交通局</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.tbkc.gov.tw/Service/TrafficEvent" title="高雄市政府交通局">
+                                <i class="fas fa-caret-right arrow"></i>高雄市政府交通局</a>
+                        </li>
+                        <i class="fas fa-caret-right arrow"></i>法務部</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="area-image"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 時鐘 -->
+    <div class="clock">
+        <div class="clock-image">
+            <i class="far fa-clock fa-2x"></i>
+        </div>
+        <div class="clock-time">
+            <span id="clock"></span>
+        </div>
+    </div>
+    <!-- google搜尋 -->
+    <div class="googlesearch animated fadeIn">
+        <style>
+            input.gsc-search-button {
+                border-color: #923C99;
+                background-color: #2c83ca;
+                color: #FFF;
+                border: 1px solid #81bded;
+            }
+        </style>
+        <script>
+            (function () {
+                var cx = '002134160576658380868:oljlnomcrfe';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                    '//cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+            })();
+        </script>
+        <gcse:searchbox-only enableautocomplete="true" resultsurl="https://www.tpk.moj.gov.tw/bbssp.asp?xdurl=search/GSSForm.asp&mp=030&"></gcse:searchbox-only>
+        <div class="hot-word">
+            <span class="title">熱門關鍵字：</span>
+            <span>
+                <a title="在新視窗打開" href="https://www.tpk.moj.gov.tw/HitCounter.asp?xItem=456438" target="_blank">拘提管收</a>
+            </span>
+            <span>、</span>
+            <span>
+                <a title="在新視窗打開" href="https://www.tpk.moj.gov.tw/HitCounter.asp?xItem=456439" target="_blank">限制出境</a>
+            </span>
+            <span>、</span>
+            <span>
+                <a title="在新視窗打開" href="https://www.tpk.moj.gov.tw/HitCounter.asp?xItem=456441" target="_blank">救濟</a>
+            </span>
+            <span>、</span>
+            <span>
+                <a title="在新視窗打開" href="https://www.google.com.tw/advanced_search?hl=zh-TW&as_q&num=100&as_sitesearch=https://www.tpk.moj.gov.tw&cof=FORID%3A10&ie=UTF-8"
+                    target="_blank">進階查詢</a>
+            </span>
+        </div>
+    </div>
+</div>
+
+<script>
+    // declare block
+    //全文檢索
+    var linkBtn = document.querySelector("#linkBtn");
+    var btnOther = document.querySelector("#btn-other");
+    var linkModel = document.getElementById("linkModel");
+    var modelOther = document.getElementById("myModel-other");
+    var linkClose = document.querySelector(".linkClose");
+    clock();
+    window.onload = function () {
+        var btnGoogle = document.querySelector(".gsc-search-button-v2");
+        btnGoogle.setAttribute("id", "color");
+    };
+
+    linkBtn.onclick = function () {
+        linkModel.style.display = "flex";
+    };
+    btnOther.onclick = function () {
+        modelOther.style.display = "flex";
+    };
+    linkModel.onclick = function () {
+        this.style.display = "none";
+    };
+    modelOther.onclick = function () {
+        this.style.display = "none";
+    };
+    linkClose.onclick = function () {
+        linkModel.style.display = "none";
+    };
+
+    function clock() {
+        var clock = document.getElementById("clock");
+        clock.textContent = getNowTime();
+        setInterval(function () {
+            var clock = document.getElementById("clock");
+            clock.textContent = getNowTime();
+        }, 1000);
+    }
+
+    function getNowTime() {
+        var date = new Date();
+        var year = date.getFullYear() - 1911;
+        var month = date.getMonth() + 1;
+        var dd = date.getDate();
+        var weekend = getChineseDay(date.getDay());
+        var hour = getChineseHours(date.getHours());
+        var minute = addZero(date.getMinutes());
+        var second = addZero(date.getSeconds());
+        var nowTime = year + "年" + month + "月" + dd + "日 " + "星期" + weekend + " " + hour + ":" + minute +
+            ":" + second;
+        return nowTime;
+    }
+
+    function getChineseDay(day) {
+        var chineseDay;
+        switch (day) {
+            case 0:
+                chineseDay = "日";
+                break;
+            case 1:
+                chineseDay = "一";
+                break;
+            case 2:
+                chineseDay = "二";
+                break;
+            case 3:
+                chineseDay = "三";
+                break;
+            case 4:
+                chineseDay = "四";
+                break;
+            case 5:
+                chineseDay = "五";
+                break;
+            case 6:
+                chineseDay = "六";
+                break;
+        }
+        return chineseDay;
+    }
+
+    function getChineseHours(hour) {
+        var chineseHours;
+        if (hour == 0) {
+            chineseHours = "午夜 " + addZero(hour);
+        } else if (hour > 0 && hour < 12) {
+            chineseHours = "上午 " + addZero(hour);
+        } else if (hour == 12) {
+            chineseHours = "中午 " + addZero(hour);
+        } else if (hour > 12 && hour < 24) {
+            chineseHours = "下午 " + addZero(hour - 12);
+        }
+        return chineseHours;
+    }
+
+    function addZero(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+
+    function changeExecImg(value) {
+        var getExecImg = document.querySelectorAll(".area-image img");
+        getExecImg[value].style.display = "block";
+    }
+
+    function recoverImg(value) {
+        var getExecImg = document.querySelectorAll(".area-image img");
+        getExecImg[value].style.display = "none";
+    }
+</script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>

@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/styleFinal.css">
+    <script src="https://www.tpk.moj.gov.tw/xslGip/unit030/js/jquery-1.11.3.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body width="993px" style="display:flex;justify-content:center;flex-flow:column;align-items:center">
+    <img src="../image/new_logo_orange.png" width="993px" alt="">
+    <!-- fastBox -->
+    <div class="fastBox">
+        <ul>
+            <li>
+                <a href="">
+                    <i class="fas img-color fa-search "></i>搜尋</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fas img-color fa-volume-down"></i>消息</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fas img-color fa-user"></i>服務</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="far img-color fa-flag"></i>報告</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fas img-color fa-briefcase"></i>業務</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fas img-color fa-chart-bar"></i>統計</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fab img-color fa-youtube"></i>影音</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fas img-color fa-link"></i>連結</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fas img-color fa-arrow-up"></i>top</a>
+            </li>
+        </ul>
+    </div>
+    <!-- 全文檢索 -->
+    <div class="serach-container" id="serach-container">
+        <!-- 各分署全球資訊網連結 -->
+        <div class="option-container">
+            <div class="linkBtn link" id="linkBtn">所屬機關網站連結</div>
+            <div class="linkModel" id="linkModel">
+                <span>
+                    <i class="fas fa-times linkClose"></i>
+                </span>
+                <div class="linkModelBox">
+                    <div class="linkTitle">法務部行政執行署各分署全球資訊網清單</div>
+                    <div class="linkContent">
+                        <ul>
+                            <li onmouseover="changeExecImg(0)" onmouseout="recoverImg(0)">
+                                <a target="_blank" href="http://www.tpy.moj.gov.tw" title="臺北分署">
+                                    <i class="fas fa-caret-right arrow"></i>法務部行政執行署臺北分署</a>
+                            </li>
+                            <li onmouseover="changeExecImg(1)" onmouseout="recoverImg(1)">
+                                <a target="_blank" href="http://www.sly.moj.gov.tw" title="士林分署">
+                                    <i class="fas fa-caret-right arrow"></i>法務部行政執行署士林分署</a>
+                            </li>
+                            <li onmouseover="changeExecImg(2)" onmouseout="recoverImg(2)">
+                                <a target="_blank" href="http://www.pcy.moj.gov.tw" title="新北分署">
+                                    <i class="fas fa-caret-right arrow"></i>法務部行政執行署新北分署</a>
+                            </li>
+                            <li onmouseover="changeExecImg(3)" onmouseout="recoverImg(3)">
+                                <a target="_blank" href="http://www.tyy.moj.gov.tw" title="桃園分署">
+                                    <i class="fas fa-caret-right arrow"></i>法務部行政執行署桃園分署</a>
+                            </li>
+                            <li onmouseover="changeExecImg(4)" onmouseout="recoverImg(4)">
+                                <a target="_blank" href="http://www.scy.moj.gov.tw" title="新竹分署">
+                                    <i class="fas fa-caret-right arrow"></i>法務部行政執行署新竹分署</a>
+                            </li>
+                            <li onmouseover="changeExecImg(5)" onmouseout="recoverImg(5)">
+                                <a target="_blank" href="http://www.tcy.moj.gov.tw" title="臺中分署">
+                                    <i class="fas fa-caret-right arrow"></i>法務部行政執行署臺中分署</a>
+                            </li>
+                            <li onmouseover="changeExecImg(6)" onmouseout="recoverImg(6)">
+                                <a target="_blank" href="http://www.chy.moj.gov.tw" title="彰化分署">
+                                    <i class="fas fa-caret-right arrow"></i>法務部行政執行署彰化分署</a>
+                            </li>
+                            <li onmouseover="changeExecImg(7)" onmouseout="recoverImg(7)">
+                                <a target="_blank" href="http://www.cyy.moj.gov.tw" title="嘉義分署">
+                                    <i class="fas fa-caret-right arrow"></i>法務部行政執行署嘉義分署</a>
+                            </li>
+                            <li onmouseover="changeExecImg(8)" onmouseout="recoverImg(8)">
+                                <a target="_blank" href="http://www.tny.moj.gov.tw" title="臺南分署">
+                                    <i class="fas fa-caret-right arrow"></i>法務部行政執行署臺南分署</a>
+                            </li>
+                            <li onmouseover="changeExecImg(9)" onmouseout="recoverImg(9)">
+                                <a target="_blank" href="http://www.ksy.moj.gov.tw" title="高雄分署">
+                                    <i class="fas fa-caret-right arrow"></i>法務部行政執行署高雄分署</a>
+                            </li>
+                            <li onmouseover="changeExecImg(10)" onmouseout="recoverImg(10)">
+                                <a target="_blank" href="http://www.pty.moj.gov.tw" title="屏東分署">
+                                    <i class="fas fa-caret-right arrow"></i>法務部行政執行署屏東分署</a>
+                            </li>
+                            <li onmouseover="changeExecImg(11)" onmouseout="recoverImg(11)">
+                                <a target="_blank" href="http://www.hly.moj.gov.tw" title="花蓮分署">
+                                    <i class="fas fa-caret-right arrow"></i>法務部行政執行署花蓮分署</a>
+                            </li>
+                            <li onmouseover="changeExecImg(12)" onmouseout="recoverImg(12)">
+                                <a target="_blank" href="http://www.ily.moj.gov.tw" title="臺北分署">
+                                    <i class="fas fa-caret-right arrow"></i>法務部行政執行署宜蘭分署</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="area-image">
+                        <img src="../image/exec_dept_id/01tpy.jpg" alt="法務部行政執行署臺北分署">
+                        <img src="../image/exec_dept_id/02sly.jpg" alt="法務部行政執行署士林分署">
+                        <img src="../image/exec_dept_id/03pcy.jpg" alt="法務部行政執行署新北分署">
+                        <img src="../image/exec_dept_id//04tyy.jpg" alt="法務部行政執行署桃園分署">
+                        <img src="../image/exec_dept_id/05scy.jpg" alt="法務部行政執行署新竹分署">
+                        <img src="../image/exec_dept_id/06chy.jpg" alt="法務部行政執行署臺中分署">
+                        <img src="../image/exec_dept_id/07tcy.jpg" alt="法務部行政執行署彰化分署">
+                        <img src="../image/exec_dept_id/08cyy.jpg" alt="法務部行政執行署嘉義分署">
+                        <img src="../image/exec_dept_id/09tny.jpg" alt="法務部行政執行署臺南分署">
+                        <img src="../image/exec_dept_id/10ksy.jpg" alt="法務部行政執行署高雄分署">
+                        <img src="../image/exec_dept_id/11pty.jpg" alt="法務部行政執行署屏東分署">
+                        <img src="../image/exec_dept_id/12hly.jpg" alt="法務部行政執行署花蓮分署">
+                        <img src="../image/exec_dept_id/13ily.jpg" alt="法務部行政執行署宜蘭分署">
+                    </div>
+                </div>
+            </div>
+            <div class="linkBtn link" id="btn-other">其他機關網站連結</div>
+            <div class="model-other" id="myModel-other">
+                <span>
+                    <i class="fas fa-times linkClose"></i>
+                </span>
+                <div class="linkModelBox">
+                    <div class="linkTitle">其他機關全球資訊網清單</div>
+                    <div class="linkHeight">
+                        <ul>
+                            <div class="linkName">上級機關</div>
+                            <li>
+                                <a target="_blank" href="https://www.moj.gov.tw/mp-001.html" title="行政院">
+                                    <i class="fas fa-caret-right arrow"></i>行政院</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.moj.gov.tw/mp-001.html" title="法務部">
+                                    <i class="fas fa-caret-right arrow"></i>法務部</a>
+                            </li>
+                            <div class="linkName">主要移送機關(國稅)</div>
+                            <li>
+                                <a target="_blank" href="https://www.dot.gov.tw/" title="財政部賦稅署">
+                                    <i class="fas fa-caret-right arrow"></i>財政部賦稅署</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="http://www.ntbt.gov.tw/" title="財政部臺北國稅局">
+                                    <i class="fas fa-caret-right arrow"></i>財政部臺北國稅局</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.ntbk.gov.tw/etwmain/" title="財政部高雄國稅局">
+                                    <i class="fas fa-caret-right arrow"></i>財政部高雄國稅局</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.ntbna.gov.tw/etwmain/" title="財政部臺北國稅局">
+                                    <i class="fas fa-caret-right arrow"></i>財政部臺北國稅局</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.ntbna.gov.tw/etwmain/" title="財政部北區國稅局">
+                                    <i class="fas fa-caret-right arrow"></i>財政部北區國稅局</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="http://www.ntbca.gov.tw/" title="財政部中區國稅局">
+                                    <i class="fas fa-caret-right arrow"></i>財政部中區國稅局</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="http://www.ntbsa.gov.tw/" title="財政部南區國稅局">
+                                    <i class="fas fa-caret-right arrow"></i>財政部南區國稅局</a>
+                            </li>
+                            <div class="linkName">主要移送機關(地方稅)</div>
+                            <li>
+                                <a target="_blank" href="https://tpctax.gov.taipei/" title="臺北市稅捐稽徵處">
+                                    <i class="fas fa-caret-right arrow"></i>臺北市稅捐稽徵處</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="http://www.tax.ntpc.gov.tw/core/main/index.php" title="新北市政府稅捐稽徵處">
+                                    <i class="fas fa-caret-right arrow"></i>新北市政府稅捐稽徵處</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="http://www.tytax.gov.tw/core/main/index.php" title="桃園市政府地方稅務局">
+                                    <i class="fas fa-caret-right arrow"></i>桃園市政府地方稅務局</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="http://www.tax.taichung.gov.tw/" title="臺中市政府地方稅務局">
+                                    <i class="fas fa-caret-right arrow"></i>臺中市政府地方稅務局</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="http://www.tntb.gov.tw/core/main/index.php" title="臺南市政府財政稅務局">
+                                    <i class="fas fa-caret-right arrow"></i>臺南市政府財政稅務局</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://finance2.kcg.gov.tw/" title="高雄市政府財政局">
+                                    <i class="fas fa-caret-right arrow"></i>高雄市政府財政局</a>
+                            </li>
+                            <div class="linkName">主要移送機關(健保、勞保機關)</div>
+                            <li>
+                                <a target="_blank" href="https://www.nhi.gov.tw/" title="衛生福利部中央健康保險署">
+                                    <i class="fas fa-caret-right arrow"></i>衛生福利部中央健康保險署</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.bli.gov.tw/default.aspx" title="勞動部勞工保險局">
+                                    <i class="fas fa-caret-right arrow"></i>勞動部勞工保險局</a>
+                            </li>
+                            <div class="linkName">主要移送機關(監理機關)</div>
+                            <li>
+                                <a target="_blank" href="https://www.thb.gov.tw/" title="交通部公路總局">
+                                    <i class="fas fa-caret-right arrow"></i>交通部公路總局</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.mvdis.gov.tw/" title="監理服務網">
+                                    <i class="fas fa-caret-right arrow"></i>監理服務網</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="http://tpcmv.thb.gov.tw/" title="臺北市區監理所">
+                                    <i class="fas fa-caret-right arrow"></i>臺北市區監理所</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="http://tmvso.thb.gov.tw/" title="臺北區監理所">
+                                    <i class="fas fa-caret-right arrow"></i>臺北區監理所</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="http://hmv.thb.gov.tw/" title="新竹區監理所">
+                                    <i class="fas fa-caret-right arrow"></i>新竹區監理所</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="http://tmv.thb.gov.tw/" title="臺中區監理所">
+                                    <i class="fas fa-caret-right arrow"></i>臺中區監理所</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="http://cyi2.thb.gov.tw/" title="嘉義區監理所">
+                                    <i class="fas fa-caret-right arrow"></i>嘉義區監理所</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="http://khcmv.thb.gov.tw/" title="高雄市區監理所">
+                                    <i class="fas fa-caret-right arrow"></i>高雄市區監理所</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="http://komv.thb.gov.tw/" title="高雄區監理所">
+                                    <i class="fas fa-caret-right arrow"></i>嘉義區監理所</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.mvdis.gov.tw/m3-emv/news/office" title="更多監理機關">
+                                    <i class="fas fa-caret-right arrow"></i>更多監理機關</a>
+                            </li>
+                            <div class="linkName">主要移送機關(交裁機關)</div>
+                            <li>
+                                <a target="_blank" href="http://www.judge.gov.taipei/" title="臺北市交通事件裁決所">
+                                    <i class="fas fa-caret-right arrow"></i>臺北市交通事件裁決所</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.tad.ntpc.gov.tw/" title="新北市政府交通事件裁決處">
+                                    <i class="fas fa-caret-right arrow"></i>新北市政府交通事件裁決處</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="http://traffic-tad.tycg.gov.tw/" title="桃園市政府交通事件裁決處">
+                                    <i class="fas fa-caret-right arrow"></i>桃園市政府交通事件裁決處</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="http://www.traffic.taichung.gov.tw/sub2/news/index.asp?Parser=9,18,273" title="臺中市交通事件裁決處">
+                                    <i class="fas fa-caret-right arrow"></i>臺中市交通事件裁決處</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="http://ttac.tainan.gov.tw/" title="臺南市政府交通局">
+                                    <i class="fas fa-caret-right arrow"></i>臺南市政府交通局</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.tbkc.gov.tw/Service/TrafficEvent" title="高雄市政府交通局">
+                                    <i class="fas fa-caret-right arrow"></i>高雄市政府交通局</a>
+                            </li>
+                            <i class="fas fa-caret-right arrow"></i>法務部</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="area-image"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 時鐘 -->
+        <div class="clock">
+            <div class="clock-image">
+                <i class="far fa-clock fa-2x"></i>
+            </div>
+            <div class="clock-time">
+                <span id="clock"></span>
+            </div>
+        </div>
+        <!-- google搜尋 -->
+        <div class="googlesearch animated fadeIn">
+            <style>
+                input.gsc-search-button {
+                    border-color: #923C99;
+                    background-color: #2c83ca;
+                    color: #FFF;
+                    border: 1px solid #81bded;
+                }
+            </style>
+            <script>
+                (function () {
+                    var cx = '002134160576658380868:oljlnomcrfe';
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                        '//cse.google.com/cse.js?cx=' + cx;
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                })();
+            </script>
+            <gcse:searchbox-only enableautocomplete="true" resultsurl="https://www.tpk.moj.gov.tw/bbssp.asp?xdurl=search/GSSForm.asp&mp=030&"></gcse:searchbox-only>
+            <div class="hot-word">
+                <span class="title">熱門關鍵字：</span>
+                <span>
+                    <a title="在新視窗打開" href="https://www.tpk.moj.gov.tw/HitCounter.asp?xItem=456438" target="_blank">拘提管收</a>
+                </span>
+                <span>、</span>
+                <span>
+                    <a title="在新視窗打開" href="https://www.tpk.moj.gov.tw/HitCounter.asp?xItem=456439" target="_blank">限制出境</a>
+                </span>
+                <span>、</span>
+                <span>
+                    <a title="在新視窗打開" href="https://www.tpk.moj.gov.tw/HitCounter.asp?xItem=456441" target="_blank">救濟</a>
+                </span>
+                <span>、</span>
+                <span>
+                    <a title="在新視窗打開" href="https://www.google.com.tw/advanced_search?hl=zh-TW&as_q&num=100&as_sitesearch=https://www.tpk.moj.gov.tw&cof=FORID%3A10&ie=UTF-8"
+                        target="_blank">進階查詢</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <!-- jumbotron -->
+    <div class="jumbotron-container">
+        <a href="#" title="法務部行政執行署所屬各分署首創「123全國聯合拍賣日」">
+            <div class="imgContainer" value='0' id="jumbotronIsActive">
+                <img src="../image/jumbotron.jpg" alt="">
+                <div class="jumbotronContent">
+                    <div class="jumbotronTitle">法務部行政執行署所屬各分署首創「123全國聯合拍賣日」</div>
+                </div>
+            </div>
+        </a>
+        <a href="#" title="法務部行政執行署所屬各分署首創「123全國聯合拍賣日」">
+            <div class="imgContainer" value='1'>
+                <img src="../image/2.jpg" alt="">
+                <div class="jumbotronContent">
+                    <div class="jumbotronTitle">勿信網路謠言，行政執行署各分署傳繳通知超商繳款「係金ㄟ」，不是詐騙</div>
+                </div>
+            </div>
+        </a>
+        <a href="#" title="法務部行政執行署兒童版網站">
+            <div class="imgContainer" value='2'>
+                <img src="../image/3.jpg" alt="">
+                <div class="jumbotronContent">
+                    <div class="jumbotronTitle">法務部行政執行署兒童版網站</div>
+                </div>
+            </div>
+        </a>
+
+        <div class="btnArrow" id="jumbotronNext">
+            <i class="fas fa-angle-right"></i>
+        </div>
+        <div class="btnArrow" id="jumbotronPre">
+            <i class="fas fa-angle-left"></i>
+        </div>
+    </div>
+    <!-- 最新訊息 -->
+    <div class="container-news">
+            <div class="news">
+                <div class="btnNewsBlock">
+                    <div class="btn-news" id="is-active" title="新聞稿" onclick="getBlock(0)">新聞稿</div>
+                    <div class="btn-news" title="電子公布欄" onclick="getBlock(1)">最新消息</div>
+                    <div class="btn-news" title="獎勵檢舉" onclick="getBlock(2)">獎勵檢舉</div>
+                    <div class="btn-news" title="採購公告" onclick="getBlock(3)">採購公告</div>
+                    <div class="btn-news" title="廉政宣導" onclick="getBlock(4)">廉政宣導</div>
+                </div>
+                <div class="newsBlock">
+                    <!--新聞稿-->
+                    <div class="hot-news-content" id="isActive" value="0">
+                        <ul id="hotNews"></ul>
+                        <ul class="more-news">
+                            <a href="https://www.tpk.moj.gov.tw/np.asp?ctNode=35868&mp=030" title="更多新聞稿">
+                                <i class="fas fa-plus-circle plus"></i>更多新聞稿</a>
+                        </ul>
+                    </div>
+                    <!--最新消息-->
+                    <div class="hot-news-content" value="1">
+                        <ul id="news"></ul>
+                        <ul class="more-news">
+                            <a href="https://www.tpk.moj.gov.tw/np.asp?ctNode=35869&mp=030" title="更多訊息">
+                                <i class="fas fa-plus-circle plus"></i>更多最新消息</a>
+                        </ul>
+                    </div>
+                    <!--獎勵檢舉-->
+                    <div class="hot-news-content" value="2">
+                        <ul id="report"></ul>
+                        <ul class="more-news">
+                            <a href="https://www.tpk.moj.gov.tw/np.asp?ctNode=42805&mp=030" title="更多獎勵檢舉公告">
+                                <i class="fas fa-plus-circle plus"></i>更多獎勵檢舉公告</a>
+                        </ul>
+                    </div>
+                    <!--採購公告 -->
+                    <div class="hot-news-content" value="3">
+                        <ul id="announcement"></ul>
+                        <ul class="more-news">
+                            <a href="https://www.tpk.moj.gov.tw/np.asp?ctNode=42803&mp=030" title="更多採購公告">
+                                <i class="fas fa-plus-circle plus"></i>更多採購公告</a>
+                        </ul>
+                    </div>
+                    <!--廉政宣導-->
+                    <div class="hot-news-content" value="4">
+                        <ul id="propaganda"></ul>
+                        <ul class="more-news">
+                            <a href="https://www.tpk.moj.gov.tw/np.asp?ctNode=21646&mp=030" title="更多廉政宣導">
+                                <i class="fas fa-plus-circle plus"></i>更多廉政宣導</a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 為民服務專區 -->
+            <div class="for-people-container">
+                <!--名稱 -->
+                <div class="for-people-container-name">為民服務專區</div>
+                <!--按鈕 -->
+                <div class="for-people-container-box">
+                    <div class="for-people-box-top">
+                        <!--1地理位置-->
+                        <div class="area">
+                            <a title="地理位置" href="https://www.tpk.moj.gov.tw/ct.asp?xItem=2111&CtNode=21620&mp=030" target="_blank">
+                                <div class="image-box-left">
+                                    <svg id="Location" data-name="Location" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+                                        <title>右邊廣告 拷貝</title>
+                                        <g>
+                                            <path d="M25.19,54a22.44,22.44,0,1,1,31.74,0L41.06,69.86ZM40.71,27.82a9.36,9.36,0,1,0,9.36,9.35A9.36,9.36,0,0,0,40.71,27.82Z"
+                                                style="fill:#f05d4b" />
+                                            <path d="M56.62,19.82h0a23.52,23.52,0,0,0-33.24,0h0a23.52,23.52,0,0,0,0,33.24L40,69.67,56.62,53.06A23.52,23.52,0,0,0,56.62,19.82ZM40,43.49a7.64,7.64,0,1,1,7.64-7.64A7.64,7.64,0,0,1,40,43.49Z"
+                                                style="fill:none;stroke:#555e65;stroke-miterlimit:10;stroke-width:2px" />
+                                        </g>
+                                    </svg>
+                                </div>
+                                <span>地理位置</span>
+                            </a>
+                        </div>
+                        <!--1關懷公益-->
+                        <div class="area">
+                            <a title="關懷公益" href="https://www.tpk.moj.gov.tw/lp.asp?ctNode=40394&CtUnit=16142&BaseDSD=7&mp=030" target="_blank">
+                                <div class="image-box-center">
+                                    <svg id="Heart" data-name="Heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+                                        <title>右邊廣告 拷貝</title>
+                                        <g>
+                                            <path d="M41.19,66.43c-2.81-1.17-14.32-6.29-21.68-14.85-6.72-7.82-8.88-17.08-5.63-24.16a14.15,14.15,0,0,1,13.23-8.28h.2c7.42.08,12.3,7.38,12.34,7.45l1.54,2.54,1.54-2.54c.05-.08,4.92-7.37,12.35-7.45h.19a14.15,14.15,0,0,1,13.24,8.28c3.25,7.08,1.09,16.34-5.64,24.16C55.52,60.14,44,65.26,41.19,66.43Z"
+                                                style="fill:#f05d4b" />
+                                            <path d="M53.59,16.55c-7.83.09-13,7.21-13.59,8.15-.57-.94-5.76-8.06-13.59-8.15-15.32-.17-23.14,18.25-9,34.71C26,61.3,40,66.57,40,66.57S54,61.3,62.59,51.26C76.73,34.8,68.91,16.38,53.59,16.55Z"
+                                                style="fill:none;stroke:#555e65;stroke-miterlimit:10;stroke-width:2px" />
+                                        </g>
+                                    </svg>
+                                </div>
+                                <span>關懷公益</span>
+                            </a>
+                        </div>
+                        <!--3民意信箱-->
+                        <div class="area">
+                            <a title="民意信箱" href="https://www.tpk.moj.gov.tw/ct.asp?xItem=401727&CtNode=41129&mp=030" target="_blank">
+                                <div class="image-box-right">
+                                    <svg id="Mail" data-name="Mail" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+                                        <title>右邊廣告 拷貝</title>
+                                        <g>
+                                            <polygon points="64.87 36.87 15.5 36.87 15.5 32.36 40.18 18.92 64.87 32.36 64.87 36.87" style="fill:#fff" />
+                                            <polygon points="17.4 36.24 17.4 33.14 41.45 20.08 65.5 33.14 65.5 36.24 17.4 36.24" style="fill:#c2e7f7" />
+                                            <polygon points="64.87 36.87 15.5 36.87 15.5 32.36 40.18 18.92 64.87 32.36 64.87 36.87" style="fill:none;stroke:#555e65;stroke-miterlimit:10;stroke-width:2px"
+                                            />
+                                            <rect x="18.66" y="23.58" width="42.41" height="28.48" rx="4" ry="4" style="fill:#fff" />
+                                            <rect x="20.56" y="25.48" width="41.14" height="26.58" rx="2" ry="2" style="fill:#faf7de" />
+                                            <rect x="18.66" y="23.58" width="42.41" height="28.48" rx="4" ry="4" style="fill:none;stroke:#555e65;stroke-miterlimit:10;stroke-width:2px"
+                                            />
+                                            <polygon points="18.95 36.87 64.87 61.37 64.87 64.72 15.5 64.72 15.5 36.87 18.95 36.87" style="fill:#fff" />
+                                            <polygon points="17.4 64.72 64.87 64.72 64.87 63.37 19.84 38.77 17.4 38.77 17.4 64.72" style="fill:#c2e7f7" />
+                                            <polygon points="18.95 36.87 64.87 61.37 64.87 64.72 15.5 64.72 15.5 36.87 18.95 36.87" style="fill:none;stroke:#555e65;stroke-miterlimit:10;stroke-width:2px"
+                                            />
+                                            <polygon points="61.41 36.87 15.5 61.37 15.5 64.72 64.87 64.72 64.87 36.87 61.41 36.87" style="fill:#fff" />
+                                            <polygon points="64.87 64.72 16.77 64.72 16.77 63.02 61.94 38.77 64.87 38.77 64.87 64.72" style="fill:#c2e7f7" />
+                                            <polygon points="61.41 36.87 15.5 61.37 15.5 64.72 64.87 64.72 64.87 36.87 61.41 36.87" style="fill:none;stroke:#555e65;stroke-miterlimit:10;stroke-width:2px"
+                                            />
+                                            <line x1="44.65" y1="50.44" x2="61.02" y2="59.25" style="fill:none;stroke:#555e65;stroke-miterlimit:10;stroke-width:2px"
+                                            />
+                                            <line x1="31.32" y1="32.44" x2="38.92" y2="32.44" style="fill:none;stroke:#555e65;stroke-miterlimit:10;stroke-width:2px"
+                                            />
+                                            <line x1="31.32" y1="36.87" x2="49.68" y2="36.87" style="fill:none;stroke:#555e65;stroke-miterlimit:10;stroke-width:2px"
+                                            />
+                                        </g>
+                                    </svg>
+                                </div>
+                                <span>民意信箱</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="for-people-box-center-1">
+                        <!--4 123聯合拍賣-->
+                        <div class="area">
+                            <a title="聯合拍賣" href="https://www.tpk.moj.gov.tw/ct.asp?xItem=52378&CtNode=14925&mp=030" target="_blank">
+                                <div class="image-box-left">
+                                    <svg id="auction" data-name="auction" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                        <title>gavel</title>
+                                        <path d="M51.06,55.6C59.71,66.35,72.3,80.51,73.7,81.91a5.75,5.75,0,0,0,8.13-8.13c-1.4-1.4-15.56-14.08-26.31-22.64-.7.78-1.49,1.57-2.19,2.27s-1.49,1.49-2.27,2.19M17.84,44.14l-.18.18a4.17,4.17,0,0,0,0,5.94L36.2,68.8a4.17,4.17,0,0,0,5.94,0l.18-.18a4.17,4.17,0,0,0,0-5.94L23.78,44.14a4.16,4.16,0,0,0-5.94,0M50.27,17.66,68.8,36.19a4.17,4.17,0,0,1,0,5.94l-.17.18a4.18,4.18,0,0,1-5.95,0L44.15,23.78a4.18,4.18,0,0,1,0-6l.18-.17a4.16,4.16,0,0,1,5.94,0"
+                                            style="fill:#7c6335" />
+                                        <path d="M44.24,23.86l-.09-.08A74.74,74.74,0,0,0,33.05,33a80.43,80.43,0,0,0-9.27,11.1l.09.09L42.23,62.59l.09.09a76,76,0,0,0,11.1-9.27,79.62,79.62,0,0,0,9.26-11.1l-.08-.09Z"
+                                            style="fill:#f9da58" />
+                                        <path d="M49.22,18.62,67.75,37.15a2.76,2.76,0,0,1,0,3.93l-.17.18a2.84,2.84,0,0,1-3.93,0l-.09-.09L45.2,22.81l-.09-.08h0a2.75,2.75,0,0,1-.78-1.93,3.13,3.13,0,0,1,1-2.18,2.84,2.84,0,0,1,3.93,0ZM55.69,53c10.67,8.57,23.87,20.37,25.18,21.77A4.39,4.39,0,0,1,74.66,81c-1.4-1.4-13.2-14.51-21.77-25.18.44-.44,1-.87,1.4-1.4a18.48,18.48,0,0,0,1.4-1.4ZM25.62,44A80.62,80.62,0,0,1,34,34a74.18,74.18,0,0,1,10-8.39L60.85,42.48a81.51,81.51,0,0,1-8.39,10,73.45,73.45,0,0,1-10,8.39Zm15.65,23.6-.18.18a2.84,2.84,0,0,1-3.93,0L18.62,49.21a2.71,2.71,0,0,1-.78-1.92,3.11,3.11,0,0,1,1-2.18,2.69,2.69,0,0,1,3.93,0l.09.08L41.27,63.64h0a2.7,2.7,0,0,1,0,3.93ZM43.1,16.78a5.7,5.7,0,0,0-1,6.65A82.9,82.9,0,0,0,32,32a77.72,77.72,0,0,0-8.57,10.14,5.74,5.74,0,0,0-6.73,9.1L35.15,69.76a5.65,5.65,0,0,0,8,0l.18-.18a5.37,5.37,0,0,0,1.66-3.93,5.55,5.55,0,0,0-.7-2.62c2.27-1.66,4.54-3.41,6.73-5.34,8.57,10.58,20.46,23.78,21.77,25.18A7.17,7.17,0,0,0,82.88,72.73c-1.4-1.31-14.6-13.2-25.27-21.85A74.69,74.69,0,0,0,63,44.14a5.58,5.58,0,0,0,6.64-1l.17-.17a5.47,5.47,0,0,0,0-7.87L51.23,16.61a5.87,5.87,0,0,0-8.13.17Z"
+                                        />
+                                        <path d="M54.55,50.09l-1.22,1.22a1.21,1.21,0,0,0-.35,1,1,1,0,0,0,.52,1C64,61.8,76.76,73.25,78.16,74.65a4.49,4.49,0,0,1,0,6.21,4.32,4.32,0,0,1-2,1.14,1.41,1.41,0,0,0-1.05,1.4,1.31,1.31,0,0,0,1.05,1.31A7.26,7.26,0,0,0,83,82.87a7.18,7.18,0,0,0,2.1-5.07A6.86,6.86,0,0,0,83,72.73C81.48,71.33,67.32,58.66,56.48,50a1.38,1.38,0,0,0-1.93.09"
+                                            style="opacity:0.23999999463558197;isolation:isolate" />
+                                    </svg>
+                                </div>
+                                <span>聯合拍賣</span>
+                            </a>
+                        </div>
+                        <!--5就業資訊-->
+                        <div class="area">
+                            <a title="就業資訊" href="https://www.tpk.moj.gov.tw/lp.asp?CtNode=35880&CtUnit=7841&BaseDSD=7&mp=030" target="_blank">
+                                <div class="image-box-center">
+                                    <svg id="job" data-name="job" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                        <title>briefcase-2</title>
+                                        <g>
+                                            <g id="Fill">
+                                                <rect x="13.02" y="34.91" width="73.96" height="43.77" rx="3.02" ry="3.02" style="fill:#fff" />
+                                            </g>
+                                            <g id="Red">
+                                                <path d="M60.57,21.32H39.43a3,3,0,0,0-3,3v7.55h3V24.34H60.57v7.55h3V24.34A3,3,0,0,0,60.57,21.32Z" style="fill:#ee6a56" />
+                                            </g>
+                                            <g id="Yellow">
+                                                <path d="M56,54.53v2.26H44V54.53H13V75.66a3,3,0,0,0,3,3H84a3,3,0,0,0,3-3V54.53Z" style="fill:#ffc868" />
+                                            </g>
+                                            <g id="Inner_Lines" data-name="Inner Lines" style="opacity:0.15000000596046448">
+                                                <path d="M16,68.87a.76.76,0,0,0-.76-.76H13v1.51h2.26A.76.76,0,0,0,16,68.87Zm-1.51-3a.76.76,0,0,0-.76-.76H13V66.6h.75A.75.75,0,0,0,14.53,65.85Zm2.26,5.28H13v1.51h3.77a.76.76,0,1,0,0-1.51Zm66.42-31.7a.76.76,0,0,0-.76.76.75.75,0,0,0,.76.75H87V39.43ZM84,43.21a.76.76,0,0,0,.76.75H87V42.45H84.72A.76.76,0,0,0,84,43.21Zm1.51,3a.76.76,0,0,0,.76.75H87V45.47h-.75A.76.76,0,0,0,85.47,46.23Z"
+                                                />
+                                            </g>
+                                            <g id="Shadows" style="opacity:0.10000000149011612">
+                                                <path d="M42.45,59.81A1.52,1.52,0,0,0,44,61.32H56a1.52,1.52,0,0,0,1.51-1.51v-3A1.51,1.51,0,0,1,56,58.3H44a1.51,1.51,0,0,1-1.51-1.51Zm0-5.28H13V56H42.45ZM56,55.28H44v1.51H56Zm1.51-.75V56H87V54.53ZM84,77.17H16a3,3,0,0,1-3-3v1.51a3,3,0,0,0,3,3H84a3,3,0,0,0,3-3V74.15A3,3,0,0,1,84,77.17Z"
+                                                />
+                                            </g>
+                                            <g id="Outline">
+                                                <path d="M84,31.89H66.6V24.34a6,6,0,0,0-6-6H39.43a6,6,0,0,0-6,6v7.55H16a6,6,0,0,0-6,6V75.66a6,6,0,0,0,6,6H84a6,6,0,0,0,6-6V37.92A6,6,0,0,0,84,31.89ZM36.42,24.34a3,3,0,0,1,3-3H60.57a3,3,0,0,1,3,3v7.55h-3V24.34H39.43v7.55h-3Zm21.13,3v4.53H42.45V27.36ZM87,75.66a3,3,0,0,1-3,3H16a3,3,0,0,1-3-3V54.53H42.45v2.26A1.51,1.51,0,0,0,44,58.3H56a1.51,1.51,0,0,0,1.51-1.51V54.53H87ZM44,56.79V49.25h1.51v7.54Zm3,0V49.25h6v7.54Zm7.55,0V49.25H56v7.54ZM87,51.51H57.55V49.25A1.51,1.51,0,0,0,56,47.74H44a1.51,1.51,0,0,0-1.51,1.51v2.26H13V37.92a3,3,0,0,1,3-3H84a3,3,0,0,1,3,3Z"
+                                                    style="fill:#171c1f" />
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <span>就業資訊</span>
+                            </a>
+                        </div>
+                        <!--6分署轄區-->
+                        <div class="area">
+                            <a title="分署轄區" href="https://www.tpk.moj.gov.tw/np.asp?ctNode=16569&mp=030" target="_blank">
+                                <div class="image-box-right">
+                                    <svg id="Compass" data-name="Compass" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                        <title>compass</title>
+                                        <g>
+                                            <g id="Fill">
+                                                <path d="M55,22.24a6.09,6.09,0,1,0-10.06,0,33.47,33.47,0,1,0,10.06,0Zm-5-2.67a.76.76,0,1,1,.76-.76A.76.76,0,0,1,50,19.57Z"
+                                                    style="fill:#fff" />
+                                            </g>
+                                            <g id="Blue">
+                                                <circle cx="50" cy="55.33" r="26.62" style="fill:#70cbf6" />
+                                            </g>
+                                            <g id="Black">
+                                                <path d="M44.86,49.41l-.41.41-.36.37c-2.35,2.35-4.7,11.56-5.84,16.89,5.33-1.13,14.57-3.49,16.91-5.83l.46-.48.3-.3c2.34-2.34,4.69-11.56,5.82-16.89C56.43,44.68,47.19,47.07,44.86,49.41Z"
+                                                    style="fill:#171c1f" />
+                                            </g>
+                                            <g id="Red">
+                                                <path d="M45.94,50.19l9.21,9.21c1.4-1.59,3.31-7.08,5-14.17C53,46.88,47.53,48.79,45.94,50.19Z"
+                                                    style="fill:#ff7575" />
+                                            </g>
+                                            <g id="White">
+                                                <path d="M44.86,51.27c-1.4,1.61-3.31,7.08-5,14.15,7.06-1.64,12.54-3.54,14.16-4.94Z"
+                                                    style="fill:#fff" />
+                                            </g>
+                                            <g id="Shadows" style="opacity:0.10000000149011612">
+                                                <path d="M55.62,60.77l-.46.48c-2.28,2.28-11,4.56-16.37,5.71-.2.85-.39,1.66-.54,2.39,5.32-1.13,14.56-3.49,16.91-5.83l.45-.47.3-.31c2.34-2.34,4.69-11.56,5.82-16.88l-.54.11C60,51.3,57.92,58.44,55.87,60.42ZM50,32.51A25.87,25.87,0,0,1,75.82,56.85c0-.5,0-1,0-1.52a25.87,25.87,0,1,0-51.73,0c0,.51,0,1,.05,1.52A25.86,25.86,0,0,1,50,32.51ZM82,54.57a31.95,31.95,0,0,1-63.9,0v.76a31.95,31.95,0,0,0,63.9,0Z"
+                                                />
+                                            </g>
+                                            <g id="Inner_Lines" data-name="Inner Lines" style="opacity:0.25">
+                                                <path d="M50,73.58a.76.76,0,0,0-.76.76v1.53a.76.76,0,0,0,1.52,0V74.34A.76.76,0,0,0,50,73.58Zm-19-19H29.46a.76.76,0,1,0,0,1.52H31a.76.76,0,1,0,0-1.52Zm5-14.3a.76.76,0,0,0-1.08.08.77.77,0,0,0,0,1L36,42.4a.76.76,0,0,0,1-.24.79.79,0,0,0,0-.81ZM50,34a.76.76,0,0,0-.76.76v1.52a.76.76,0,0,0,1.52,0V34.79A.76.76,0,0,0,50,34ZM70.54,54.57H69a.76.76,0,0,0,0,1.52h1.53a.76.76,0,1,0,0-1.52ZM64,68.26a.76.76,0,1,0-1.29.81.69.69,0,0,0,.24.24L64,70.38a.76.76,0,0,0,1.07-.08.75.75,0,0,0,0-1Z"
+                                                    style="fill:#171c1f" />
+                                            </g>
+                                            <g id="Outline">
+                                                <path d="M58.74,21.44a9.13,9.13,0,1,0-17.5,0,35,35,0,1,0,17.5,0ZM50,87.28a31.95,31.95,0,0,1-3.74-63.67,6.08,6.08,0,1,1,8.54-1.05,6.52,6.52,0,0,1-1,1.05A31.95,31.95,0,0,1,50,87.28Zm0-59.34A27.39,27.39,0,1,0,77.38,55.33,27.39,27.39,0,0,0,50,27.94Zm0,53.25A25.87,25.87,0,1,1,75.86,55.33,25.86,25.86,0,0,1,50,81.19Zm0-59.33a3,3,0,1,0-3-3.05A3,3,0,0,0,50,21.86Zm0-3.81a.76.76,0,1,1-.76.76A.76.76,0,0,1,50,18.05Z"
+                                                    style="fill:#171c1f" />
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <span>分署轄區</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="for-people-box-center-2">
+                        <!--7常見問題-->
+                        <div class="area">
+                            <a title="常見問題" href="https://www.tpk.moj.gov.tw/np.asp?ctNode=11264&mp=030" target="_blank">
+                                <div class="image-box-left">
+                                    <svg id="Chat" data-name="Chat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+                                        <title>右邊廣告 拷貝</title>
+                                        <g>
+                                            <path d="M40.36,64A23.63,23.63,0,1,1,59.77,53.86l-.41.58,2.48,6.82a.4.4,0,0,1-.05.41.46.46,0,0,1-.37.2h0a.45.45,0,0,1-.16,0l-6.82-2.48-.58.41A23.5,23.5,0,0,1,40.36,64Z"
+                                                style="fill:#d8eac6" />
+                                            <path d="M59.52,53.27a25,25,0,1,0-6.25,6.25l6.16,2.24a1.82,1.82,0,0,0,2.33-2.33Z" style="fill:none;stroke:#555e65;stroke-miterlimit:10;stroke-width:2px"
+                                            />
+                                            <circle cx="39.91" cy="39.91" r="1.82" style="fill:#fff" />
+                                            <circle cx="30.82" cy="39.91" r="1.82" style="fill:#fff" />
+                                            <circle cx="49" cy="39.91" r="1.82" style="fill:#fff" />
+                                            <circle cx="39" cy="39" r="1.82" style="fill:#555e65" />
+                                            <circle cx="29.91" cy="39" r="1.82" style="fill:#555e65" />
+                                            <circle cx="48.09" cy="39" r="1.82" style="fill:#555e65" />
+                                        </g>
+                                    </svg>
+                                </div>
+                                <span>常見問題</span>
+                            </a>
+                        </div>
+                        <!--8民眾申辦事項-->
+                        <div class="area">
+                            <a title="民眾申辦事項" href="https://www.moj.gov.tw/np-16-001.html" target="_blank">
+                                <div class="image-box-center">
+                                    <svg id="clipboard" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                        <title>clipboard</title>
+                                        <rect x="22.5" y="19.56" width="55" height="66.55" style="fill:#faf7de;stroke:#103e68;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px"
+                                        />
+                                        <rect x="38.45" y="13.79" width="23.19" height="11.55" style="fill:#fff;stroke:#103e68;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px"
+                                        />
+                                        <line x1="45.69" y1="41.29" x2="67.33" y2="41.29" style="fill:none;stroke:#103e68;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px"
+                                        />
+                                        <line x1="45.69" y1="55.77" x2="67.33" y2="55.77" style="fill:none;stroke:#103e68;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px"
+                                        />
+                                        <line x1="45.69" y1="70.25" x2="67.33" y2="70.25" style="fill:none;stroke:#103e68;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px"
+                                        />
+                                        <line x1="32.68" y1="41.29" x2="35.52" y2="41.29" style="fill:none;stroke:#103e68;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px"
+                                        />
+                                        <line x1="32.68" y1="55.77" x2="35.52" y2="55.77" style="fill:none;stroke:#103e68;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px"
+                                        />
+                                        <line x1="32.68" y1="70.25" x2="35.52" y2="70.25" style="fill:none;stroke:#103e68;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px"
+                                        />
+                                    </svg>
+                                </div>
+                                <span>申辦事項</span>
+                            </a>
+                        </div>
+                        <!--9檔案應用-->
+                        <div class="area">
+                            <a title="檔案應用" href="https://www.tpk.moj.gov.tw/np.asp?ctNode=40587&mp=030" target="_blank">
+                                <div class="image-box-right">
+                                    <svg id="folder" data-name="folder" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                        <title>folder</title>
+                                        <g id="Inner_Lines_1" data-name="Inner Lines 1">
+                                            <path d="M75,60.5,71,23.75a1.32,1.32,0,0,0-1.49-1.14h0L38,26.11a1.3,1.3,0,0,0-1.13,1.49h0L41,64.35a1.31,1.31,0,0,0,1.49,1.14h0L74,62a1.31,1.31,0,0,0,1-1.49ZM42.21,64.17,38.1,27.42l31.5-3.5,4.2,36.75Z"
+                                                style="fill:#171c1f" />
+                                        </g>
+                                        <g id="White">
+                                            <rect x="40.12" y="25.58" width="31.67" height="37.01" transform="translate(-4.54 6.47) rotate(-6.36)"
+                                                style="fill:#fff" />
+                                        </g>
+                                        <g id="Inner_Lines_3" data-name="Inner Lines 3">
+                                            <path d="M79.84,28.82,48.25,26.37a1.3,1.3,0,0,0-1.4,1.23l-2.8,36.92a1.28,1.28,0,0,0,1.23,1.4h0l31.58,2.45a1.29,1.29,0,0,0,1.4-1.22L81,30.22A1.18,1.18,0,0,0,79.84,28.82ZM77,67,45.36,64.61l2.8-36.83,31.59,2.36Z"
+                                                style="fill:#171c1f" />
+                                        </g>
+                                        <g id="White-2">
+                                            <rect x="44.27" y="31.5" width="37.1" height="31.76" transform="translate(10.58 106.22) rotate(-85.43)"
+                                                style="fill:#fff" />
+                                        </g>
+                                        <g id="Fill">
+                                            <path d="M82.38,31.54H63.21C58,31.54,42.74,21,37.49,21H17.62A2.63,2.63,0,0,0,15,23.57V76.42a2.63,2.63,0,0,0,2.62,2.63H82.38A2.64,2.64,0,0,0,85,76.42V34.16A2.64,2.64,0,0,0,82.38,31.54Z"
+                                                style="fill:#c2e7f7" />
+                                        </g>
+                                        <g id="Shadows" style="opacity:0.10000000149011612">
+                                            <rect x="17.63" y="69.77" width="64.75" height="3.94" />
+                                        </g>
+                                        <g id="Inner_Lines_4" data-name="Inner Lines 4" style="opacity:0.25">
+                                            <rect x="17.63" y="69.77" width="64.75" height="1.31" style="fill:#171c1f" />
+                                        </g>
+                                        <g id="Outline">
+                                            <path d="M82.38,31.54H63.21C58,31.54,42.74,21,37.49,21H17.62A2.63,2.63,0,0,0,15,23.57V76.42a2.63,2.63,0,0,0,2.62,2.63H82.38A2.64,2.64,0,0,0,85,76.42V34.16A2.64,2.64,0,0,0,82.38,31.54Zm0,44.88H17.62V23.57H37.4c2,0,7.61,2.89,11.64,5,6.73,3.5,11,5.6,14.08,5.6H82.38Z"
+                                                style="fill:#171c1f" />
+                                        </g>
+                                    </svg>
+                                </div>
+                                <span>檔案應用</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="for-people-box-bottom">
+                        <!--10影音專區-->
+                        <div class="area">
+                            <a title="影音專區" href="https://www.tpk.moj.gov.tw/np.asp?ctNode=42774&mp=030" target="_blank">
+                                <div class="image-box-left">
+                                    <svg id="youtube" data-name="youtube" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                        <title>youtube</title>
+                                        <path d="M15,47.22a106,106,0,0,1,.7-11.33s.68-4.82,2.78-6.95c2.66-2.78,6.16-2.7,7.72-3,5.6-.54,23.8-.7,23.8-.7s14.71,0,24.5.73a10,10,0,0,1,7,3c2.1,2.13,2.78,7,2.78,7A105.76,105.76,0,0,1,85,47.22v5.51a105.76,105.76,0,0,1-.7,11.33s-.68,4.82-2.78,7a10,10,0,0,1-7,3c-9.79.71-24.5.73-24.5.73s-18.2-.16-23.8-.7c-1.56-.29-5.06-.21-7.72-3-2.1-2.13-2.78-7-2.78-7A105.76,105.76,0,0,1,15,52.73Z"
+                                            style="fill:red" />
+                                        <polygon points="42.77 59.16 42.77 39.5 61.69 49.36 42.79 59.16 42.77 59.16" style="fill:#fff"
+                                        />
+                                    </svg>
+                                </div>
+                                <span>影音專區</span>
+                            </a>
+                        </div>
+                        <!--11臉書專區-->
+                        <div class="area">
+                            <a title="臉書專區" href="https://www.facebook.com/MOJaEa/?ref=br_rs" target="_blank">
+                                <div class="image-box-center">
+                                    <svg id="facebook" data-name="facebook" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                        <title>facebook</title>
+                                        <path d="M80.3,14.2H18.1a3.9,3.9,0,0,0-3.9,3.9V80.4a3.9,3.9,0,0,0,3.9,3.9H51.6V57.1H42.5V46.5h9.1V38.7c0-9,5.5-14,13.6-14,3.9,0,7.2.3,8.2.4v9.4H67.8c-4.4,0-5.2,2.1-5.2,5.2v6.7H73.1L71.7,57H62.6V84.1H80.4a3.9,3.9,0,0,0,3.9-3.9V18a4,4,0,0,0-4-3.8"
+                                            style="fill:#3b5998" />
+                                    </svg>
+                                </div>
+                                <span>臉書專區</span>
+                            </a>
+                        </div>
+                        <!--12網路相簿-->
+                        <div class="area">
+                            <a title="網路相簿" href="https://www.flickr.com/photos/148399646@N06/albums/with/72157681065759686" target="_blank">
+                                <div class="image-box-right">
+                                    <svg id="flickr" data-name="flickr" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+                                        <title>右邊廣告 拷貝</title>
+                                        <circle cx="34.64" cy="36.14" r="6.94" style="fill:#0063dc" />
+                                        <rect x="14.5" y="14.61" width="50" height="50" rx="4.31" ry="4.31" style="fill:none;stroke:#999;stroke-miterlimit:10" />
+                                        <circle cx="45.75" cy="36.14" r="6.94" style="fill:#ff0084" />
+                                        <text transform="translate(26.1 57.23)" style="font-size:12.5px;fill:#0063dc;stroke:#0063dc;stroke-miterlimit:10;stroke-width:0.25px;font-family:LiHeiPro, LiHei Pro">flick
+                                            <tspan x="23.86" y="0" style="fill:#ff0084;stroke:#ff0084">r</tspan>
+                                        </text>
+                                        <text transform="translate(54.57 51.93)" style="font-size:2.0833332538604736px;fill:#ff0084;font-family:LiHeiPro, LiHei Pro">TM</text>
+                                    </svg>
+                                </div>
+                                <span>網路相簿</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <!-- 常用服務熱區-->
+    <div class="main-box-service wow fadeIn" data-wow-duration="1s" data-wow-delay="0.7s">
+        <!--名稱-->
+        <!--圖示-->
+        <div class="main-box-image">
+            <div class="title-box colorRed">常用服務熱區</div>
+        </div>
+        <!--按鈕-->
+        <div class="main-box-btn">
+            <!--區塊1-->
+            <div class="main-box-btn-first">
+                <!--機關導覽-->
+                <div class="box">
+                    <a title="機關導覽" target="_blank" href="https://www.tpk.moj.gov.tw/ct.asp?xItem=2111&amp;CtNode=21620&amp;mp=030">
+                        <div class="box-inner-image">
+                            <i class="fas fa-search-plus font color-1 color-6"></i>
+                        </div>
+                        <div class="box-inner-text">
+                            <div class="text">機關導覽</div>
+                        </div>
+                    </a>
+                </div>
+                <!--執行大事記-->
+                <div class="box">
+                    <a title="執行大事記" target="_blank" href="https://goo.gl/GXEXD8">
+                        <div class="box-inner-image">
+                            <i class="far fa-edit font color-2 color-6"></i>
+                        </div>
+                        <div class="box-inner-text">
+                            <div class="text">執行大事記</div>
+                        </div>
+                    </a>
+                </div>
+                <!--線上檔案展-->
+                <div class="box">
+                    <a title="線上檔案展" target="_blank" href="https://tpki.github.io/online_exhibition/">
+                        <div class="box-inner-image">
+                            <i class="far fa-folder-open font color-3 color-6"></i>
+                        </div>
+                        <div class="box-inner-text">
+                            <div class="text">線上檔案展</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="box">
+                    <!--執行出版品-->
+                    <a title="執行出版品" target="_blank" href="https://www.tpk.moj.gov.tw/np.asp?ctNode=42789&mp=030">
+                        <div class="box-inner-image">
+                            <i class="fas fa-balance-scale font color-4 color-6"></i>
+                        </div>
+                        <div class="box-inner-text">
+                            <div class="text">執行出版品</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="box">
+                    <!--統計視覺化-->
+                    <a title="電子繳款" target="_blank" href="http://www.iv.moj.gov.tw/tpk/">
+                        <div class="box-inner-image">
+                            <i class="fab fa-cc-amazon-pay font color-5 color-6"></i>
+                        </div>
+                        <div class="box-inner-text">
+                            <div class="text">電子繳款</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- 第二區塊 -->
+            <div class="main-box-btn-second">
+                <!-- 重大政策 -->
+                <div class="box">
+                    <a title="重大政策" target="_blank" href="https://www.tpk.moj.gov.tw/np.asp?ctNode=42729&mp=030">
+                        <div class="box-inner-image">
+                            <i class="far fa-lightbulb font color-5 color-6"></i>
+                        </div>
+                        <div class="box-inner-text">
+                            <div class="text">重大政策</div>
+                        </div>
+                    </a>
+                    <!-- 活動花絮 -->
+                </div>
+                <div class="box">
+                    <a title="活動花絮" target="_blank" href="https://www.tpk.moj.gov.tw/lp.asp?ctNode=24623&amp;CtUnit=5190&amp;BaseDSD=7&amp;mp=030">
+                        <div class="box-inner-image">
+                            <i class="fas fa-bullhorn font color-4 color-6"></i>
+                        </div>
+                        <div class="box-inner-text">
+                            <div class="text">活動花絮</div>
+                        </div>
+                    </a>
+                </div>
+                <!-- 法令規章 -->
+                <div class="box">
+                    <a title="法令規章" target="_blank" href="https://www.tpk.moj.gov.tw/np.asp?ctNode=42785&mp=030">
+                        <div class="box-inner-image">
+                            <i class="far fa-flag font color-3 color-6"></i>
+                        </div>
+                        <div class="box-inner-text">
+                            <div class="text">法令規章</div>
+                        </div>
+                    </a>
+                </div>
+                <!-- 資料交換平台 -->
+                <div class="box">
+                    <a title="資料交換平台" target="_blank" href="https://www.tpk.moj.gov.tw/lp.asp?ctNode=39506&CtUnit=15790&BaseDSD=7&mp=030">
+                        <div class="box-inner-image">
+                            <i class="fas fa-laptop  font color-2 color-6"></i>
+                        </div>
+                        <div class="box-inner-text">
+                            <div class="text">資料交換平台</div>
+                        </div>
+                    </a>
+                </div>
+                <!--移送書表下載 -->
+                <div class="box">
+                    <a title="移送書表下載" target="_blank" href="https://www.tpk.moj.gov.tw/ct.asp?xItem=254587&amp;CtNode=15581&amp;mp=030">
+                        <div class="box-inner-image">
+                            <i class="far fa-arrow-alt-circle-down font color-1 color-6"></i>
+                        </div>
+                        <div class="box-inner-text">
+                            <div class="text">移送書表下載</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- 第三區塊 -->
+            <div class="main-box-btn-second">
+                <!-- 行政執行開放資料 -->
+                <div class="box">
+                    <a title="行政執行開放資料" target="_blank" href="https://www.tpk.moj.gov.tw/np.asp?ctNode=42729&mp=030">
+                        <div class="box-inner-image">
+                            <i class="fas fa-database font color-5 color-6"></i>
+                        </div>
+                        <div class="box-inner-text">
+                            <div class="text">行政執行開放資料</div>
+                        </div>
+                    </a>
+                    <!-- RSS -->
+                </div>
+                <div class="box">
+                    <a title="RSS" target="_blank" href="https://www.moj.gov.tw/lp-36-001.html">
+                        <div class="box-inner-image">
+                            <i class="fas fa-rss font color-2 color-6"></i>
+                        </div>
+                        <div class="box-inner-text">
+                            <div class="text">RSS</div>
+                        </div>
+                    </a>
+                </div>
+                <!-- 電子報 -->
+                <div class="box">
+                    <a title="法令規章" target="_blank" href="https://www.moj.gov.tw/sp-epap-sform-001.html">
+                        <div class="box-inner-image">
+                            <i class="far fa-newspaper font color-3 color-6"></i>
+                        </div>
+                        <div class="box-inner-text">
+                            <div class="text">訂閱電子報</div>
+                        </div>
+                    </a>
+                </div>
+                <!-- 限制出境查詢 -->
+                <div class="box">
+                    <a title="資料交換平台" target="_blank" href="https://niioa.immigration.gov.tw/NIA_OnlineApply_inter/personVoucher/personVoucherForm.action">
+                        <div class="box-inner-image">
+                            <i class="fas fa-ban font color-4 color-6"></i>
+                        </div>
+                        <div class="box-inner-text">
+                            <div class="text">限制出境查詢</div>
+                        </div>
+                    </a>
+                </div>
+                <!--檢舉信箱 -->
+                <div class="box">
+                    <a title="移送書表下載" target="_blank" href="https://www.tpk.moj.gov.tw/ct.asp?xItem=17340&CtNode=21645&mp=030">
+                        <div class="box-inner-image">
+                            <i class="far fa-envelope  font color-1 color-6"></i>
+                        </div>
+                        <div class="box-inner-text">
+                            <div class="text">檢舉信箱</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--執行績效作為-->
+    <div class="main-box-policy wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
+        <!--名稱-->
+        <!--行政執行績效報告與策進作為-->
+        <div class="main-box-image">
+            <div class="title-box colorYellow">行政執行績效報告與策進作為</div>
+        </div>
+        <!--懶人包-->
+        <div class="main-policy-box wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.8s">
+            <!-- 懶人包 -->
+            <div class="policy-box-video">
+                <div class="policy-video">
+                    <iframe src="https://www.youtube.com/embed/BAGaKKCHukg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="policy-box-content wow fadeInRight" data-wow-duration="1s" data-wow-delay="1s">
+                <div class="policy-content">
+                    <a href="https://tpki.github.io/online_stamp/policy_image/0.jpg" target="_blank">
+                        <img src="https://tpki.github.io/online_stamp/policy_image/0.jpg" alt="懶人包">
+                    </a>
+                    <a href="https://tpki.github.io/online_stamp/policy_image/1.jpg" target="_blank">
+                        <img src="https://tpki.github.io/online_stamp/policy_image/1.jpg" alt="懶人包">
+                    </a>
+                    <a href="https://tpki.github.io/online_stamp/policy_image/2.jpg" target="_blank">
+                        <img src="https://tpki.github.io/online_stamp/policy_image/2.jpg" alt="懶人包">
+                    </a>
+                    <a href="https://tpki.github.io/online_stamp/policy_image/3.jpg" target="_blank">
+                        <img src="https://tpki.github.io/online_stamp/policy_image/3.jpg" alt="懶人包">
+                    </a>
+                    <a href="https://tpki.github.io/online_stamp/policy_image/4.jpg" target="_blank">
+                        <img src="https://tpki.github.io/online_stamp/policy_image/4.jpg" alt="懶人包">
+                    </a>
+                    <a href="https://tpki.github.io/online_stamp/policy_image/5.jpg" target="_blank">
+                        <img src="https://tpki.github.io/online_stamp/policy_image/5.jpg" alt="懶人包">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="policyModal">
+            <span class="policyClose" id="policyClose">&times;</span>
+            <div class="policyTitle">行政執行績效政策與作為懶人包</div>
+            <div class="policyModalImg">
+                <div class="mainPolicyImg">
+                    <img class="policyDisable" id="policyImgActive" src="https://tpki.github.io/online_stamp/policy_image/0.jpg" alt="">
+                    <img class="policyDisable" src="https://tpki.github.io/online_stamp/policy_image/1.jpg" alt="">
+                    <img class="policyDisable" src="https://tpki.github.io/online_stamp/policy_image/2.jpg" alt="">
+                    <img class="policyDisable" src="https://tpki.github.io/online_stamp/policy_image/3.jpg" alt="">
+                    <img class="policyDisable" src="https://tpki.github.io/online_stamp/policy_image/4.jpg" alt="">
+                    <img class="policyDisable" src="https://tpki.github.io/online_stamp/policy_image/5.jpg" alt="">
+                </div>
+                <div class="littlePolicyImg">
+                    <img id="littleImgActive" src="https://tpki.github.io/online_stamp/policy_image/0.jpg" alt="" onclick="changeImg(0)">
+                    <img src="https://tpki.github.io/online_stamp/policy_image/1.jpg" alt="" onclick="changeImg(1)">
+                    <img src="https://tpki.github.io/online_stamp/policy_image/2.jpg" alt="" onclick="changeImg(2)">
+                    <img src="https://tpki.github.io/online_stamp/policy_image/3.jpg" alt="" onclick="changeImg(3)">
+                    <img src="https://tpki.github.io/online_stamp/policy_image/4.jpg" alt="" onclick="changeImg(4)">
+                    <img src="https://tpki.github.io/online_stamp/policy_image/5.jpg" alt="" onclick="changeImg(5)">
+                </div>
+            </div>
+        </div>
+        <!-- 完整報告 -->
+        <div class="more-policy">
+            <a title="在新視窗打開" target="_blank" href="https://tpki.github.io/online_stamp/pdf/policy.pdf">
+                <i class="fas fa-plus-circle more"></i>績效報告與策進作為完整報告內容</a>
+        </div>
+    </div>
+    <!-- 執行業務區塊 -->
+    <div class="main-box-area">
+        <!--行政執行績效報告與策進作為-->
+        <div class="main-box-image">
+            <div class="title-box colorYellow">行政執行績效報告與策進作為</div>
+        </div>
+        <div class="tablink" id="tabActiveColor" onclick="changeTab(0)">執行有愛</div>
+        <div class="tablink" onclick="changeTab(1)">公義無礙</div>
+        <div class="tablink" onclick="changeTab(2)">紀念郵冊</div>
+        <div class="tablink" onclick="changeTab(3)">關懷弱勢案例</div>
+        <div class="tablink" onclick="changeTab(4)">指標性案件</div>
+        <div class="enforcement tabcontent" id="tabActive" value="0">
+            <div class="enforcementCard">
+                <div class="card-img-top">
+                    <img src="../image/業務用圖/change/first-1.jpg" alt="便民有感">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">便民有感</div>
+                    <div class="card-text">
+                        <ul>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try2&sub=convenience/a" title="小額多元繳款">小額多元繳款</a>
+                            </li>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try2&sub=convenience/b" title="逐步擴大適用範圍">逐步擴大適用範圍</a>
+                            </li>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try2&sub=convenience/c" title="實施成效與未來展望">實施成效與未來展望</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="enforcementCard">
+                <div class="card-img-top">
+                    <img src="../image/業務用圖/change/first-2.jpg" alt="從心出發">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">從心出發</div>
+                    <div class="card-text">
+                        <ul>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try5&sub=heartgo/a" title="執行「心」方向">執行「心」方向</a>
+                            </li>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try5&sub=heartgo/b" title="盞盞「心」燈，點亮希望">盞盞「心」燈，點亮希望</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="enforcementCard">
+                <div class="card-img-top">
+                    <img src="../image/業務用圖/change/first-3.jpg" alt="實踐理論">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">實踐理論</div>
+                    <div class="card-text">
+                        <ul>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try6&sub=practice/a" title="提供理論實踐的平台">提供理論實踐的平台</a>
+                            </li>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try6&sub=practice/b" title="法律實習課程之推廣">法律實習課程之推廣</a>
+                            </li>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try6&sub=practice/c" title="師承與薪傳的綿延">師承與薪傳的綿延</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="enforcementCard">
+                <div class="card-img-top">
+                    <img src="../image/業務用圖/change/first-4.jpg" alt="舉報有賞">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">舉報有賞</div>
+                    <div class="card-text">
+                        <ul>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try1&sub=report/a" title="獎勵檢舉制度之緣起">獎勵檢舉制度之緣起</a>
+                            </li>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try1&sub=report/b" title="獎勵檢舉之事項及要件">獎勵檢舉之事項及要件</a>
+                            </li>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try1&sub=report/c" title="獎勵檢舉制度之運作">獎勵檢舉制度之運作</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="enforcementCard">
+                <div class="card-img-top">
+                    <img src="../image/業務用圖/change/first-5.jpg" alt="無紙減碳">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">無紙減碳</div>
+                    <div class="card-text">
+                        <ul>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try3&sub=paperless/a" title="創造多贏的執行命令電子化">創造多贏的執行命令電子化</a>
+                            </li>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try3&sub=paperless/b" title="執行命令電子化推動過程">執行命令電子化推動過程</a>
+                            </li>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try3&sub=paperless/c" title="執行命令電子化之成效與展望">執行命令電子化之成效與展望</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="enforcementCard">
+                <div class="card-img-top">
+                    <img src="../image/業務用圖/change/first-6.jpg" alt="便利閱覽">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">便利閱覽</div>
+                    <div class="card-text">
+                        <ul>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try4&sub=read/a" title="從乙則網路笑話談起">從乙則網路笑話談起</a>
+                            </li>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try4&sub=read/b" title="筆錄的進化">筆錄的進化</a>
+                            </li>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try4&sub=read/c" title="筆錄電腦化的推動">筆錄電腦化的推動</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="justice tabcontent" value="1">
+            <div class="justiceCard">
+                <div class="card-img-top">
+                    <img src="../image/業務用圖/change/second-1.jpg" alt="社會公義">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">社會公義</div>
+                    <div class="card-text">
+                        <ul>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try7&sub=tpk/a" title="行政執行法之立法沿革">行政執行法之立法沿革</a>
+                            </li>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try7&sub=tpk/b" title="強制執行專責機關之設立">強制執行專責機關之設立</a>
+                            </li>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try7&sub=tpk/c" title="行政執行機關之組織">行政執行機關之組織</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="justiceCard">
+                <div class="card-img-top">
+                    <img src="../image/業務用圖/change/second-2.jpg" alt="效能政府">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">效能政府</div>
+                    <div class="card-text">
+                        <ul>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try11&sub=benign/a" title="引進企業化經營理念">引進企業化經營理念</a>
+                            </li>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try11&sub=benign/b" title="效率與親切">效率與親切</a>
+                            </li>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try11&sub=benign/c" title="稽核管考、績效達標">稽核管考、績效達標</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="justiceCard">
+                <div class="card-img-top">
+                    <img src="../image/業務用圖/change/second-3.jpg" alt="嚴打老虎">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">嚴打老虎</div>
+                    <div class="card-text">
+                        <ul>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try9&sub=targer/a">滯欠大戶之強制執行</a>
+                            </li>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try9&sub=targer/b">嚴打老虎─指標性案例範圍</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="justiceCard">
+                <div class="card-img-top">
+                    <img src="../image/業務用圖/change/second-4.jpg" alt="禁止奢華">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">禁止奢華</div>
+                    <div class="card-text">
+                        <ul>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try8&sub=luxurious/a" title="禁奢條款之產生">禁奢條款之產生</a>
+                            </li>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try8&sub=luxurious/b" title="禁奢條款之內涵">禁奢條款之內涵</a>
+                            </li>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try8&sub=luxurious/c" title="奢華生活之檢舉">奢華生活之檢舉</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="justiceCard">
+                <div class="card-img-top">
+                    <img src="../image/業務用圖/change/second-5.jpg" alt="聯手出擊">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">聯手出擊</div>
+                    <div class="card-text">
+                        <ul>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try10&sub=together/a" title="行政一體的跨機關合作">行政一體的跨機關合作</a>
+                            </li>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try10&sub=together/b" title="發揮「1+1>2」的具體作為">發揮「1+1>2」的具體作為</a>
+                            </li>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try10&sub=together/c" title="多元機關參與擴大實施成效">多元機關參與擴大實施成效</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="justiceCard">
+                <div class="card-img-top">
+                    <img src="../image/業務用圖/change/secoon-6.jpg" alt="成果豐碩">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">成果豐碩</div>
+                    <div class="card-text">
+                        <ul>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try12&sub=achievement/a" title="執行績效里程碑">執行績效里程碑</a>
+                            </li>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try12&sub=achievement/b" title="執行績效突飛猛進">執行績效突飛猛進</a>
+                            </li>
+                            <li>
+                                <a href="https://tpki.github.io/online_exhibition/reindex.html?upg=public&context=try12&sub=achievement/c" title="在社會脈動中向前躍進">在社會脈動中向前躍進</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="stamp tabcontent" value="2">
+            <div class="stampCard">
+                <a href="https://tpki.github.io/online_stamp/" title="紀年郵冊">
+                    <div class="card-img-top">
+                        <img src="../image/stamp/page02.jpg" alt="舵手">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">紀年郵冊-舵手</div>
+                    </div>
+                </a>
+            </div>
+            <div class="stampCard">
+                <a href="https://tpki.github.io/online_stamp/" title="紀年郵冊">
+                    <div class="card-img-top">
+                        <img src="../image/stamp/page03.jpg" alt="沿革">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">紀年郵冊-沿革</div>
+                    </div>
+                </a>
+            </div>
+            <div class="stampCard">
+                <a href="https://tpki.github.io/online_stamp/" title="紀年郵冊">
+                    <div class="card-img-top">
+                        <img src="../image/stamp/page04.jpg" alt="奠基">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">紀年郵冊-奠基</div>
+                    </div>
+                </a>
+            </div>
+            <div class="stampCard">
+                <a href="https://tpki.github.io/online_stamp/" title="紀年郵冊">
+                    <div class="card-img-top">
+                        <img src="../image/stamp/page05.jpg" alt="鐵碗">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">紀年郵冊-鐵碗</div>
+                    </div>
+                </a>
+            </div>
+            <div class="stampCard">
+                <a href="https://tpki.github.io/online_stamp/" title="紀年郵冊">
+                    <div class="card-img-top">
+                        <img src="../image/stamp/page06.jpg" alt="便民">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">紀年郵冊-便民</div>
+                    </div>
+                </a>
+            </div>
+            <div class="stampCard">
+                <a href="https://tpki.github.io/online_stamp/" title="紀年郵冊">
+                    <div class="card-img-top">
+                        <img src="../image/stamp/page07.jpg" alt="關懷">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">紀年郵冊-關懷</div>
+                    </div>
+                </a>
+            </div>
+            <div class="stampCard">
+                <a href="https://tpki.github.io/online_stamp/" title="紀年郵冊">
+                    <div class="card-img-top">
+                        <img src="../image/stamp/page08.jpg" alt="e化">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">紀年郵冊-e化</div>
+                    </div>
+                </a>
+            </div>
+            <div class="stampCard">
+                <a href="https://tpki.github.io/online_stamp/" title="紀年郵冊">
+                    <div class="card-img-top">
+                        <img src="../image/stamp/page09.jpg" alt="強化">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">紀年郵冊-強化</div>
+                    </div>
+                </a>
+            </div>
+            <div class="stampCard">
+                <a href="https://tpki.github.io/online_stamp/" title="紀年郵冊">
+                    <div class="card-img-top">
+                        <img src="../image/stamp/page10.jpg" alt="深化">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">紀年郵冊-深化</div>
+                    </div>
+                </a>
+            </div>
+            <div class="stampCard">
+                <a href="https://tpki.github.io/online_stamp/" title="紀年郵冊">
+                    <div class="card-img-top">
+                        <img src="../image/stamp/page11.jpg" alt="活化">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">紀年郵冊-活化</div>
+                    </div>
+                </a>
+            </div>
+            <div class="stampCard">
+                <a href="https://tpki.github.io/online_stamp/" title="紀年郵冊">
+                    <div class="card-img-top">
+                        <img src="../image/stamp/page12.jpg" alt="精進">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">紀年郵冊-精進</div>
+                    </div>
+                </a>
+            </div>
+            <div class="stampCard">
+                <a href="https://tpki.github.io/online_stamp/" title="紀年郵冊">
+                    <div class="card-img-top">
+                        <img src="../image/stamp/page13.jpg" alt="扎根">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">紀年郵冊-扎根</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="heart tabcontent" value="3">
+            <div class="heartCard">
+                <div class="heartTitle">設計師久違的微笑</div>
+                <div class="heartExecName">臺北分署</div>
+                <div class="heartContent">
+                    <img src="../image/design.png" alt="設計師久違的微笑">室內設計師小傑因遭好友陷害，導致辛苦成立的公司倒閉又積欠稅款及民間債務，為了還債甚至借了高利貸，在惡性循環下，小傑每天過著足不出戶、毫無安全感的生活，臺北分署除命小傑至分署報告公司財產狀況外，並至小傑家中訪視，發現小傑並非無工作能力，僅對未來失去信心及感到失望與無助，該分署知道要徵起本件欠稅，首先要打破小傑的心防，主動付出關懷、給予溫暖的鼓勵，經過幾次訪談後，小傑慢慢回復對設計的熱忱與內心的溫暖，並同意接受該分署轉介就業服務，協助重返職場，積極處理欠稅，使行政執行機關達到「公義」與「關懷」雙贏的局面。</div>
+            </div>
+            <div class="heartCard">
+                <div class="heartTitle">一家9口年前臨斷炊，分署拋磚引玉展關懷</div>
+                <div class="heartExecName">屏東分署</div>
+                <div class="heartContent">
+                    <img src="../image/people.png" class="special" alt="一家9口年前臨斷炊，分署拋磚引玉展關懷">排灣族林姓義務人一家九口天天擠在不到十坪的空間，在寒冬中打著地鋪才能睡覺，林姓義務人更為了維持全家生計，冒險無照騎乘無牌機車擔任清潔工工作，累計滯欠各種交通違規罰鍰超過八萬元，但為養家，積欠的罰款僅能申請以分期繳納，如今家計都快支撐不住，還款也跟著停擺。屏東分署於執行過程中得知義務人困境後，全體同仁發動募集物資，並結合百合扶輪
+                    社等民間團體傳遞關懷與愛心，帶著白米、尿布、新衣服、玩具、書籍及文具等，讓義務人過年不致斷炊;由於屏東分署寒冬送暖活動、會並有一技之長。行政執行機 關往往在個案執行中，對於隱 藏於社會角落未被發現的弱勢
+                    民眾，在缺乏資源管道或求助無門之當下，盡微薄之力，即時提供協助走出困境。
+                </div>
+            </div>
+        </div>
+        <div class="focus tabcontent" value='4'>
+            <div class="focusCard">
+                <div class="focusTitle">媒體追逐的董事長</div>
+                <div class="focusExecName">士林分署</div>
+                <div class="focusContent">
+                    <span>
+                        <img src="../image/onfoucs.png" alt="媒體追逐的董事長">&nbsp;&nbsp;義務人孫○存滯納88、89年度贈與稅及其罰鍰，及93年度綜合所得稅，合計滯欠金額為3億27萬8,419元，移送機關財政部臺北國稅局於94年9月間移送臺北分署執行，嗣因轄區調整，於95年初移由士林分署接續執行。</span>
+                    <div>&nbsp;&nbsp;本件於收案後即執行義務人存款、薪津及投資股票等財產，且併法院執行不動產，惟其名下財產顯不足清償，不動產亦無人應買。該分署除依職權調查義務人財產外，並多次通知義務人到場報告財產狀況，惟義務人僅願每月自動繳納25萬元，是該分署即積極調查義務人之資金流向及資產變動情形，以明其是否有隱匿或處分財產之情事，擬以聲請管收之間接強制方法促使義務人履行義務。</div>
+                    <div>&nbsp;&nbsp;該分署調取義務人歷年之財產及所得資料，且因義務人之投資變動及資金往來情形複雜，是該分署即請財政部臺北國稅局指派專業稅務人員協助調查，經調閱義務人投資公司之股份異動紀錄、關係人近數年之財產及所得資料、高額抵押貸款資金流向等，並派出數組人員至金融機構調查義務人及關係人資金往來紀錄，就查得之資料共同彙整比對後，發現義務人可能有涉及隱匿或處分財產之情事，是該分署即通知義務人到場說明。詢問當日，該分署請義務人就異常之資金變動提出說明，並曉諭其如涉有隱匿處分財產或虛偽報告之情事，則將向法院聲請管收，歷經6小時之詢問，終於促使義務人於當日繳納1億元，其餘款項則申請分6期繳納，並由有資力之第三人出具擔保書，嗣義務人依分期約定如期履行，於99年3月21日繳清全部稅款，本件終於全數徵起。</div>
+                    <div>&nbsp;&nbsp;本件義務人曾擔任上市公司之董事長，廣為一般民眾認識，被媒體批露其滯欠上億稅款卻仍住豪宅且偕妻子購買精品等奢侈行為，致全民輿論一致撻伐，報章媒體大肆報導，該分署亦承受相當之壓力，然該分署趁此時民氣可用，就前已蒐集掌握之義務人資金變動相關資料，適時出示證據詢問義務人，並告以該分署聲請管收之決心，以此契機，終能促使義務人提出清償方案履行義務。本案除幫國庫挹注3億餘元之執行金額外，亦因此案而促使行政執行法增訂第17條之1有關禁奢條款之規定，使我國行政執行機關多了
+                        可資運用之執行方法;又因本案義務人之資金 流向複雜，該分署請國稅局指派稅務人員協助追查，亦發揮具體成效，是促使財政部與法務部於99年度欠稅移送執行案件業務聯繫會議中，共同訂定「強化稅捐稽徵機關與行政執行機關執行案件追查具體措施」，就大額欠稅案件或社會關注而具指標性意義之執行案件，得依實務需要由稅捐稽徵機關指派人員協助追查，建立行政執行機關與稅捐稽徵機關合作追查執行案件之具體規範，以活化執行技巧，使稅捐案件之執行更能發揮成效。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 統計視覺化 -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <div class="main-box-dataVisual wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
+        <!--名稱-->
+        <div class="main-box-image">
+            <div class="title-box colorYellow">行政執行資訊視覺化專區</div>
+        </div>
+        <div class="blockBtn">
+            <div class="execBtn" id="execBtnActive" onclick="changeStatic(0)">合計</div>
+            <div class="execBtn" onclick="changeStatic(1)">臺北</div>
+            <div class="execBtn" onclick="changeStatic(2)">士林</div>
+            <div class="execBtn" onclick="changeStatic(3)">新北</div>
+            <div class="execBtn" onclick="changeStatic(4)">桃園</div>
+            <div class="execBtn" onclick="changeStatic(5)">新竹</div>
+            <div class="execBtn" onclick="changeStatic(6)">臺中</div>
+            <div class="execBtn" onclick="changeStatic(7)">彰化</div>
+            <div class="execBtn" onclick="changeStatic(8)">嘉義</div>
+            <div class="execBtn" onclick="changeStatic(9)">臺南</div>
+            <div class="execBtn" onclick="changeStatic(10)">高雄</div>
+            <div class="execBtn" onclick="changeStatic(11)">屏東</div>
+            <div class="execBtn" onclick="changeStatic(12)">花蓮</div>
+            <div class="execBtn" onclick="changeStatic(13)">宜蘭</div>
+        </div>
+        <div class="dashboard">
+            <div class="cashBoard">
+                <div class="cardHeader">
+                    <div class="boxImage success">
+                        <i class="far fa-clipboard"></i>
+                    </div>
+                    <div class="boxContent">
+                        <div class="execName common">新收件數</div>
+                        <div class="num common">
+                            <span class="newNum">935</span>
+                            <span class="unit">萬件</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardFotter">
+                    <div class="dashBoardUnit">106年 </div>
+                    <div class="segmentation">行政執行各分署</div>
+                </div>
+            </div>
+            <div class="cashBoard">
+                <div class="cardHeader">
+                    <div class="boxImage danger">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="boxContent">
+                        <div class="execName common">終結件數</div>
+                        <div class="num common">
+                            <span class="overNum">749</span>
+                            <span class="unit">萬件</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardFotter">
+                    <div class="dashBoardUnit">106年 </div>
+                    <div class="segmentation">行政執行各分署</div>
+                </div>
+            </div>
+            <div class="cashBoard">
+                <div class="cardHeader">
+                    <div class="boxImage info">
+                        <i class="fas fa-donate"></i>
+                    </div>
+                    <div class="boxContent">
+                        <div class="execName common">徵起金額</div>
+                        <div class="num common">
+                            <span class="receiveMoney">275</span>
+                            <span class="unit">億元</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardFotter">
+                    <div class="dashBoardUnit">106年 </div>
+                    <div class="segmentation">行政執行各分署</div>
+                </div>
+            </div>
+        </div>
+
+        <!--data-->
+        <div class="main-data-box">
+            <!-- 新收件數 -->
+            <div class="data-box wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                <div class="data-title">
+
+                    <span class="pie-name">106年執行案件新收情形</span>
+                    <span class="unit">(單位：萬件)</span>
+
+                </div>
+                <div id="donutChart" class="data-image"></div>
+            </div>
+            <!-- 徵起金額 -->
+            <div class="data-box wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                <div class="data-title">
+                    <span class="colChart-name">106年執行案件徵起情形</span>
+                    <span class="unit">(單位：新臺幣億元)</span>
+
+                </div>
+                <div id="barChart" class="data-image"></div>
+            </div>
+        </div>
+        <!-- 更多統計 -->
+        <div class="more-data">
+            <a title="在新視窗打開" target="_blank" href="http://www.rjsd.moj.gov.tw/RJSDWEB/visualization/justice/enforcement/enforcement_index.html">
+                <i class="fas fa-plus-circle more"></i>更多統計資訊服務</a>
+        </div>
+
+    </div>
+    <!-- 熱門影片 -->
+    <div class="main-box-youtube wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
+        <!--影片名稱-->
+        <!--署徽-->
+        <div class="main-box-image">
+            <div class="title-box colorBlue">熱門影片專區</div>
+        </div>
+        <!--影片-->
+        <div class="main-box-movie">
+            <div class="movie-box">
+                <div class="main-movie">
+                    <iframe class="movie-size" value='0' id="movieIsActive" title="行政執行署5000億成果短片-攀升跨越榮耀時刻" src="https://www.youtube.com/embed/04ljiWGEC4o"
+                        frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                    <iframe class="movie-size" value='1' title="行政執行有效率，超商繳款最便利" src="https://www.youtube.com/embed/lG-DJAbRr4A" frameborder="0"
+                        gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                    <iframe class="movie-size" value='2' title="執行分署傳繳通知「係金ㄟ」記者會錄影" src="https://www.youtube.com/embed/0v5eeRzCY4s" frameborder="0"
+                        gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="movie-content">
+                    <ul>
+                        <li>
+                            <div class="movie-link">
+                                <div class="movie-logo">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <div class="movie-inner-content" id="choose" value='0'>
+                                    <div class="movie-name">大突破，跨越5,000億成果</div>
+                                    <div class="movie-cop">行政執行署</div>
+                                    <div class="movie-date">發布日期：106年12月21日</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="movie-link">
+                                <div class="movie-logo">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <div class="movie-inner-content" value='1'>
+                                    <div class="movie-name">行政執行有效率，超商繳款最便利</div>
+                                    <div class="movie-cop">行政執行署</div>
+                                    <div class="movie-date">發布日期：107年2月2日</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="movie-link">
+                                <div class="movie-logo">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <div class="movie-inner-content" value='2'>
+                                    <div class="movie-name">執行分署傳繳通知「係金ㄟ」記者會錄影</div>
+                                    <div class="movie-cop">行政執行署</div>
+                                    <div class="movie-date">發布日期：107年3月6日</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="more-video">
+            <a title="在新視窗打開" target="_blank" href="https://www.youtube.com/channel/UCth7EXf77LjjHenf_L9eH4g/videos">
+                <i class="fas fa-plus-circle more"></i>更多熱門影片</a>
+        </div>
+        <div class="hr"></div>
+    </div>
+    <img src="../image/bottom.png" width="993px" alt="">
+    <script src="../js/index.js"></script>
+    <script src="../js/jumbotrom.js"></script>
+    <script src="../js/new.js"></script>
+    <script src="../js/statics.js"></script>
+    <script src="https://tpki.github.io/forChild/js/wow.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
+        crossorigin="anonymous"></script>
+    <script>
+        var head = document.getElementsByTagName("head")[0];
+        link = document.createElement("link");
+        link.id = "animated";
+        link.rel = "stylesheet";
+        link.type = 'text/css';
+        link.href = "https://tpki.github.io/webTool/css/animate.css";
+        head.appendChild(link);
+    </script>
+    <script>
+        function changeTab(value) {
+            var tabNow = document.getElementById("tabActive");
+            var tabColor = document.getElementById("tabActiveColor");
+            var changeTab = document.getElementsByClassName("tabcontent")[value];
+            var changeTabColor = document.getElementsByClassName("tablink")[value];
+            tabNow.removeAttribute("id", "tabActive");
+            changeTab.setAttribute("id", "tabActive");
+            tabColor.removeAttribute("id", "tabActiveColor");
+            changeTabColor.setAttribute("id", "tabActiveColor");
+        }
+    </script>
+    <script>
+        var btnMovie = document.getElementsByClassName("movie-inner-content");
+        for (var row = 0; row < btnMovie.length; row++) {
+            btnMovie[row].onclick = function () {
+                var movieNow = document.getElementsByClassName("movie-size");
+                var movieIsActive = document.getElementById("movieIsActive");
+                var btnIsActive = document.getElementById("choose");
+                var value = this.getAttribute("value");
+                btnIsActive.removeAttribute("id");
+                btnMovie[value].setAttribute("id", "choose");
+                movieIsActive.removeAttribute("id");
+                movieNow[value].setAttribute("id", "movieIsActive")
+            }
+        }
+    </script>
+    <script>
+        new WOW().init();
+    </script>
+</body>
+
+</html>

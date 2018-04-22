@@ -1,0 +1,412 @@
+<style>
+    /* 視覺化區塊 */
+
+    .main-box-policy {
+        box-sizing: border-box;
+        width: 995px;
+        height: 800px;
+        margin-bottom: 10px;
+        background-color: #F7F7F7;
+        margin-top: 10px;
+    }
+
+    /* 區塊title */
+
+    .main-box-title {
+        box-sizing: border-box;
+        text-align: center;
+        height: 20px;
+        font-family: "微軟正黑體";
+        font-weight: 500;
+        margin-bottom: 5px;
+        /* color: black; */
+    }
+
+    .main-box-image {
+        display: flex;
+        border:1px solid;
+        height: 20px;
+        background-color: #4B4B4B;
+        border-bottom: 5px solid rgb(161, 161, 161);
+        position: relative;
+    }
+
+    .title-box{
+        position: absolute;
+        width: 300px;
+        height: 35px;
+        left: 25px;
+        top:-15px;
+        color:#fff;
+        line-height: 35px;
+        text-align:center;
+        font-size: 1.2em;
+    }
+    
+    .colorYellow{
+        background-color: #E7AE3C;
+    }
+    .main-box-image .main-box-image-line {
+        box-sizing: border-box;
+        border-bottom: 1.3px solid rgb(190, 190, 190);
+        width: 80%;
+        height: 25px;
+        margin: 0px 12px 0px 12px;
+    }
+
+    .main-box-image .main-box-image-ige {
+        box-sizing: border-box;
+        display: inline-flex;
+        width: 20%;
+        margin: 0px auto;
+        font-size: 2.7em;
+        color: rgb(190, 190, 190);
+        justify-content: center;
+    }
+
+    .main-box-image:hover .main-box-image-ige {
+        transition: 0.3s;
+        color: rgb(192, 0, 0);
+    }
+
+    .main-policy-box {
+        display: flex;
+        flex-flow: column;
+        margin-top: 1.2em;
+        height: 600px;
+    }
+    .policy-box-video {
+        /* width: 40%; */
+        height: 500px;
+        border: 1px solid gray;
+        /* box-shadow: 0px 0px 20px #8f8f8f; */
+        background-color: black;
+        transition: 1s;
+        color:#fff;
+    }
+
+    .policy-box-video:hover{
+        box-shadow: 0px 0px 50px #8f8f8f; 
+        /* transform: translate(-5px, -5px); */
+    }
+
+    div.policy-box-content {
+        width: calc(100%);
+        height: 120px;
+        /* box-shadow: 0px 0px 20px #8f8f8f; */
+        background-color: #fff;
+        transition: 1s;
+        border: 1px solid gray;
+        color: #fff;
+        background-color: black;
+    }
+
+    [class^="policy-box"] {
+        border-radius: 0.2em;
+    }
+
+    [class^="policy-box"]:hover {
+        transition: 0.3s;
+    }
+
+    [class^="policy-box"] .policy-title {
+        /* height: 2em; */
+        /* line-height: 2em; */
+        font-size: 1.2em;
+        width: 100%;
+        border-bottom: 5px solid rgb(66, 202, 184);
+        color: #fff;
+        font-family: "微軟正黑體";
+        /* padding-left: 10px; */
+        /* text-align: center; */
+    }
+
+    .policy-video {
+        /* border: 1px solid; */
+        width: 80%;
+        height: 85%;
+        margin: 10px auto;
+    }
+
+    .policy-video iframe {
+        width: 100%;
+        height: 100%;
+    }
+
+    .policy-content {
+        margin: 10px auto;
+        display: flex;
+        justify-content: space-around;
+        /* border: 1px solid; */
+        overflow: hidden;
+        box-sizing: border-box;
+
+    }
+
+    .policy-content img{
+        width:calc(990px/6.5);
+        height:100px;
+        border:1px solid rgb(182, 180, 180);
+        opacity: 0.7;
+        /* transition: 1s ease; */
+        cursor: pointer;
+
+    }
+
+    .policy-content img:hover{
+        opacity: 1;
+        /* transform:scale(1.2); */
+    }
+
+    .policyModal{
+        width: 100%;
+        height: 100%;
+        background-color:black;
+        z-index: 999;
+        position: absolute;
+        top:0;
+        left:0;
+        display: none;
+        flex-flow: column;
+        align-items: center;
+    }
+
+    .policyClose{
+        color:#fff;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 2em;
+        cursor: pointer;
+    }
+
+    .policyClose:hover{
+        color: rgb(255, 0, 128);
+    }
+
+    .policyTitle{
+        color: #fff;
+        /* width: 100%; */
+        font-size: 2em;
+        font-weight: 400;
+        margin-top: 10px;
+        border-bottom: 10px solid red;
+        height: 50px;
+    }
+
+    .policyModalImg{
+        display: flex;
+        flex-flow: column;
+        width: 900px;
+        border:1px solid rebeccapurple;
+        margin-top: 30px;
+    }
+
+    .policyModalImg img{
+        width: 100%;
+    }
+
+    .policyDisable{
+        display: none;
+    }
+
+    #policyImgActive{
+        display: block;
+    }
+
+    .littlePolicyImg{
+        display: flex;
+        justify-content: center;
+    }
+
+    .littlePolicyImg img{
+        width: calc(100%/6);
+        height: 100px;
+        opacity: 0.8;
+    }
+
+    .littlePolicyImg img:hover{
+        opacity: 1;
+        cursor: pointer;
+    }
+
+
+    #littleImgActive{
+        opacity: 1;
+    }
+
+
+
+    div.more-policy {
+        text-align: center;
+        margin-top: 1.5em;
+        margin-left: 1.5em;
+        display: flex;
+        justify-content: flex-start;
+        height: 2em;
+        line-height: 2em;
+        align-content: center;
+    }
+
+    div.more-policy a {
+        text-decoration: none;
+        font-size: 1em;
+        display: flex;
+        align-items: center;
+        color: black;
+    }
+
+    div.more-policy .more {
+        margin-right: 0.3em;
+        font-size: 1.5em;
+        color: rgb(126, 114, 114);
+    }
+
+    div.more-policy a:hover,
+    a:hover .more {
+        transition: 0.3s;
+        color: rgb(236, 166, 104);
+        text-decoration: underline;
+    }
+
+    .box-bottom {
+        margin-top: 2em;
+    }
+
+    /* The Modal (background) */
+
+    #myModal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: black;
+        display: none;
+        /* border: 1px solid red; */
+        justify-content: center;
+        align-items: center;
+    }
+
+    #myModal .close {
+        color: white;
+        position: absolute;
+        top: 10px;
+        right: 40px;
+        font-size: 2em;
+        cursor: pointer;
+    }
+
+    #myModal .close:hover {
+        color: red;
+    }
+
+    img.modal-content {
+        width: 60%;
+        animation-name: changeWidth;
+        animation-duration: 1s;
+        /* margin:0px auto; */
+        /* border: 1px solid red; */
+    }
+
+    @keyframes changeWidth {
+        from {
+            width: 0%;
+        }
+        to {
+            width: 60%;
+        }
+    }
+
+    img.disable {
+        display: none;
+    }
+</style>
+
+<div class="main-box-policy wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
+    <!--名稱-->
+    <!--行政執行績效報告與策進作為-->
+    <div class="main-box-image">
+        <div class="title-box colorYellow">行政執行績效報告與策進作為</div>
+    </div>
+    <!--懶人包-->
+    <div class="main-policy-box wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.8s">
+        <!-- 懶人包 -->
+        <div class="policy-box-video">
+            <div class="policy-video">
+                <iframe src="https://www.youtube.com/embed/BAGaKKCHukg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="policy-box-content wow fadeInRight" data-wow-duration="1s" data-wow-delay="1s">
+            <div class="policy-content">
+                <img src="https://tpki.github.io/online_stamp/policy_image/0.jpg" alt="" onclick="openModal(0)">
+                <img src="https://tpki.github.io/online_stamp/policy_image/1.jpg" alt="" onclick="openModal(1)">
+                <img src="https://tpki.github.io/online_stamp/policy_image/2.jpg" alt="" onclick="openModal(2)">
+                <img src="https://tpki.github.io/online_stamp/policy_image/3.jpg" alt="" onclick="openModal(3)">
+                <img src="https://tpki.github.io/online_stamp/policy_image/4.jpg" alt="" onclick="openModal(4)">
+                <img src="https://tpki.github.io/online_stamp/policy_image/5.jpg" alt="" onclick="openModal(5)">
+            </div>
+        </div>
+    </div>
+    <div class="policyModal">
+        <span class="policyClose" id="policyClose">&times;</span>
+        <div class="policyTitle">行政執行績效政策與作為懶人包</div>
+        <div class="policyModalImg">
+            <div class="mainPolicyImg">
+                <img class="policyDisable" id="policyImgActive" src="https://tpki.github.io/online_stamp/policy_image/0.jpg" alt="">
+                <img class="policyDisable" src="https://tpki.github.io/online_stamp/policy_image/1.jpg" alt="">
+                <img class="policyDisable" src="https://tpki.github.io/online_stamp/policy_image/2.jpg" alt="">
+                <img class="policyDisable" src="https://tpki.github.io/online_stamp/policy_image/3.jpg" alt="">
+                <img class="policyDisable" src="https://tpki.github.io/online_stamp/policy_image/4.jpg" alt="">
+                <img class="policyDisable" src="https://tpki.github.io/online_stamp/policy_image/5.jpg" alt="">
+            </div>
+            <div class="littlePolicyImg">
+                <img id="littleImgActive" src="https://tpki.github.io/online_stamp/policy_image/0.jpg" alt="" onclick="changeImg(0)">
+                <img src="https://tpki.github.io/online_stamp/policy_image/1.jpg" alt="" onclick="changeImg(1)">
+                <img src="https://tpki.github.io/online_stamp/policy_image/2.jpg" alt="" onclick="changeImg(2)">
+                <img src="https://tpki.github.io/online_stamp/policy_image/3.jpg" alt="" onclick="changeImg(3)">
+                <img src="https://tpki.github.io/online_stamp/policy_image/4.jpg" alt="" onclick="changeImg(4)">
+                <img src="https://tpki.github.io/online_stamp/policy_image/5.jpg" alt="" onclick="changeImg(5)">
+            </div>
+        </div>
+    </div>
+    <!-- 完整報告 -->
+    <div class="more-policy">
+        <a title="在新視窗打開" target="_blank" href="https://tpki.github.io/online_stamp/pdf/policy.pdf">
+            <i class="fas fa-plus-circle more"></i>績效報告與策進作為完整報告內容</a>
+    </div>
+</div>
+
+<script>
+    var policyClose = document.getElementById("policyClose");
+    var policyModal = document.querySelector(".policyModal");
+
+    policyModal.onclick = function(){
+        // this.style.display = "none";
+    }
+
+    policyClose.onclick = function(){
+        // var policyModal = document.querySelector(".policyModal");
+        policyModal.style.display = "none";
+    }
+
+    function openModal(value){
+        // var policyModal = document.querySelector(".policyModal");
+        policyModal.style.display = "flex";
+        changeImg(value);
+    }
+
+    // console.log(littlePolicyImg);
+    function changeImg(value){
+        var mainPolicyImg = document.querySelectorAll(".mainPolicyImg img");
+        var mainPolicyImgNow = document.getElementById("policyImgActive");
+        var littlePolicyImg = document.querySelectorAll(".littlePolicyImg img");
+        var littlePolicyImgNow = document.getElementById("littleImgActive");
+        littlePolicyImgNow.removeAttribute("id");
+        littlePolicyImg[value].setAttribute("id", "littleImgActive");
+        mainPolicyImgNow.removeAttribute("id");
+        mainPolicyImg[value].setAttribute("id", "policyImgActive");
+    }
+</script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
