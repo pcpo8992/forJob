@@ -346,19 +346,19 @@
     </div>
     <!-- jumbotron -->
     <div class="jumbotron-container">
-        <a href="#" title="法務部行政執行署所屬各分署首創「123全國聯合拍賣日」">
-            <div class="imgContainer" value='0' id="jumbotronIsActive">
-                <img src="./image/jumbotron.001.jpg" alt="">
-                <div class="jumbotronContent">
-                    <div class="jumbotronTitle">法務部行政執行署所屬各分署首創「123全國聯合拍賣日」</div>
-                </div>
-            </div>
-        </a>
         <a href="#" title="大突破-行政執行績效跨越5仟億">
-            <div class="imgContainer" value='1'>
+            <div class="imgContainer" value='0' id="jumbotronIsActive">
                 <img src="./image/jumbotron.002.jpg" alt="">
                 <div class="jumbotronContent">
                     <div class="jumbotronTitle">大突破-行政執行績效跨越5仟億</div>
+                </div>
+            </div>
+        </a>
+        <a href="#" title="法務部行政執行署所屬各分署首創「123全國聯合拍賣日」">
+            <div class="imgContainer" value='1'>
+                <img src="./image/jumbotron.001.jpg" alt="法務部行政執行署所屬各分署首創「123全國聯合拍賣日」">
+                <div class="jumbotronContent">
+                    <div class="jumbotronTitle"></div>
                 </div>
             </div>
         </a>
@@ -855,14 +855,14 @@
                         </div>
                     </a>
                 </div>
-                <!-- 電子報 -->
+                <!-- 法務部電子報 -->
                 <div class="box wow flipInX animated" data-wow-duration="2s" data-wow-delay="2.6s">
                     <a title="法令規章" target="_blank" href="https://www.moj.gov.tw/sp-epap-sform-001.html">
                         <div class="box-inner-image">
                             <i class="far fa-newspaper font color-3 color-6"></i>
                         </div>
                         <div class="box-inner-text">
-                            <div class="text">訂閱電子報</div>
+                            <div class="text">法務部電子報</div>
                         </div>
                     </a>
                 </div>
@@ -1474,7 +1474,7 @@
         <div class="main-box-movie">
             <div class="movie-box">
                 <div class="main-movie">
-                    <iframe class="movie-size" value='0' id="movieIsActive" title="行政執行署5000億成果短片-攀升跨越榮耀時刻" src="https://www.youtube.com/embed/04ljiWGEC4o"
+                    <iframe class="movie-size" value='0' id="movieIsActive" title="Youtue影片" src="https://www.youtube.com/embed/04ljiWGEC4o"
                         frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
                     <!-- <iframe class="movie-size" value='1' title="行政執行有效率，超商繳款最便利" src="https://www.youtube.com/embed/lG-DJAbRr4A" frameborder="0"
                         gesture="media" allow="encrypted-media" allowfullscreen></iframe>
@@ -1565,7 +1565,6 @@
                 movieIsActive.src = this.getAttribute("value")
             };
         }
-        // console.log("hello world");
     </script>
     <script>
         new WOW().init();
