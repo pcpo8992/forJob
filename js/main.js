@@ -1,148 +1,173 @@
 // declare block
-    //全文檢索
-    var linkBtn = document.querySelector("#linkBtn");
-    var btnOther = document.querySelector("#btn-other");
-    var linkModel = document.getElementById("linkModel");
-    var modelOther = document.getElementById("myModel-other");
-    var linkClose = document.querySelector(".linkClose");
-    clock();
-    window.onload = function () {
-        var btnGoogle = document.querySelector(".gsc-search-button-v2");
-        btnGoogle.setAttribute("id", "color");
-    };
+//全文檢索
+var linkBtn = document.querySelector("#linkBtn");
+var btnOther = document.querySelector("#btn-other");
+var linkModel = document.getElementById("linkModel");
+var modelOther = document.getElementById("myModel-other");
+var linkClose = document.querySelector(".linkClose");
+clock();
+window.onload = function () {
+    var btnGoogle = document.querySelector(".gsc-search-button-v2");
+    btnGoogle.setAttribute("id", "color");
+};
 
-    linkBtn.onclick = function () {
-        linkModel.style.display = "flex";
-    };
-    btnOther.onclick = function () {
-        modelOther.style.display = "flex";
-    };
-    linkModel.onclick = function () {
-        this.style.display = "none";
-    };
-    modelOther.onclick = function () {
-        this.style.display = "none";
-    };
-    linkClose.onclick = function () {
-        linkModel.style.display = "none";
-    };
+linkBtn.onclick = function () {
+    linkModel.style.display = "flex";
+};
+btnOther.onclick = function () {
+    modelOther.style.display = "flex";
+};
+linkModel.onclick = function () {
+    this.style.display = "none";
+};
+modelOther.onclick = function () {
+    this.style.display = "none";
+};
+linkClose.onclick = function () {
+    linkModel.style.display = "none";
+};
 
-    function clock() {
+function clock() {
+    var clock = document.getElementById("clock");
+    clock.textContent = getNowTime();
+    setInterval(function () {
         var clock = document.getElementById("clock");
         clock.textContent = getNowTime();
-        setInterval(function () {
-            var clock = document.getElementById("clock");
-            clock.textContent = getNowTime();
-        }, 1000);
-    }
+    }, 1000);
+}
 
-    function getNowTime() {
-        var date = new Date();
-        var year = date.getFullYear() - 1911;
-        var month = date.getMonth() + 1;
-        var dd = date.getDate();
-        var weekend = getChineseDay(date.getDay());
-        var hour = getChineseHours(date.getHours());
-        var minute = addZero(date.getMinutes());
-        var second = addZero(date.getSeconds());
-        var nowTime = year + "年" + month + "月" + dd + "日 " + "星期" + weekend + " " + hour + ":" + minute +
-            ":" + second;
-        return nowTime;
-    }
+function getNowTime() {
+    var date = new Date();
+    var year = date.getFullYear() - 1911;
+    var month = date.getMonth() + 1;
+    var dd = date.getDate();
+    var weekend = getChineseDay(date.getDay());
+    var hour = getChineseHours(date.getHours());
+    var minute = addZero(date.getMinutes());
+    var second = addZero(date.getSeconds());
+    var nowTime = year + "年" + month + "月" + dd + "日 " + "星期" + weekend + " " + hour + ":" + minute +
+        ":" + second;
+    return nowTime;
+}
 
-    function getChineseDay(day) {
-        var chineseDay;
-        switch (day) {
-            case 0:
-                chineseDay = "日";
-                break;
-            case 1:
-                chineseDay = "一";
-                break;
-            case 2:
-                chineseDay = "二";
-                break;
-            case 3:
-                chineseDay = "三";
-                break;
-            case 4:
-                chineseDay = "四";
-                break;
-            case 5:
-                chineseDay = "五";
-                break;
-            case 6:
-                chineseDay = "六";
-                break;
-        }
-        return chineseDay;
+function getChineseDay(day) {
+    var chineseDay;
+    switch (day) {
+        case 0:
+            chineseDay = "日";
+            break;
+        case 1:
+            chineseDay = "一";
+            break;
+        case 2:
+            chineseDay = "二";
+            break;
+        case 3:
+            chineseDay = "三";
+            break;
+        case 4:
+            chineseDay = "四";
+            break;
+        case 5:
+            chineseDay = "五";
+            break;
+        case 6:
+            chineseDay = "六";
+            break;
     }
+    return chineseDay;
+}
 
-    function getChineseHours(hour) {
-        var chineseHours;
-        if (hour == 0) {
-            chineseHours = "午夜 " + addZero(hour);
-        } else if (hour > 0 && hour < 12) {
-            chineseHours = "上午 " + addZero(hour);
-        } else if (hour == 12) {
-            chineseHours = "中午 " + addZero(hour);
-        } else if (hour > 12 && hour < 24) {
-            chineseHours = "下午 " + addZero(hour - 12);
-        }
-        return chineseHours;
+function getChineseHours(hour) {
+    var chineseHours;
+    if (hour == 0) {
+        chineseHours = "午夜 " + addZero(hour);
+    } else if (hour > 0 && hour < 12) {
+        chineseHours = "上午 " + addZero(hour);
+    } else if (hour == 12) {
+        chineseHours = "中午 " + addZero(hour);
+    } else if (hour > 12 && hour < 24) {
+        chineseHours = "下午 " + addZero(hour - 12);
     }
+    return chineseHours;
+}
 
-    function addZero(i) {
-        if (i < 10) {
-            i = "0" + i;
-        }
-        return i;
+function addZero(i) {
+    if (i < 10) {
+        i = "0" + i;
     }
+    return i;
+}
 
-    function changeExecImg(value) {
-        var getExecImg = document.querySelectorAll(".area-image img");
-        getExecImg[value].style.display = "block";
-    }
+function changeExecImg(value) {
+    var getExecImg = document.querySelectorAll(".area-image img");
+    getExecImg[value].style.display = "block";
+}
 
-    function recoverImg(value) {
-        var getExecImg = document.querySelectorAll(".area-image img");
-        getExecImg[value].style.display = "none";
-    }
+function recoverImg(value) {
+    var getExecImg = document.querySelectorAll(".area-image img");
+    getExecImg[value].style.display = "none";
+}
 
-    // jumbotron
-    var btnNext = document.getElementById("jumbotronNext");
+// jumbotron
+var btnNext = document.getElementById("jumbotronNext");
 var btnPre = document.getElementById("jumbotronPre");
 
 btnNext.onclick = function () {
     var activeImg = document.getElementById("jumbotronIsActive");
     var value = parseInt(activeImg.getAttribute("value"));
     var imgContainer = document.getElementsByClassName("imgContainer");
+    var nowDot = document.querySelector(".active");
+    var nextDot = document.querySelectorAll(".dot");
     if (value < imgContainer.length - 1) {
-        console.log(imgContainer[value]);
+        // console.log(imgContainer[value]);
         imgContainer[value].removeAttribute("id");
+        nowDot.className = nowDot.className.replace(" active", "");
         value += 1;
-        console.log(value);
+        // console.log(value);
+        nextDot[value].className = nowDot.className.replace("dot", "dot active");
         imgContainer[value].setAttribute("id", "jumbotronIsActive");
     } else {
         imgContainer[value].removeAttribute("id");
+        nowDot.className = nowDot.className.replace(" active", "");
         imgContainer[0].setAttribute("id", "jumbotronIsActive");
+        nextDot[0].className = nowDot.className.replace("dot", "dot active");
     }
 };
 
 btnPre.onclick = function () {
     var activeImg = document.getElementById("jumbotronIsActive");
     var value = parseInt(activeImg.getAttribute("value"));
+    var nowDot = document.querySelector(".active");
+    var nextDot = document.querySelectorAll(".dot");
     var imgContainer = document.getElementsByClassName("imgContainer");
     if (value > 0) {
         imgContainer[value].removeAttribute("id");
+        nowDot.className = nowDot.className.replace(" active", "");
         value -= 1;
         imgContainer[value].setAttribute("id", "jumbotronIsActive");
+        nextDot[value].className = nowDot.className.replace("dot", "dot active");
     } else {
         imgContainer[value].removeAttribute("id");
+        nowDot.className = nowDot.className.replace(" active", "");
         imgContainer[imgContainer.length - 1].setAttribute("id", "jumbotronIsActive");
+        nextDot[imgContainer.length - 1].className = nowDot.className.replace("dot", "dot active");
     }
 };
 
+function currentSlide(value){
+    var nowImage = document.getElementById("jumbotronIsActive");
+    var nextImage = document.querySelectorAll(".imgContainer")[value];
+    var nowDot = document.querySelector(".active");
+    var nextDot = document.querySelectorAll(".dot")[value];
+    nowImage.removeAttribute("id", "jumbotronIsActive");
+    nowDot.className = nowDot.className.replace(" active", "");
+    nextImage.setAttribute("id", "jumbotronIsActive");
+    nextDot.className = nowDot.className.replace("dot", "dot active");
+}
+
+
+//json 格式
 var nowValue = 0;
 var staticNum = {
     tpk: {
@@ -298,7 +323,7 @@ function changeStatic(value) {
     //    console.log(execName);
     pieName.textContent = '106年 ' + getExec(nowValue).name + ' 新收情形';
     colChartName.textContent = '106年 ' + getExec(nowValue).name + ' 徵起情形';
-    for(var row = 0; row < execName.length; row ++){
+    for (var row = 0; row < execName.length; row++) {
         execName[row].textContent = getExec(value).name;
     }
     // ie 不支援＠＠
@@ -573,7 +598,7 @@ function drawAnotherChart() {
     ];
 
     var dataChoice = [
-    ['案件類型', '徵起金額', {
+        ['案件類型', '徵起金額', {
             role: 'style'
         }, {
             role: 'annotation'
@@ -591,7 +616,7 @@ function drawAnotherChart() {
             left: 90,
             top: 70,
         },
-        title: '總徵起金額：' + getExec(nowValue).receiveMoney +  '億元',
+        title: '總徵起金額：' + getExec(nowValue).receiveMoney + '億元',
         'titleTextStyle': {
             color: '#005b8e',
             fontName: '微軟正黑體',
@@ -614,7 +639,7 @@ function drawAnotherChart() {
                 color: 'white',
             }
         },
-        'vAxis.viewWindow.min': 'pretty'         
+        'vAxis.viewWindow.min': 'pretty'
     };
 
     var chart = new google.visualization.ColumnChart(document.getElementById('barChart'));
@@ -623,8 +648,8 @@ function drawAnotherChart() {
 }
 
 var btnMovie = document.getElementsByClassName("movie-inner-content");
-for(var row = 0; row < btnMovie.length; row++){
-    btnMovie[row].onclick = function(){
+for (var row = 0; row < btnMovie.length; row++) {
+    btnMovie[row].onclick = function () {
         var movieNow = document.getElementsByClassName("movie-size");
         var movieIsActive = document.getElementById("movieIsActive");
         var movieChoose = document.getElementById("choose");

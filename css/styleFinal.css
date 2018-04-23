@@ -295,13 +295,21 @@
 
 .jumbotron-container {
     width: 993px;
-    height: 410px;
+    height: 490px;
+    display: flex;
+    flex-flow: column;
+    /* border: 1px solid red; */
+}
+
+.jumbotron-image{
+    width: 100%;
+    height: 100%;
     position: relative;
 }
 
 .jumbotron-container .imgContainer {
     width: 100%;
-    height: 100%;
+    height: 96%;
     position: absolute;
     display: none;
 }
@@ -326,7 +334,7 @@
 }
 
 .jumbotronContent {
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     height: 50px;
@@ -375,6 +383,25 @@
     left: 0;
 }
 
+.dotted-container{
+    display: flex;
+    justify-content: center;
+    /* margin-top: 100px; */
+}
+
+.dot{
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active,.dot:hover {
+    background-color: #db2828;
+  }
 /* 為民服務 */
 
 .container-news {
