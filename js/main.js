@@ -298,9 +298,13 @@ function changeStatic(value) {
     //    console.log(execName);
     pieName.textContent = '106年 ' + getExec(nowValue).name + ' 新收情形';
     colChartName.textContent = '106年 ' + getExec(nowValue).name + ' 徵起情形';
-    execName.forEach(function (elm) {
-        elm.textContent = getExec(value).name;
-    })
+    for(var row = 0; row < execName.length; row ++){
+        execName[row].textContent = getExec(value).name;
+    }
+    // ie 不支援＠＠
+    // execName.forEach(function (elm) {
+    //     elm.textContent = getExec(value).name;
+    // });
     newNumBlock.textContent = getExec(value).newNum;
     overNumBlock.textContent = getExec(value).overNum;
     moneyBlock.textContent = getExec(value).receiveMoney;
