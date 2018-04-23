@@ -11,4 +11,6 @@ for(var row = 0; row < btnMovie.length; row++){
         movieNow[value].setAttribute("id", "movieIsActive");
     };
 }
+
 // console.log(btnMovie[0]);
+
