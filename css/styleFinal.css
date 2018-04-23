@@ -12,7 +12,7 @@
     list-style-type: none;
     display: flex;
     flex-flow: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     width: 60px;
     height: 60px;
@@ -74,7 +74,7 @@
     width: calc(30%);
     display: flex;
     flex-flow: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 @keyframes open {
@@ -945,7 +945,7 @@ a:hover .more {
 }
 
 .heart {
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: flex-start;
 }
 
@@ -1056,7 +1056,7 @@ a:hover .more {
     height: 50px;
     margin: 10px 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     box-sizing: border-box;
     align-items: center;
 }
@@ -1086,7 +1086,7 @@ a:hover .more {
 .dashboard {
     height: 180px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     background-color: #EEEEEE;
 }
@@ -1170,7 +1170,7 @@ a:hover .more {
     border-top: 1px solid gray;
     margin: 0px auto;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -1312,7 +1312,7 @@ a:hover .more {
     height: 100%;
     background-color: #fff;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     box-shadow: 0px 0px 10px rgb(77, 75, 75);
 }
@@ -1380,7 +1380,7 @@ a:hover .more {
     display: flex;
     flex-direction: column;
     margin-left: 10px;
-    justify-content: space-evenly;
+    justify-content: space-around;
     height: 100px;
     border-radius: 5px;
 }
