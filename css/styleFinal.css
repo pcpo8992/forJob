@@ -947,32 +947,38 @@ a:hover .more {
 }
 
 .card-body {
-    width: 90%;
+    width: 95%;
     margin: 20px auto;
 }
 
 .card-title {
-    font-size: 1em;
+    font-size: 1.4em;
+    font-weight: 500;
+    color: rgb(51, 51, 197);
+}
+
+.card-text{
+    margin-top: 15px;
+    font-size: 1.2em;
     font-weight: 400;
 }
 
-.card-text ul {
-    padding: 0;
-}
-
-.card-text li {
-    list-style: none;
-    margin-bottom: 5px;
-}
-
-.card-text a {
+.card-link{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 40px;
+    background-color: rgb(34, 183, 241);
     text-decoration: none;
-    color: rgb(32, 32, 170);
+    color: white;
+    border-radius: 5px;
 }
 
-.card-text a:hover {
-    color: red;
-    text-decoration: underline;
+.card-link:hover{
+    transition: 0.4s;
+    background-color: rgb(44, 127, 160);
 }
 
 .stampCard a {
