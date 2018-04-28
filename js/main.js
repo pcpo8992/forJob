@@ -120,11 +120,9 @@ btnNext.onclick = function () {
     var nowDot = document.querySelector(".active");
     var nextDot = document.querySelectorAll(".dot");
     if (value < imgContainer.length - 1) {
-        // console.log(imgContainer[value]);
         imgContainer[value].removeAttribute("id");
         nowDot.className = nowDot.className.replace(" active", "");
         value += 1;
-        // console.log(value);
         nextDot[value].className = nowDot.className.replace("dot", "dot active");
         imgContainer[value].setAttribute("id", "jumbotronIsActive");
     } else {
@@ -268,7 +266,7 @@ var staticNum = {
         overNum: 39,
         receiveMoney: 5.7
     }
-}
+};
 google.charts.load('current', {
     'packages': ['corechart']
 });

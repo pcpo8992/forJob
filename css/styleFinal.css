@@ -1,5 +1,16 @@
 /* fastBox */
-
+@media (max-width: 1200px) {
+    .fastBox{
+        display: none;
+    }
+}
+.fastBoxTitle{
+    text-align: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color:rgb(185, 185, 185);
+    color: rgb(66, 66, 66);
+}
 .fastBox ul {
     padding: 0;
     display: inline-block;
@@ -31,7 +42,6 @@
     font-size: 13px;
     box-sizing: border-box;
     background-color: #fff;
-    transition: 0.4s;
     color: rgb(14, 14, 14);
     font-family: "微軟正黑體";
 }
@@ -43,6 +53,7 @@
 
 .fastBox a:hover {
     color: red;
+    cursor: a;
 }
 
 .fastBox a:hover .img-color {
@@ -599,12 +610,13 @@
 }
 
 /* 常用服務熱區 */
-
+#service{
+    margin-bottom: 25px;
+}
 .main-box-service {
     box-sizing: border-box;
     width: 993px;
     height: 500px;
-    margin-top: 10px;
     margin-bottom: 50px;
 }
 
@@ -801,14 +813,15 @@ background-color: rgb(250, 188, 107);
 }
 
 /* 執行績效作為 */
-
+#report{
+    margin-bottom: 25px;
+}
 .main-box-policy {
     box-sizing: border-box;
     width: 995px;
     height: 700px;
     margin-bottom: 10px;
     background-color: #F7F7F7;
-    margin-top: 10px;
     margin-bottom: 50px;
 }
 
@@ -916,13 +929,16 @@ a:hover .more {
 }
 
 /* 執行業務區塊 */
+#intro{
+    margin-bottom: 25px;
+}
 
 .main-box-area {
     box-sizing: border-box;
     width: 995px;
     height: 790px;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin-bottom: 15px;
+
 }
 
 .colorPink {
@@ -1124,12 +1140,15 @@ a:hover .more {
     cursor: pointer;
 }
 
+#static{
+    margin-bottom: 25px;
+}
+
 .main-box-dataVisual {
     box-sizing: border-box;
     width: 995px;
     height: 750px;
     margin-bottom: 10px;
-    margin-top: 3em;
 }
 
 .colorBrown {
@@ -1348,14 +1367,15 @@ a:hover .more {
 }
 
 /* 熱門影片 */
-
+#movie{
+    margin-bottom: 25px;
+}
 .main-box-youtube {
     box-sizing: border-box;
     width: 993px;
     height: 530px;
     margin-bottom: 10px;
     background-color: #F5F4EF;
-    margin-top: 10px;
     margin-bottom: 40px;
 }
 
