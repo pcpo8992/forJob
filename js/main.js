@@ -321,8 +321,8 @@ function changeStatic(value) {
     execBtnActive.removeAttribute("id", "execBtnActive");
     execBtn[nowValue].setAttribute("id", "execBtnActive");
     //    console.log(execName);
-    pieName.textContent = '106年 ' + getExec(nowValue).name + ' 新收情形';
-    colChartName.textContent = '106年 ' + getExec(nowValue).name + ' 徵起情形';
+    pieName.textContent = '106年 ' + getExec(nowValue).name + ' 新收件數';
+    colChartName.textContent = '106年 ' + getExec(nowValue).name + ' 徵起金額';
     for (var row = 0; row < execName.length; row++) {
         execName[row].textContent = getExec(value).name;
     }
@@ -661,3 +661,26 @@ for (var row = 0; row < btnMovie.length; row++) {
     };
 }
 // console.log(btnMovie[0]);
+
+
+var movieIsActive = document.getElementById("movieIsActive");
+var chooseMovie = document.querySelectorAll(".movie-inner-content");
+for (var row = 0; row < chooseMovie.length; row++) {
+    chooseMovie[row].onclick = function () {
+        var movieNow = document.querySelector("#choose");
+        movieNow.removeAttribute("id", "choose");
+        this.setAttribute("id", "choose");
+        movieIsActive.src = this.getAttribute("value")
+    };
+}
+
+function changeTab(value) {
+    var tabNow = document.getElementById("tabActive");
+    var tabColor = document.getElementById("tabActiveColor");
+    var changeTab = document.getElementsByClassName("tabcontent")[value];
+    var changeTabColor = document.getElementsByClassName("tablink")[value];
+    tabNow.removeAttribute("id", "tabActive");
+    changeTab.setAttribute("id", "tabActive");
+    tabColor.removeAttribute("id", "tabActiveColor");
+    changeTabColor.setAttribute("id", "tabActiveColor");
+}
